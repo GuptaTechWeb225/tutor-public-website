@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Overview</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- LightGallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <style>
+        .swiper-slide img {
+            height: 360px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+
+        .roomSelect {
+            padding-right: 2.5rem;
+            /* Space for arrow */
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-after-login-section">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+
+            <nav class="navbar navbar-expand-lg topbar">
+                <div class="container-fluid px-4">
+
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="/index.html">
+                        <img src="/assets/images/hero/logo.png" class="logo-img" alt="BookLuxor">
+                    </a>
+
+                    <!-- Mobile Toggle -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topbarMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Toggle Content -->
+                    <div class="collapse navbar-collapse justify-content-end" id="topbarMenu">
+                        <ul class="navbar-nav jus align-items-start gap-3">
+
+                            <!-- Language -->
+                            <li class="nav-item">
+
+                                <div class="dropdown">
+                                    <button
+                                        class="btn p-1 btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret"
+                                        type="button" data-bs-toggle="dropdown">
+                                        <img class="mb-1" src="/assets/images/form/english.png" width="15"> EN
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item d-flex align-items-center" href="#"> <img
+                                                    src="/assets/images/form/english.png" alt="EN" width="18"
+                                                    height="18" class="me-2" />
+                                                EN</a></li>
+                                        <li><a class="dropdown-item d-flex align-items-center" href="#"> <img
+                                                    src="/assets/images/form/ar.png" alt="AR" width="18" height="18"
+                                                    class="me-2" />
+                                                AR</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- Buttons -->
+                            <li class="nav-item">
+                                <a href="../befor-login/login-flow/login.html"
+                                    class="btn btn-outline-primary rounded-pill px-4 py-1 w-100">Login</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="../befor-login/login-flow/Signup.html"
+                                    class="btn btn-primary rounded-pill px-4 py-1 w-100">Sign Up</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="hero-inner">
+                <nav class="menu-nav">
+                    <ul class="menu-list">
+                        <li class="menu-item active">
+                            <a href="/index.html"><img src="/assets/images/hero/menu1.png"> Hotels</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="/Accommodations-Adventures/Accommodation-home.html"><img src="/assets/images/hero/menu3.png"> Accommodations & Adventures</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="/tour-operator/trour-operator-home.html"><img src="/assets/images/hero/menu4.png">
+                                Tours & Attractions</a>
+                        </li>
+                    </ul>
+                </nav>
+                <h1 class="hero-title">Discover Your Perfect Stay</h1>
+                <p class="hero-subtitle">Explore top stays at unbeatable prices</p>
+            </div>
+        </div>
+      <div class="search-bar">
+
+        <h2 class="search-title">Go Luxor</h2>
+
+        <input type="text" class="field location-field" id="locationInput" placeholder="Where are you going?"
+          autocomplete="off">
+
+
+        <!-- Date -->
+        <input type="text" id="date-range" class="field date-field" placeholder="Check-In — Check-Out"
+          data-datepicker />
+            <div class="guest-field" data-guest>
+                <i class="bi bi-person-fill"></i>
+                <input type="text" readonly placeholder="2 Adults · 0 Children · 1 Room">
+            </div>
+        <input type="text" class="field filter-field" id="filterInput" placeholder="Select filter" autocomplete="off">
+
+        <!-- Search Button -->
+        <a href="befor-login/search-screen.html" class="btn btn-primary rounded-pill search-btn">Search</a>
+
+      </div>
+
+    </section>
+    <section class="search-result-header container py-3">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb-nav mb-2">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Luxor</a></li>
+                <li class="breadcrumb-item"><a href="#">Search Result</a></li>
+                <li class="breadcrumb-item active">Pyramisa Hotel Luxor (Hotel) (Egypt) Deals</li>
+            </ol>
+        </nav>
+
+        <!-- hotel details -->
+        <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+            <div class="">
+                <div class="">
+                    <h2>Pyramisa Hotel Luxor</h2>
+                </div>
+                <div class="rating-row">
+                    <span class="rating-text">Very Good</span>
+                    <span class="rating-score">| 8.8</span>
+                    <span class="stars"><i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-half text-warning"></i>
+                    </span>
+                    <span class="reviews">| 2050 reviews</span>
+                </div>
+                <div class="distance">
+                    <p class="mb-2"> <i class="bi bi-geo-alt-fill"></i> 2.4 km from centre
+                        <a href="/befor-login/map-view.html" class="show-map-btn">Show On Map</a>
+                    </p>
+                </div>
+            </div>
+            <div class="text-start">
+                <button class="fav-btn">
+                    <i class="bi bi-heart mb-0 "></i>
+                </button>
+                <a href="book-now/book-info.html" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class=" my-4">
+            <div class="row equal-row">
+
+                <!-- LEFT COLUMN -->
+                <div class="col-lg-9">
+                    <div class="desktop-gallery">
+
+                        <!-- TOP BIG + 3 SMALL -->
+                        <div class="gallery-wrapper">
+                            <div class="left-big"></div>
+                            <div class="right-small"></div>
+                        </div>
+
+                        <!-- BOTTOM 4 IMAGES -->
+                        <div class="bottom-row"></div>
+
+                    </div>
+
+                    <!-- MOBILE SWIPER -->
+                    <div class="mobile-slider">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <!-- about hotel -->
+                    <div class="mt-4">
+                        <h4 class="fw-bold">About</h4>
+                        <p class="bottom-review-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley
+                            of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley
+                            of type and scrambled it to make a type specimen book.  <a href="#">Read more</a></p>
+                    </div>
+
+                    <div class=" my-4">
+                        <h4 class="fw-bold mb-3">Great for your stay</h4>
+
+                        <div class="d-flex flex-wrap align-items-center gap-4 stay-wrap">
+
+                            <!-- Item -->
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <div>
+                                    <div class="fw-semibold"> <i class="bi bi-cup-hot fs-6"></i> Meals</div>
+                                    <small class="text-muted">Breakfast included</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <div>
+                                    <div class="fw-semibold"> <i class="bi bi-person-wheelchair fs-6"></i>
+                                        Accessibility</div>
+                                    <small class="text-muted">Wheelchair accessible</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <div>
+                                    <div class="fw-semibold"> <i class="bi bi-bus-front fs-6"></i>
+                                        Transfer</div>
+                                    <small class="text-muted">Included</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <div>
+                                    <div class="fw-semibold"> <i class="bi bi-wifi fs-6"></i>
+                                        Wifi</div>
+                                    <small class="text-muted">Free</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <div>
+                                    <div class="fw-semibold"> <i class="bi bi-house fs-6"></i>
+                                        Laundry</div>
+                                    <small class="text-muted">Included</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <div>
+                                    <div class="fw-semibold"> <i class="bi bi-bell fs-6"></i>
+                                        Hotel-Service</div>
+                                    <small class="text-muted">Wheelchair accessible</small>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <div>
+                                    <div class="fw-semibold"> <i class="bi bi-paw fs-6"></i>
+                                        Pet</div>
+                                    <small class="text-muted">Allowed</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-4 mt-lg-0">
+                    <div class="d-flex flex-column">
+                        <div class="drawer-map map-wrapper border-0 border-radius-4 rounded-4">
+                            <a href="/befor-login/map-view.html" class="map-btn btn btn-primary">View Full Map</a>
+
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509428!2d144.95373531531687!3d-37.81627974201473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727ac91f0b8df5!2sFederation%20Square!5e0!3m2!1sen!2sin!4v1706170427439!5m2!1sen!2sin"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"> </iframe>
+                        </div>
+                        <div class="card d-flex flex-row justify-content-between p-3 mt-3 shadow-sm rounded-4">
+                            <h2 class="fw-bold fs-1 mb-0">4.5</h2>
+                            <div class="d-flex flex-column">
+                                <div class="g-0 mb-1 "> <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                </div>
+                                <span>Based on 675 Reviews</span>
+                            </div>
+
+
+                        </div>
+                        <div class="card p-4 shadow-sm review-card mt-3">
+
+                            <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                                <div class="carousel-inner content-area">
+
+                                    <!-- Slide 1 -->
+                                    <div class="carousel-item active">
+                                        <div class="review-content">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="/assets/images/users/user1.png" class="review-img" alt="">
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Gorgia</h6>
+                                                        <small class="text-muted">Oct 24, 2024</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <span class="text-warning fs-5"> <i
+                                                            class="bi bi-star-fill text-warning"></i></span>
+                                                    <span class="fw-bold">4.2</span>
+                                                </div>
+                                            </div>
+
+                                            <p class="text-muted mb-1">
+                                                Booking Luxor made my travel planning effortless from start to finish.
+                                                The hotel photos and amenities were displayed clearly, giving me
+                                                confidence in my choice. The checkout process was quick and
+                                                straightforward. I also found some great offers that fit well within my
+                                                budget. I would definitely recommend Booking Luxor to anyone looking for
+                                                a smooth booking experience.
+                                            </p>
+                                            <a href="#" class="fw-semibold">Read more</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="carousel-item">
+                                        <div class="review-content">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="/assets/images/users/user2.png" class="review-img" alt="">
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">William</h6>
+                                                        <small class="text-muted">Oct 15, 2024</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <span class="text-warning fs-5"> <i
+                                                            class="bi bi-star-fill text-warning"></i></span>
+                                                    <span class="fw-bold">4.7</span>
+                                                </div>
+                                            </div>
+
+                                            <p class="text-muted mb-1">
+                                                Amazing property and great customer service. Highly recommended!
+                                            </p>
+                                            <a href="#" class="fw-semibold">Read more</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="carousel-item">
+                                        <div class="review-content">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="/assets/images/users/user3.png" class="review-img" alt="">
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Sophia</h6>
+                                                        <small class="text-muted">Oct 09, 2024</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <span class="text-warning fs-5"> <i
+                                                            class="bi bi-star-fill text-warning"></i></span>
+                                                    <span class="fw-bold">4.8</span>
+                                                </div>
+                                            </div>
+
+                                            <p class="text-muted mb-1">
+                                                Very comfortable and clean rooms. Loved the atmosphere.
+                                            </p>
+                                            <a href="#" class="fw-semibold">Read more</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 4 -->
+                                    <div class="carousel-item">
+                                        <div class="review-content">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="/assets/images/users/user1.png" class="review-img" alt="">
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Michael</h6>
+                                                        <small class="text-muted">Oct 02, 2024</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <span class="text-warning fs-5"> <i
+                                                            class="bi bi-star-fill text-warning"></i></span>
+                                                    <span class="fw-bold">4.5</span>
+                                                </div>
+                                            </div>
+
+                                            <p class="text-muted mb-1">
+                                                Staff was friendly and supportive. Will stay again soon!
+                                            </p>
+                                            <a href="#" class="fw-semibold">Read more</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="0"
+                                        class="active"></button>
+                                    <button type="button" data-bs-target="#reviewCarousel"
+                                        data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#reviewCarousel"
+                                        data-bs-slide-to="2"></button>
+                                    <button type="button" data-bs-target="#reviewCarousel"
+                                        data-bs-slide-to="3"></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <hr>
+
+            <!-- table sectio n start for tablest and mobile -->
+            <div class="row mt-3">
+                <div class="col-12 col-lg-9 mb-3">
+                    <div class="search-bar">
+                        <!-- Date -->
+                        <!-- Date -->
+                        <input type="text" id="date-range" class="field date-field" placeholder="Check-In — Check-Out"
+                            data-datepicker />
+
+                        <div class="guest-field" data-guest>
+                            <i class="bi bi-person-fill"></i>
+                            <input type="text" readonly placeholder="2 Adults · 0 Children · 1 Room">
+                        </div>
+
+                        <!-- Search Button -->
+                        <a href="#" class="btn btn-primary rounded-pill search-btn"> Search</a>
+
+                    </div>
+                </div>
+                <!-- for dekstop -->
+                <div class="col-lg-9 d-none d-lg-block">
+                    <!-- Real HTML Table Version -->
+                    <table class="booking-table shadow-sm rounded-4" cellspacing="0" cellpadding="10"
+                        style=" border-collapse:collapse;">
+                        <thead class="rounded-4">
+                            <tr>
+                                <th style="min-width:1%">Room Type</th>
+                                <th style="min-width:120px;">No. of guests</th>
+                                <th style="min-width:100px;">Price</th>
+                                <th style="min-width:200px;">Your choices</th>
+                                <th>Select Rooms</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- ROOM 1 -->
+                            <tr>
+                                <!-- Room Type -->
+                                <td>
+                                    <h5>Standard Double Room with City View</h5>
+                                    <ul class="features-list">
+                                        <li><img src="/assets/images/table-icons/bedroom.png"> Bedroom: 1 Double Bed
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/size.png"> Size: 100 m2</li>
+
+                                        <li><img src="/assets/images/table-icons/wifi.png"> Free Wifi</li>
+                                        <li><img src="/assets/images/table-icons/air-conditioning.png"> Air Conditioning
+                                        </li>
+
+                                        <li><img src="/assets/images/table-icons/mountain-view.png"> Mountain View</li>
+                                        <li><img src="/assets/images/table-icons/balcony.png"> Balcony</li>
+
+                                        <li><img src="/assets/images/table-icons/private-bathroom.png"> Private Bathroom
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/garden-view.png"> Garden View</li>
+
+                                        <li><img src="/assets/images/table-icons/landmark-view.png"> Landmark View</li>
+                                        <li><img src="/assets/images/table-icons/city-view.png"> City View</li>
+
+
+                                    </ul>
+                                    <ul class="features-list">
+                                        <li><i class="bi bi-check"></i> Private Bathroom
+                                        </li>
+                                        <li><i class="bi bi-check"></i> Garden View</li>
+
+                                        <li><i class="bi bi-check"></i> Landmark View</li>
+
+                                        <li><i class="bi bi-check"></i> City View</li>
+                                    </ul>
+
+                                </td>
+
+                                <!-- Guests -->
+                                <td>
+
+                                    <strong> <img src="/assets/images/table-icons/two-adult.png" alt="">2
+                                        Adults</strong>
+                                </td>
+
+                                <!-- Price -->
+                                <td>
+                                    <h3>$7,155</h3>
+                                    <small>+ $85 taxes and charges</small>
+                                </td>
+
+                                <!-- Your Choices -->
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check"></i> Free cancellation before 14:00 on 31 October
+                                            2025
+                                        </li>
+                                        <li><i class="bi bi-check"></i> Breakfast available (extra $1,330 per
+                                            person/night)
+                                        </li>
+                                        <li><i class="bi bi-check"></i>Includes parking + late check-in</li>
+                                    </ul>
+                                </td>
+
+                                <!-- Select Rooms -->
+                                <td>
+
+                                    <div class="select-wrapper">
+                                        <select class="form-select roomSelect">
+                                            <option value="0" data-price="0">0</option>
+                                            <option value="1" data-price="7155">1 — $7,155</option>
+                                            <option value="2" data-price="14310">2 — $14,310</option>
+                                            <option value="3" data-price="21465">3 — $21,465</option>
+                                        </select>
+                                    </div>
+
+
+
+                                </td>
+                            </tr>
+
+                            <!-- <tr>
+                                <td>
+                                    <h5>Double or Twin Nile view Room</h5>
+                                    <ul class="features-list">
+                                        <li><img src="/assets/images/table-icons/bedroom.png"> Bedroom: 1 Double Bed
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/size.png"> Size: 100 m2</li>
+
+                                        <li><img src="/assets/images/table-icons/wifi.png"> Free Wifi</li>
+                                        <li><img src="/assets/images/table-icons/air-conditioning.png"> Air Conditioning
+                                        </li>
+
+                                        <li><img src="/assets/images/table-icons/mountain-view.png"> Mountain View</li>
+                                        <li><img src="/assets/images/table-icons/balcony.png"> Balcony</li>
+
+                                        <li><img src="/assets/images/table-icons/private-bathroom.png"> Private Bathroom
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/garden-view.png"> Garden View</li>
+
+                                        <li><img src="/assets/images/table-icons/landmark-view.png"> Landmark View</li>
+                                        <li><img src="/assets/images/table-icons/city-view.png"> City View</li>
+                                    </ul>
+
+                                </td>
+
+                                <td>
+                                    <strong> <img src="/assets/images/table-icons/two-adult.png" alt=""> 2
+                                        Adults</strong>
+                                </td>
+
+                                <td>
+                                    <h3>$7,155</h3>
+                                    <small>+ $85 taxes and charges</small>
+                                </td>
+
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check"></i> Free cancellation before 14:00 on 31 October
+                                            2025
+                                        </li>
+                                        <li><i class="bi bi-check"></i> Breakfast available (extra $1,330 per
+                                            person/night)
+                                        </li>
+                                        <li><i class="bi bi-check"></i>Includes parking + late check-in</li>
+                                    </ul>
+                                </td>
+
+                                <td>
+
+                                    <div class="select-wrapper">
+                                        <select id="roomSelect" class="form-select">
+                                            <option value="0" data-price="0">0</option>
+                                            <option value="1" data-price="7155">1 — $7,155</option>
+                                            <option value="2" data-price="14310">2 — $14,310</option>
+                                            <option value="3" data-price="21465">3 — $21,465</option>
+                                        </select>
+
+                                    </div>
+
+                                </td>
+                            </tr> -->
+                            <tr>
+                                <!-- Room Type -->
+                                <td>
+                                    <h5>Standard Single Room with Nile View</h5>
+                                    <ul class="features-list">
+                                        <li><img src="/assets/images/table-icons/bedroom.png"> Bedroom: 1 Double Bed
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/size.png"> Size: 100 m2</li>
+
+                                        <li><img src="/assets/images/table-icons/wifi.png"> Free Wifi</li>
+                                        <li><img src="/assets/images/table-icons/air-conditioning.png"> Air Conditioning
+                                        </li>
+
+                                        <li><img src="/assets/images/table-icons/mountain-view.png"> Mountain View</li>
+                                        <li><img src="/assets/images/table-icons/balcony.png"> Balcony</li>
+
+                                        <li><img src="/assets/images/table-icons/private-bathroom.png"> Private Bathroom
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/garden-view.png"> Garden View</li>
+
+                                        <li><img src="/assets/images/table-icons/landmark-view.png"> Landmark View</li>
+                                        <li><img src="/assets/images/table-icons/city-view.png"> City View</li>
+                                    </ul>
+
+                                </td>
+
+                                <!-- Guests -->
+                                <td>
+                                    <strong> <img src="/assets/images/table-icons/single-adult.png" alt=""> 1
+                                        Adults</strong>
+                                </td>
+
+                                <!-- Price -->
+                                <td>
+                                    <h3>$8,799</h3>
+                                    <small>+ $85 taxes and charges</small>
+                                </td>
+
+                                <!-- Your Choices -->
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check"></i> Free cancellation before 14:00 on 31 October
+                                            2025
+                                        </li>
+                                        <li><i class="bi bi-check"></i> Breakfast available (extra $1,330 per
+                                            person/night)
+                                        </li>
+                                        <li><i class="bi bi-check"></i>Includes parking + late check-in</li>
+                                    </ul>
+                                </td>
+
+                                <!-- Select Rooms -->
+                                <td>
+
+
+                                    <div class="select-wrapper">
+                                        <select class="form-select roomSelect">
+                                            <option value="0" data-price="0">0</option>
+                                            <option value="1" data-price="7155">1 — $7,155</option>
+                                            <option value="2" data-price="14310">2 — $14,310</option>
+                                            <option value="3" data-price="21465">3 — $21,465</option>
+                                        </select>
+                                    </div>
+
+
+
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td>
+                                    <h5>Standard Single Room with Nile View</h5>
+                                    <ul class="features-list">
+                                        <li><img src="/assets/images/table-icons/bedroom.png"> Bedroom: 1 Double Bed
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/size.png"> Size: 100 m2</li>
+
+                                        <li><img src="/assets/images/table-icons/wifi.png"> Free Wifi</li>
+                                        <li><img src="/assets/images/table-icons/air-conditioning.png"> Air Conditioning
+                                        </li>
+
+                                        <li><img src="/assets/images/table-icons/mountain-view.png"> Mountain View</li>
+                                        <li><img src="/assets/images/table-icons/balcony.png"> Balcony</li>
+
+                                        <li><img src="/assets/images/table-icons/private-bathroom.png"> Private Bathroom
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/garden-view.png"> Garden View</li>
+
+                                        <li><img src="/assets/images/table-icons/landmark-view.png"> Landmark View</li>
+                                        <li><img src="/assets/images/table-icons/city-view.png"> City View</li>
+                                    </ul>
+
+                                </td>
+
+                                <td>
+                                    <strong> <img src="/assets/images/table-icons/single-adult.png" alt=""> 1
+                                        Adults</strong>
+                                </td>
+
+                                <td>
+                                    <h3>$7,155</h3>
+                                    <small>+ $85 taxes and charges</small>
+                                </td>
+
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check"></i> Free cancellation before 14:00 on 31 October
+                                            2025
+                                        </li>
+                                        <li><i class="bi bi-check"></i> Breakfast available (extra $1,330 per
+                                            person/night)
+                                        </li>
+                                        <li><i class="bi bi-check"></i>Includes parking + late check-in</li>
+                                    </ul>
+                                </td>
+
+                                <td>
+
+
+                                    <div class="select-wrapper">
+                                        <select class="form-select roomSelect">
+                                            <option value="0" data-price="0">0</option>
+                                            <option value="1" data-price="7155">1 — $7,155</option>
+                                            <option value="2" data-price="14310">2 — $14,310</option>
+                                            <option value="3" data-price="21465">3 — $21,465</option>
+                                        </select>
+                                    </div>
+
+
+
+                                </td>
+                            </tr> -->
+                            <!-- <tr>
+                                <td>
+                                    <h5>Standard Single Room with Nile View</h5>
+                                    <ul class="features-list">
+                                        <li><img src="/assets/images/table-icons/bedroom.png"> Bedroom: 1 Double Bed
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/size.png"> Size: 100 m2</li>
+
+                                        <li><img src="/assets/images/table-icons/wifi.png"> Free Wifi</li>
+                                        <li><img src="/assets/images/table-icons/air-conditioning.png"> Air Conditioning
+                                        </li>
+
+                                        <li><img src="/assets/images/table-icons/mountain-view.png"> Mountain View</li>
+                                        <li><img src="/assets/images/table-icons/balcony.png"> Balcony</li>
+
+                                        <li><img src="/assets/images/table-icons/private-bathroom.png"> Private Bathroom
+                                        </li>
+                                        <li><img src="/assets/images/table-icons/garden-view.png"> Garden View</li>
+
+                                        <li><img src="/assets/images/table-icons/landmark-view.png"> Landmark View</li>
+                                        <li><img src="/assets/images/table-icons/city-view.png"> City View</li>
+                                    </ul>
+
+                                </td>
+
+                                <td>
+                                    <strong> <img src="/assets/images/table-icons/single-adult.png" alt=""> 1
+                                        Adults</strong>
+                                </td>
+
+                                <td>
+                                    <h3>$7,155</h3>
+                                    <small>+ $85 taxes and charges</small>
+                                </td>
+
+                                <td>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check"></i> Free cancellation before 14:00 on 31 October
+                                            2025
+                                        </li>
+                                        <li><i class="bi bi-check"></i> Breakfast available (extra $1,330 per
+                                            person/night)
+                                        </li>
+                                        <li><i class="bi bi-check"></i>Includes parking + late check-in</li>
+                                    </ul>
+                                </td>
+
+                                <td>
+
+
+                                    <div class="select-wrapper">
+                                        <select class="form-select roomSelect">
+                                            <option value="0" data-price="0">0</option>
+                                            <option value="1" data-price="7155">1 — $7,155</option>
+                                            <option value="2" data-price="14310">2 — $14,310</option>
+                                            <option value="3" data-price="21465">3 — $21,465</option>
+                                        </select>
+                                    </div>
+
+
+
+                                </td>
+                            </tr> -->
+
+                        </tbody>
+                    </table>
+                    <!-- <div class="text-center">
+                        <button class="btn btn-primary mt-3">See Availability</button>
+                    </div> -->
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="bookin-card card p-4 shadow-sm "
+                        style="border-width:2px; border-radius:12px; max-width:320px;">
+
+                        <p class="text-muted mb-1 small">Price for 2 Nights and 2 Adults</p>
+
+                        <h3 class="fw-bold mb-0">$ 7,155</h3>
+                        <p class="text-muted small">+$ 655 taxes and Charges</p>
+
+                        <a href="book-now/book-info.html" class="btn btn-primary w-100 py-2 fw-semibold rounded-3 mb-3">
+                            Book Now
+                        </a>
+
+                        <ul class="list-unstyled mt-3">
+                            <li class="d-flex mb-2">
+                                <i class="bi bi-check"></i>
+                                <span>Free cancellation before 14:00 on 31 October 2025</span>
+                            </li>
+
+                            <li class="d-flex mb-2">
+                                <i class="bi bi-check"></i>
+                                <span><strong>Breakfast Available</strong> (extra Rs.1,330 per person/night)</span>
+                            </li>
+
+                            <li class="d-flex mb-2">
+                                <i class="bi bi-check"></i>
+                                <span>No modifications after booking</span>
+                            </li>
+
+                            <li class="d-flex mb-2">
+                                <i class="bi bi-check"></i>
+                                <span>Pay Online</span>
+                            </li>
+
+                            <li class="d-flex mb-2">
+                                <i class="bi bi-check"></i>
+                                <span>No modifications after booking</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- for mobilt screen -->
+                <div class="d-block d-lg-none">
+                    <div class="room-card shadow-sm border-primary  rounded-4 p-3 mb-3">
+
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+                            <h5 class="fw-bold text-primary mb-0">Standard Double Room with
+                                City View</h5>
+                        </div>
+
+                        <!-- Beds -->
+                        <p class="small mb-1">
+                            <strong>Beds: </strong> Single Bed,
+                            1 large double bed <i class="bi bi-bed"></i> <i class="bi bi-bed"></i>
+                        </p>
+
+                        <!-- Badges -->
+                        <div class="d-flex flex-wrap gap-1 mt-2">
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Size.png" alt=""> 100 m2</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/WiFi.png" alt=""> Free WiFi</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/AC.png" alt=""> Air conditioning</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Mountain-view.png" alt=""> Mountaian view</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Balcony.png" alt=""> Balcony</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Bathroom.png" alt=""> Private bathroom</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Garden.png" alt=""> Garaden view</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/landmark-view.png" alt=""> Landmark view</span>
+
+                        </div>
+
+                        <p class="text-primary fw-bold mt-3 mb-1">Flexible</p>
+
+                        <!-- Room For -->
+                        <p class="small fw-semibold mb-2">
+                            Adults : 2 <i class="bi bi-people-fill"></i>
+                        </p>
+
+                        <!-- Check Points -->
+                        <div class="small text-success mb-3">
+                            <div><i class="bi bi-check2"></i> Free cancellation before 14:00 24 November 2025</div>
+                            <div><i class="bi bi-check2"></i> No prepayment needed – pay at property</div>
+                            <div><i class="bi bi-check2"></i> Includes parking + late check-in</div>
+                        </div>
+
+                        <!-- Price Section -->
+                        <div>
+                            <small>Price for <span class="fw-semibold">1 night :</span></small><br>
+                            <span class="price-old">$5,933</span>
+                            <span class="price-main fw-bold ms-1">$5,340 <i class="bi bi-info-circle"></i></span>
+                            <div class="text-muted small">+ $203 taxes and charges</div>
+                        </div>
+
+                        <!-- Reserve Button -->
+                        <button class="btn btn-primary w-100 fw-semibold mt-3 reserveBtn">
+                            Reserve
+                        </button>
+
+                        <!-- Counter (Hidden Initially) -->
+                        <div class="d-flex align-items-center gap-3 mt-3 d-none counterBlock">
+                            <div class="counter-box rounded-2 border d-flex align-items-center gap-3">
+                                <button class="btn btn-sm minusBtn">-</button>
+                                <span class="fw-semibold small roomCount">1 room</span>
+                                <button class="btn btn-sm plusBtn">+</button>
+                            </div>
+                            <button class="btn btn-outline-danger btn-sm ms-auto">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+
+                        <!-- Summary Section (Hidden Initially) -->
+                        <div class="d-none mt-3 summarySection">
+                            <div class="d-flex gap-3 mt-2">
+
+                                <!-- Box 1 -->
+                                <label class="guest-select-box border px-2 rounded-2 position-relative">
+                                    <input type="radio" name="guestOption" class="guest-radio" checked>
+                                    <i class="bi bi-person-fill fs-6"></i>
+                                    <span class="select-circle"></span>
+                                </label>
+
+                                <!-- Box 2 -->
+                                <label class="guest-select-box border px-2 rounded-2 position-relative">
+                                    <input type="radio" name="guestOption" class="guest-radio">
+                                    <i class="bi bi-people-fill fs-6"></i>
+                                    <span class="select-circle"></span>
+                                </label>
+
+                            </div>
+                            <hr>
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div class="fw-bold">1 room selected</div>
+                                    <div class="text-muted small">1 night</div>
+                                    <div class="text-muted small">Mon 21 Nov – Tue 22 Nov</div>
+                                </div>
+
+                                <div class="text-end">
+                                    <span class="price-old">$5,933</span>
+                                    <span class="price-main fw-bold ms-1">$5,340</span>
+                                    <div class="text-muted small">+ $203 taxes and charges</div>
+                                </div>
+                            </div>
+
+                            <a href="book-now/book-info.html" class="btn btn-primary w-100 fw-semibold mt-3">
+                                Next Step
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="room-card shadow-sm border-primary  rounded-4 p-3 mb-3">
+
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+                            <h5 class="fw-bold text-primary mb-0">Double or Twin Nile view Room</h5>
+                        </div>
+
+                        <!-- Beds -->
+                        <p class="small mb-1">
+                            <strong>Beds: </strong> Single Bed,
+                            1 large double bed <i class="bi bi-bed"></i> <i class="bi bi-bed"></i>
+                        </p>
+
+                        <!-- Badges -->
+                        <div class="d-flex flex-wrap gap-1 mt-2">
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Size.png" alt=""> 100 m2</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/WiFi.png" alt=""> Free WiFi</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/AC.png" alt=""> Air conditioning</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Mountain-view.png" alt=""> Mountaian view</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Balcony.png" alt=""> Balcony</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Bathroom.png" alt=""> Private bathroom</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Garden.png" alt=""> Garaden view</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/landmark-view.png" alt=""> Landmark view</span>
+
+                        </div>
+
+                        <p class="text-primary fw-bold mt-3 mb-1">Flexible</p>
+
+                        <!-- Room For -->
+                        <p class="small fw-semibold mb-2">
+                            Adult : 1 <i class="bi bi-person-fill"></i>
+                        </p>
+
+                        <!-- Check Points -->
+                        <div class="small text-success mb-3">
+                            <div><i class="bi bi-check2"></i> Free cancellation before 14:00 24 November 2025</div>
+                            <div><i class="bi bi-check2"></i> No prepayment needed – pay at property</div>
+                            <div><i class="bi bi-check2"></i> Includes parking + late check-in</div>
+
+                        </div>
+
+                        <!-- Price Section -->
+                        <div>
+                            <small>Price for <span class="fw-semibold">1 night :</span></small><br>
+                            <span class="price-old">$5,933</span>
+                            <span class="price-main fw-bold ms-1">$5,340 <i class="bi bi-info-circle"></i></span>
+                            <div class="text-muted small">+ $203 taxes and charges</div>
+                        </div>
+
+                        <!-- Reserve Button -->
+                        <button class="btn btn-primary w-100 fw-semibold mt-3 reserveBtn">
+                            Reserve
+                        </button>
+
+                        <!-- Counter (Hidden Initially) -->
+                        <div class="d-flex align-items-center gap-3 mt-3 d-none counterBlock">
+                            <div class="counter-box rounded-2 border d-flex align-items-center gap-3">
+                                <button class="btn btn-sm minusBtn">-</button>
+                                <span class="fw-semibold small roomCount">1 room</span>
+                                <button class="btn btn-sm plusBtn">+</button>
+                            </div>
+                            <button class="btn btn-outline-danger btn-sm ms-auto">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+
+                        <!-- Summary Section (Hidden Initially) -->
+                        <div class="d-none mt-3 summarySection">
+                            <div class="d-flex gap-3 mt-2">
+
+                                <!-- Box 1 -->
+                                <label class="guest-select-box border px-2 rounded-2 position-relative">
+                                    <input type="radio" name="guestOption" class="guest-radio" checked>
+                                    <i class="bi bi-person-fill fs-6"></i>
+                                    <span class="select-circle"></span>
+                                </label>
+
+                                <!-- Box 2 -->
+                                <label class="guest-select-box border px-2 rounded-2 position-relative">
+                                    <input type="radio" name="guestOption" class="guest-radio">
+                                    <i class="bi bi-people-fill fs-6"></i>
+                                    <span class="select-circle"></span>
+                                </label>
+
+                            </div>
+                            <hr>
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div class="fw-bold">1 room selected</div>
+                                    <div class="text-muted small">1 night</div>
+                                    <div class="text-muted small">Mon 21 Nov – Tue 22 Nov</div>
+                                </div>
+
+                                <div class="text-end">
+                                    <span class="price-old">$5,933</span>
+                                    <span class="price-main fw-bold ms-1">$5,340</span>
+                                    <div class="text-muted small">+ $203 taxes and charges</div>
+                                </div>
+                            </div>
+
+                            <a href="book-now/book-info.html" class="btn btn-primary w-100 fw-semibold mt-3">
+                                Next Step
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="room-card shadow-sm border-primary  rounded-4 p-3 mb-3">
+
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+                            <h5 class="fw-bold text-primary mb-0">Standard Single Room with Nile View</h5>
+                        </div>
+
+                        <!-- Beds -->
+                        <p class="small mb-1">
+                            <strong>Beds:</strong> Single Bed,
+                            1 large double bed <i class="bi bi-bed"></i> <i class="bi bi-bed"></i>
+                        </p>
+
+                        <!-- Badges -->
+                        <div class="d-flex flex-wrap gap-1 mt-2">
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Size.png" alt=""> 100 m2</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/WiFi.png" alt=""> Free WiFi</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/AC.png" alt=""> Air conditioning</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Mountain-view.png" alt=""> Mountaian view</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Balcony.png" alt=""> Balcony</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Bathroom.png" alt=""> Private bathroom</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/Garden.png" alt=""> Garaden view</span>
+                            <span class="feature-badge fs-7 text-muted px-2 border rounded-5"><img
+                                    src="../assets/images/icon/landmark-view.png" alt=""> Landmark view</span>
+
+                        </div>
+
+                        <p class="text-primary fw-bold mt-3 mb-1">Flexible</p>
+
+                        <!-- Room For -->
+                        <p class="small fw-semibold mb-2">
+                            Adults : 2 <i class="bi bi-people-fill"></i>
+                        </p>
+
+                        <!-- Check Points -->
+                        <div class="small text-success mb-3">
+                            <div><i class="bi bi-check2"></i> Free cancellation before 14:00 24 November 2025</div>
+                            <div><i class="bi bi-check2"></i> No prepayment needed – pay at property</div>
+                            <div><i class="bi bi-check2"></i> Includes parking + late check-in</div>
+
+                        </div>
+
+                        <!-- Price Section -->
+                        <div>
+                            <small>Price for <span class="fw-semibold">1 night :</span></small><br>
+                            <span class="price-old">$5,933</span>
+                            <span class="price-main fw-bold ms-1">$5,340 <i class="bi bi-info-circle"></i></span>
+                            <div class="text-muted small">+ $203 taxes and charges</div>
+                        </div>
+
+                        <!-- Reserve Button -->
+                        <button class="btn btn-primary w-100 fw-semibold mt-3 reserveBtn">
+                            Reserve
+                        </button>
+
+                        <!-- Counter (Hidden Initially) -->
+                        <div class="d-flex align-items-center gap-3 mt-3 d-none counterBlock">
+                            <div class="counter-box rounded-2 border d-flex align-items-center gap-3">
+                                <button class="btn btn-sm minusBtn">-</button>
+                                <span class="fw-semibold small roomCount">1 room</span>
+                                <button class="btn btn-sm plusBtn">+</button>
+                            </div>
+                            <button class="btn btn-outline-danger btn-sm ms-auto">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+
+                        <!-- Summary Section (Hidden Initially) -->
+                        <div class="d-none mt-3 summarySection">
+                            <div class="d-flex gap-3 mt-2">
+
+                                <!-- Box 1 -->
+                                <label class="guest-select-box border px-2 rounded-2 position-relative">
+                                    <input type="radio" name="guestOption" class="guest-radio" checked>
+                                    <i class="bi bi-person-fill fs-6"></i>
+                                    <span class="select-circle"></span>
+                                </label>
+
+                                <!-- Box 2 -->
+                                <label class="guest-select-box border px-2 rounded-2 position-relative">
+                                    <input type="radio" name="guestOption" class="guest-radio">
+                                    <i class="bi bi-people-fill fs-6"></i>
+                                    <span class="select-circle"></span>
+                                </label>
+
+                            </div>
+                            <hr>
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div class="fw-bold">1 room selected</div>
+                                    <div class="text-muted small">1 night</div>
+                                    <div class="text-muted small">Mon 21 Nov – Tue 22 Nov</div>
+                                </div>
+
+                                <div class="text-end">
+                                    <span class="price-old">$5,933</span>
+                                    <span class="price-main fw-bold ms-1">$5,340</span>
+                                    <div class="text-muted small">+ $203 taxes and charges</div>
+                                </div>
+                            </div>
+
+                            <a href="book-now/book-info.html" class="btn btn-primary w-100 fw-semibold mt-3">
+                                Next Step
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- rating bars -->
+            <div class="col-12 col-lg-9 my-4">
+
+                <h5 class="fw-bold">What Guests Are Saying</h5>
+
+                <div class="d-flex align-items-center gap-2 mb-4">
+                    <span class="fs-5 fw-semibold">Very Good | 8.8</span>
+                    <span class="text-warning"><i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-half text-warning"></i></span>
+                    <span class="text-muted">| 2050 reviews</span>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- LEFT Column -->
+                    <div class="col-md-6">
+
+                        <!-- Item -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-secondary">Staff</span>
+                                <span class="fw-semibold text-secondary">9.0</span>
+                            </div>
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-secondary">Comfort</span>
+                                <span class="fw-semibold text-secondary">8.2</span>
+                            </div>
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 82%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-secondary">Location</span>
+                                <span class="fw-semibold text-secondary">8.5</span>
+                            </div>
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-secondary">Parking</span>
+                                <span class="fw-semibold text-secondary">7.7</span>
+                            </div>
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 77%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT Column -->
+                    <div class="col-md-6">
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-secondary">Facilities</span>
+                                <span class="fw-semibold text-secondary">8.7</span>
+                            </div>
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 87%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-secondary">Cleanliness</span>
+                                <span class="fw-semibold text-secondary">8.9</span>
+                            </div>
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 89%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-secondary">Free Wifi</span>
+                                <span class="fw-semibold text-secondary">9.2</span>
+                            </div>
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 92%;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- rating cards -->
+        <div class="mt-5">
+            <h4 class="fw-bold mb-4">Highly praised by recent visitors</h4>
+
+            <div class="swiper bottom-reviewSwiper">
+                <div class="swiper-wrapper">
+
+                    <!-- CARD 1 -->
+                    <div class="swiper-slide">
+                        <div class="bottom-review-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="/assets/images/users/user1.png" class="bottom-review-img" alt="">
+                                    <div class="ms-2">
+                                        <h6 class="mb-0 fw-semibold">Gorgia</h6>
+                                        <div class="text-muted-small">Oct 24, 2025</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <span class="ms-1 fw-semibold">4.2</span>
+                                </div>
+                            </div>
+
+                            <p class="text-muted mt-3 mb-0 bottom-review-description">
+                                Booking Luxor made planning my stay incredibly simple. Selecting dates and browsing
+                                options felt very smooth and intuitive. Their customer support responded quickly to my
+                                queries, which I really appreciated. I even found a great deal thanks to their pricing
+                                options. Overall, it was a fast, reliable, and delightful booking experience.
+                                <a href="#">Read more</a>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="swiper-slide">
+                        <div class="bottom-review-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="/assets/images/users/user2.png" class="bottom-review-img" alt="">
+                                    <div class="ms-2">
+                                        <h6 class="mb-0 fw-semibold">John</h6>
+                                        <div class="text-muted-small">Aug 20, 2025</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <span class="ms-1 fw-semibold">4.8</span>
+                                </div>
+                            </div>
+
+                            <p class="text-muted mt-3 mb-0 bottom-review-description">
+                                My experience with Booking Luxor was truly impressive. The hotel details, photos, and
+                                descriptions were clear and helped me make the right choice. The platform was fast,
+                                responsive, and completely glitch-free during payment. I appreciated how secure and
+                                transparent the process felt. I will happily book again through Booking Luxor in the
+                                future.
+                                <a href="#">Read more</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="swiper-slide">
+                        <div class="bottom-review-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="/assets/images/users/user3.png" class="bottom-review-img" alt="">
+                                    <div class="ms-2">
+                                        <h6 class="mb-0 fw-semibold">Tim</h6>
+                                        <div class="text-muted-small">Jan 13, 2025</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <span class="ms-1 fw-semibold">4.6</span>
+                                </div>
+                            </div>
+
+                            <p class="text-muted mt-3 mb-0 bottom-review-description">
+                                Booking Luxor gave me one of the smoothest booking experiences ever. The interface felt
+                                clean, modern, and extremely easy to navigate. Searching for hotels and applying filters
+                                was quick and accurate. I received my confirmation instantly without any issues.
+                                Overall, it made my entire hotel booking process stress-free and convenient.
+                                <a href="#">Read more</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bottom-review-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="/assets/images/users/user2.png" class="bottom-review-img" alt="">
+                                    <div class="ms-2">
+                                        <h6 class="mb-0 fw-semibold">Tim</h6>
+                                        <div class="text-muted-small">Jan 13, 2025</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <span class="ms-1 fw-semibold">4.6</span>
+                                </div>
+                            </div>
+
+                            <p class="text-muted mt-3 mb-0 bottom-review-description">
+                                I really enjoyed using Booking Luxor for my hotel reservation. The platform’s clean
+                                design made everything easy to understand. The map view helped me check the exact
+                                location before booking, which was super helpful. My confirmation arrived instantly
+                                without any delays. It truly felt like a reliable and user-friendly service.
+                                <a href="#">Read more</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bottom-review-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="/assets/images/users/user1.png" class="bottom-review-img" alt="">
+                                    <div class="ms-2">
+                                        <h6 class="mb-0 fw-semibold">Tim</h6>
+                                        <div class="text-muted-small">Jan 13, 2025</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <span class="ms-1 fw-semibold">4.6</span>
+                                </div>
+                            </div>
+
+                            <p class="text-muted mt-3 mb-0 bottom-review-description">
+                                Booking Luxor made my travel planning effortless from start to finish. The hotel photos
+                                and amenities were displayed clearly, giving me confidence in my choice. The checkout
+                                process was quick and straightforward. I also found some great offers that fit well
+                                within my budget. I would definitely recommend Booking Luxor to anyone looking for a
+                                smooth booking experience.
+                                <a href="#">Read more</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bottom-review-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="/assets/images/users/user3.png" class="bottom-review-img" alt="">
+                                    <div class="ms-2">
+                                        <h6 class="mb-0 fw-semibold">Tim</h6>
+                                        <div class="text-muted-small">Jan 13, 2025</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <span class="ms-1 fw-semibold">4.6</span>
+                                </div>
+                            </div>
+
+                            <p class="text-muted mt-3 mb-0 bottom-review-description">
+                                The historical sites were breathtaking, but the queues were long and it was…
+                                <a href="#">Read more</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+                <a href="/after-login/My-Account-Flow/review.html" class="btn btn-primary">See All Reviews</a>
+            </div>
+        </div>
+
+        <!-- hotel area info -->
+        <div class="my-5">
+            <h4 class="fw-bold mb-4">Hotel area info</h4>
+            <div class="row">
+
+                <!-- Column 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 p-4">
+                    <ul class="list-unstyled">
+                        <li class="d-flex justify-content-between">
+                            <span>Luxor Temple</span> <span>2 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Karnak Temple</span> <span>2.9 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Colossi of Memnon</span> <span>4.9 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Medinet Habu Temple</span> <span>5 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Valley of the Kings</span> <span>7 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Deir el-Medina</span> <span>7 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Valley of the Queens</span> <span>8 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Hatshepsut's Temple</span> <span>9 km</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 p-4">
+                    <h6 class="fw-semibold mb-3">Restaurants & Cafe's</h6>
+
+                    <ul class="list-unstyled">
+                        <li class="d-flex justify-content-between">
+                            <span>Cafe/Bar . Abu Nawas Bar</span> <span>100 m</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Restaurant .El Tarboush</span> <span>20 m</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Cafe/Bar .Yashmak Coffee Shop</span> <span>200 m</span>
+                        </li>
+                    </ul>
+
+                    <h6 class="fw-semibold mt-4 mb-3">Closest Airports</h6>
+
+                    <ul class="list-unstyled">
+                        <li class="d-flex justify-content-between">
+                            <span>Luxor International Airport</span> <span>7 km</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 p-4">
+                    <h6 class="fw-semibold mb-3">Public transit</h6>
+
+                    <ul class="list-unstyled">
+                        <li class="d-flex justify-content-between">
+                            <span>Train | Luxor Train Station</span> <span>2.1 km</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Train | Al Bughdaadi</span> <span>8 km</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <h4 class="fw-bold mb-4">Hotel area info</h4>
+            <div class="card">
+                <div class="card-body">
+                    <div class=" my-4">
+                        <h6 class="fw-bold mb-3">Most popular facilities</h6>
+
+                        <div class="d-flex flex-wrap align-items-center gap-5 ">
+
+                            <!-- Item -->
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <i class="bi bi-cup-hot fs-4"></i>
+                                <div>
+                                    <div class="fw-semibold">Meals</div>
+
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <i class="bi bi-person-wheelchair fs-4"></i>
+                                <div>
+                                    <div class="fw-semibold">Accessibility</div>
+
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <i class="bi bi-bus-front fs-4"></i>
+                                <div>
+                                    <div class="fw-semibold">Transfer</div>
+
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <i class="bi bi-wifi fs-4"></i>
+                                <div>
+                                    <div class="fw-semibold">Wifi</div>
+
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <i class="bi bi-house fs-4"></i>
+                                <div>
+                                    <div class="fw-semibold">Laundry</div>
+
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <i class="bi bi-bell fs-4"></i>
+                                <div>
+                                    <div class="fw-semibold">Hotel-Service</div>
+
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 stay-item">
+                                <i class="bi bi-paw fs-4"></i>
+                                <div>
+                                    <div class="fw-semibold">Pet</div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-5">
+
+            <div class="row">
+
+                <!-- COLUMN 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="fw-semibold mb-3">Perfect for Your Stay</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>3 restaurants</li>
+                        <li><i class="bi bi-check2 me-2"></i>Air conditioning</li>
+                        <li><i class="bi bi-check2 me-2"></i>Free WiFi</li>
+                        <li><i class="bi bi-check2 me-2"></i>Room service</li>
+                        <li><i class="bi bi-check2 me-2"></i>BBQ facilities</li>
+                        <li><i class="bi bi-check2 me-2"></i>Non-smoking room</li>
+                        <li><i class="bi bi-check2 me-2"></i>Tour desk</li>
+                        <li><i class="bi bi-check2 me-2"></i>Outdoor swimming pool</li>
+                        <li><i class="bi bi-check2 me-2"></i>Luggage storage</li>
+                        <li><i class="bi bi-check2 me-2"></i>Laundry</li>
+                    </ul>
+
+                    <h6 class="fw-semibold mb-2 mt-4">Languages Spoken</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>Arabic</li>
+                        <li><i class="bi bi-check2 me-2"></i>English</li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+
+                    <h6 class="fw-semibold">Outdoors</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>BBQ facilities</li>
+                        <li><i class="bi bi-check2 me-2"></i>Terrace</li>
+                        <li><i class="bi bi-check2 me-2"></i>Garden</li>
+                    </ul>
+
+                    <h6 class="fw-semibold">Safety & security</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>Fire extinguishers</li>
+                        <li><i class="bi bi-check2 me-2"></i>Smoke alarms</li>
+                        <li><i class="bi bi-check2 me-2"></i>Security alarm</li>
+                        <li><i class="bi bi-check2 me-2"></i>Key access</li>
+                        <li><i class="bi bi-check2 me-2"></i>24-hour security</li>
+                        <li><i class="bi bi-check2 me-2"></i>Safety deposit box</li>
+                    </ul>
+
+                    <h6 class="fw-semibold">Business facilities</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>Fax/photocopying</li>
+                        <li><i class="bi bi-check2 me-2"></i>Meeting/banquet facilities</li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+
+                    <h6 class="fw-semibold mb-3">Reception Services</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>Private check-in/check-out</li>
+                        <li><i class="bi bi-check2 me-2"></i>Concierge service</li>
+                        <li><i class="bi bi-check2 me-2"></i>Luggage storage</li>
+                        <li><i class="bi bi-check2 me-2"></i>Tour desk</li>
+                        <li><i class="bi bi-check2 me-2"></i>Express check-in/check-out</li>
+                        <li><i class="bi bi-check2 me-2"></i>Non-smoking room</li>
+                        <li><i class="bi bi-check2 me-2"></i>Tour desk</li>
+                        <li><i class="bi bi-check2 me-2"></i>Outdoor swimming pool</li>
+                        <li><i class="bi bi-check2 me-2"></i>24-hour front desk</li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+
+                    <h6 class="fw-semibold mb-3">Food & Drink</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>Special diet menus</li>
+                        <li><i class="bi bi-check2 me-2"></i>Snack bar</li>
+                        <li><i class="bi bi-check2 me-2"></i>Bar</li>
+                        <li><i class="bi bi-check2 me-2"></i>Restaurant</li>
+                    </ul>
+
+                    <h6 class="fw-semibold mb-3 mt-4">Cleaning services</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2 me-2"></i>Daily housekeeping</li>
+                        <li><i class="bi bi-check2 me-2"></i>Ironing service</li>
+                        <li><i class="bi bi-check2 me-2"></i>Dry cleaning</li>
+                        <li><i class="bi bi-check2 me-2"></i>Laundry</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- hotel rules-->
+
+        <div class=" card p-4 my-4  shadow-sm border-0">
+            <h4 class="fw-bold mb-4">Hotels Rules</h4>
+
+            <div class="row gy-4">
+
+                <!-- Item -->
+                <div class="col-12">
+                    <div class="row flex-grow-1">
+                        <!-- Title -->
+                        <div class="col-12 col-md-6 d-flex mb-2 mb-md-0 align-items-start">
+                            <img src="/assets/images/hotel-overview/hotel-rules/chekin.png" width="20" class="me-2">
+                            <h6 class="fw-semibold mb-0">Check-in</h6>
+                        </div>
+
+                        <!-- Value -->
+                        <div class="col-12 col-md-6">
+                            <p class="mb-0 text-muted">From 3:00 PM</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Check-out -->
+                <div class="col-12 d-flex">
+                    <div class="row flex-grow-1">
+                        <div class="col-12 col-md-6 d-flex mb-2 mb-md-0 align-items-start">
+                            <img src="/assets/images/hotel-overview/hotel-rules/checkout.png" width="20" class="me-2">
+                            <h6 class="fw-semibold mb-0">Check-out</h6>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p class="mb-0 text-muted">Until 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cancellation -->
+                <div class="col-12">
+                    <div class="row flex-grow-1">
+                        <div class="col-12 col-md-6 d-flex mb-2 mb-md-0 align-items-start">
+                            <img src="/assets/images/hotel-overview/hotel-rules/cancellation.png" width="20"
+                                class="me-2">
+                            <h6 class="fw-semibold mb-0">Cancellation/ prepayment</h6>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p class="mb-0 text-muted">
+                                Cancellation and prepayment policies vary according to accommodation type.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Children & Beds -->
+                <div class="col-12">
+
+                    <div class="row flex-grow-1">
+                        <div class="col-12 col-md-6 d-flex mb-2 mb-md-0 align-items-start">
+                            <img src="/assets/images/hotel-overview/hotel-rules/children-beds.png" width="20"
+                                class="me-2">
+
+                            <h6 class="fw-semibold mb-0">Children & Beds</h6>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p class="mb-0 text-muted">
+                                Child policies <br> Children of all ages are welcome.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No age restriction -->
+                <div class="col-12">
+                    <div class="row flex-grow-1">
+                        <div class="col-12 col-md-6 d-flex mb-2 mb-md-0 align-items-start">
+                            <img src="/assets/images/hotel-overview/hotel-rules/noage-restriction.png" width="20"
+                                class="me-2">
+                            <h6 class="fw-semibold mb-0">No age restriction</h6>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p class="mb-0 text-muted">
+                                There is no age requirement for check-in
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pets -->
+                <div class="col-12">
+
+                    <div class="row flex-grow-1">
+                        <div class="col-12 col-md-6 d-flex mb-2 mb-md-0 align-items-start">
+                            <img src="/assets/images/hotel-overview/hotel-rules/pets.png" width="20" class="me-2">
+
+                            <h6 class="fw-semibold mb-0">Pets</h6>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p class="mb-0 text-muted">
+                                Pets are allowed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment methods -->
+                <div class="col-12 d-flex">
+
+
+                    <div class="row flex-grow-1">
+                        <div class="col-12 col-md-6 d-flex mb-2 mb-md-0 align-items-start">
+                            <img src="/assets/images/hotel-overview/hotel-rules/accept-payment.png" width="20"
+                                class="me-2">
+                            <h6 class="fw-semibold mb-0">Accepted payment methods</h6>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex gap-2 flex-wrap">
+                                <img src="/assets/images/hotel-overview/hotel-rules/pay-card1.png">
+                                <img src="/assets/images/hotel-overview/hotel-rules/pay-card2.png">
+                                <img src="/assets/images/hotel-overview/hotel-rules/pay-card3.png">
+                                <img src="/assets/images/hotel-overview/hotel-rules/pay-card4.png">
+                                <img src="/assets/images/hotel-overview/hotel-rules/pay-card5.png">
+                                <img src="/assets/images/hotel-overview/hotel-rules/pay-card6.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Hidden Gallery -->
+    <div id="popupGallery" style="display:none;">
+
+    </div>
+    <!-- footer section start -->
+    <footer class="footer-section mt-5">
+        <div class="container">
+
+            <!-- Main Footer Row -->
+            <div class="row gy-4">
+                <!-- Logo Column -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg">
+                    <div class="footer-logo">
+                        <img src="/assets/images/logo-white.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Support -->
+                <div class="col-6 col-md-4 col-lg">
+                    <h6 class="footer-title">Support</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Manage your Trips</a></li>
+                        <li><a href="#">Contact Customer Service</a></li>
+                        <li><a href="#">Safety Resource Centre</a></li>
+                    </ul>
+                </div>
+
+                <!-- Explore -->
+                <div class="col-6 col-md-4 col-lg">
+                    <h6 class="footer-title">Explore</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">Last-Minute Deals</a></li>
+                        <li><a href="#">Travel Guides</a></li>
+                        <li><a href="#">Blog & Travel Tips</a></li>
+                    </ul>
+                </div>
+
+                <!-- About -->
+                <div class="col-6 col-md-4 col-lg">
+                    <h6 class="footer-title">About</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">About BookLuxor.com</a></li>
+                        <li><a href="#">How we work</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Press Centre</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div class="col-6 col-md-4 col-lg">
+                    <h6 class="footer-title">Customer Service</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Booking Policies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Terms & Setting -->
+                <div class="col-6 col-md-4 col-lg">
+                    <h6 class="footer-title">Terms & Setting</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy & Cookies</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility Statement</a></li>
+                        <li><a href="#">Feedback & Suggestions</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+            <hr class="footer-divider">
+
+            <!-- Bottom Copyright -->
+            <div class="text-center footer-copy">
+                © 2025 BookLuxor. Your Gateway to Luxor Stays. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+    <!-- Library Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ar.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.js"></script>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Scripts  -->
+    <script src="/assets/js/flatpickr-custome.js"></script>
+    <script src="/assets/js/swiper-custom.js"></script>
+    <script src="/assets/js/hotel-overview-gallery.js"></script>
+    <script src="/assets/js/dropdown.js"></script>
+    <script>
+        document.querySelectorAll(".room-card").forEach((card) => {
+
+            let reserveBtn = card.querySelector(".reserveBtn");
+            let counterBlock = card.querySelector(".counterBlock");
+            let summarySection = card.querySelector(".summarySection");
+            let plusBtn = card.querySelector(".plusBtn");
+            let minusBtn = card.querySelector(".minusBtn");
+            let roomCount = card.querySelector(".roomCount");
+
+            let count = 1;
+
+            reserveBtn.addEventListener("click", () => {
+                reserveBtn.classList.add("d-none");
+                counterBlock.classList.remove("d-none");
+                summarySection.classList.remove("d-none");
+            });
+
+            plusBtn.addEventListener("click", () => {
+                count++;
+                roomCount.innerText = count + " rooms";
+            });
+
+            minusBtn.addEventListener("click", () => {
+                if (count > 1) {
+                    count--;
+                    roomCount.innerText = count + " rooms";
+                }
+            });
+
+        });
+    </script>
+    <script>document.querySelectorAll(".roomSelect").forEach(select => {
+
+            // Save original text for all options
+            select.querySelectorAll("option").forEach(opt => {
+                opt.dataset.fullText = opt.textContent; // example: "2 — $14,310"
+            });
+
+            // On opening dropdown → show full labels
+            select.addEventListener("mousedown", () => {
+                select.querySelectorAll("option").forEach(opt => {
+                    opt.textContent = opt.dataset.fullText;
+                });
+            });
+
+            // On change → show only number in selected
+            select.addEventListener("change", function () {
+
+                const selected = this.options[this.selectedIndex];
+                const number = selected.value; // 1, 2, 3…
+
+                // Set selected option text = ONLY number
+                selected.textContent = number;
+
+            });
+
+            // On blur → keep only number for selected
+            select.addEventListener("blur", function () {
+                const selected = this.options[this.selectedIndex];
+                selected.textContent = selected.value;
+            });
+
+        });
+        // Vanilla JS for independent "Read more/less" toggles per card
+        // Attaches click handlers to each description link on DOM load
+        // Why: Toggles a class per element for isolated height changes; prevents default link behavior
+        // Keeps slider cards uniform except for the active one; lightweight, no deps needed
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const descriptions = document.querySelectorAll('.bottom-review-description');
+
+            descriptions.forEach(desc => {
+                const link = desc.querySelector('a');
+                if (link) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault(); // Stop href="#" jump
+
+                        const isExpanded = desc.classList.contains('expanded');
+
+                        if (isExpanded) {
+                            desc.classList.remove('expanded');
+                            link.textContent = 'Read more';
+                        } else {
+                            desc.classList.add('expanded');
+                            link.textContent = 'Read less';
+                        }
+                    });
+                }
+            });
+        });
+
+        // js for price updation of table
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to update the booking card based on selections
+            function updateCard() {
+                let totalPrice = 0;
+                let totalAdults = 0;
+
+                // Loop through all room selects
+                document.querySelectorAll('.roomSelect').forEach(select => {
+                    let selectedValue = parseInt(select.value);
+                    if (selectedValue > 0) {
+                        // Get the row
+                        let row = select.closest('tr');
+
+                        // Get price from the h3 in the price column (remove $ and commas)
+                        let priceText = row.querySelector('td:nth-child(3) h3').textContent.replace(/[$,]/g, '');
+                        let price = parseFloat(priceText);
+
+                        // Add to total price (price * number selected)
+                        totalPrice += price * selectedValue;
+
+                        // Get number of guests from the guests column
+                        let guestsText = row.querySelector('td:nth-child(2) strong').textContent;
+                        let guestsMatch = guestsText.match(/\d+/);
+                        let guests = guestsMatch ? parseInt(guestsMatch[0]) : 0;
+
+                        // Add to total adults
+                        totalAdults += guests * selectedValue;
+                    }
+                });
+
+                // Update the card
+                let card = document.querySelector('.bookin-card');
+                if (card) {
+                    // Update the description
+                    card.querySelector('p.text-muted.mb-1.small').textContent = `Price for 2 Nights and ${totalAdults} Adults`;
+
+                    // Update the price
+                    card.querySelector('h3.fw-bold').textContent = `$ ${totalPrice.toLocaleString()}`;
+
+                    // Tax line remains static (not updated)
+                }
+            }
+
+            // Add event listeners to all selects
+            document.querySelectorAll('.roomSelect').forEach(select => {
+                select.addEventListener('change', updateCard);
+            });
+
+            // Initial update
+            updateCard();
+        });
+    </script>
+
+
+</body>
+
+</html>

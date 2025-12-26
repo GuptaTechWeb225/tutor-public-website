@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartBrain Academy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/fonts/">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f7f9ff, #eef2ff);
+      overflow: hidden;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      z-index: 2;
+      margin-left: 10%;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+
+    .float-img {
+      position: absolute;
+    }
+
+    .img-1 {
+      top: 15%;
+      left: 2%;
+      width: 180px;
+    }
+
+    .img-3 {
+      bottom: 8%;
+      left: 15%;
+      width: 70px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .img-4 {
+      bottom: 10%;
+      right: 45%;
+      width: 70px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .img-5 {
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 600px;
+    }
+
+    .img-5 img {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      max-width: 520px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      margin-top: 25px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 14px 16px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search-btn {
+      background: #f7931e;
+      border: none;
+      width: 54px;
+      height: 54px;
+      cursor: pointer;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+
+    /* TABLET */
+    @media (max-width: 992px) {
+      .hero {
+        min-height: 50vh;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-content {
+        margin-left: 8%;
+        max-width: 50%;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .img-5 {
+        display: none;
+      }
+
+      .img-1 {
+        top: 25%;
+        left: 23%;
+        width: 131px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero {
+
+        min-height: auto;
+        padding: 60px 20px;
+      }
+
+      .hero-content {
+        margin: 0;
+        max-width: 100%;
+      }
+
+      .hero-content h1 {
+        font-size: 30px;
+      }
+
+      .search-bar {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* hide big image on mobile */
+      .img-5 {
+        display: none;
+      }
+
+      .img-1 {
+        width: 120px;
+        top: 10%;
+        left: 5%;
+      }
+
+      .img-3,
+      .img-4 {
+        bottom: 5%;
+      }
+    }
+
+    /* SMALL MOBILE */
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 24px;
+      }
+
+      .search-bar {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="assets/images/logo.svg" alt="logo" class="logo">
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+        <div class="dropdown">
+          <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+            data-bs-toggle="dropdown">
+            <img src="/assets/images/form/english.png" width="15" alt=""> EN
+          </button>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">EN</a></li>
+            <li><a class="dropdown-item" href="#">AR</a></li>
+          </ul>
+        </div>
+        <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+        <ul class="navbar-nav mx-auto gap-xl-3">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Find a Tutor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Math</a></li>
+              <li><a class="dropdown-item" href="#">Science</a></li>
+              <li><a class="dropdown-item" href="#">Programming</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">How It Works</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Blogs</a></li>
+              <li><a class="dropdown-item" href="#">Guides</a></li>
+              <li><a class="dropdown-item" href="#">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>“Find Qualified Tutors for Every Skill, Anytime You Need.”</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="What Would you like to learn">
+        <button class="search-btn">
+        </button>
+      </div>
+    </div>
+
+    <img src="assets/images/hero/vector (4).png" class="float-img img-1">
+    <img src="assets/images/hero/vector (3).png" class="float-img img-3">
+    <img src="assets/images/hero/vector (1).png" class="float-img img-4">
+    <div class="float-img img-5">
+      <img src="assets/images/hero/super-kid.png" class="" style="width: 100%; height:500px;">
+    </div>
+  </section>
+  <section class="container mt-4">
+    <div class="section-heading">
+      <span class="gradient-line"></span>
+      <h2>Start Learning in 3 Simple Steps</h2>
+    </div>
+    <div class="row g-4">
+      <!-- STEP 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="step-circle">1</div>
+            <div>
+              <h6 class="fw-bold mb-1 text-uppercase">
+                Choose Your Tutor
+              </h6>
+              <p class="mb-0 text-muted small">
+                Browse qualified tutors that match your learning needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="step-circle">2</div>
+            <div>
+              <h6 class="fw-bold mb-1 text-uppercase">
+                Book Your Session
+              </h6>
+              <p class="mb-0 text-muted small">
+                Schedule classes at your preferred time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="step-circle">2</div>
+            <div>
+              <h6 class="fw-bold mb-1 text-uppercase">
+                Book Your Session
+              </h6>
+              <p class="mb-0 text-muted small">
+                Schedule classes at your preferred time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- decorative Image-->
+  <div class="position-relative py-3 side-image-wrapper">
+    <img src="assets/images/side-images/side-img1.svg" class="section-side-image" alt="Decoration" />
+  </div>
+
+  <section class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div class="section-heading">
+        <span class="gradient-line"></span>
+        <h2>Top-Featured tutors</h2>
+      </div>
+    </div>
+    <div class="swiper tutorSwiper py-3">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card tutor-card shadow-sm border-0">
+            <img src="assets/images/tutor/tutor1.png" class="card-img-top" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold mb-1">Maths Tutors</h6>
+              <p class="text-muted small">
+                Learn from industry experts with proven results.
+              </p>
+              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card tutor-card shadow-sm border-0">
+            <img src="assets/images/tutor/tutor2.png" class="" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold mb-1">Physics Tutors</h6>
+              <p class="text-muted small">
+                Concept-based learning with live sessions.
+              </p>
+              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card tutor-card shadow-sm border-0">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold mb-1">Maths Tutors</h6>
+              <p class="text-muted small">
+                Learn from industry experts with proven results.
+              </p>
+              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card tutor-card shadow-sm border-0">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold mb-1">Physics Tutors</h6>
+              <p class="text-muted small">
+                Concept-based learning with live sessions.
+              </p>
+              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card tutor-card shadow-sm border-0">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold mb-1">Maths Tutors</h6>
+              <p class="text-muted small">
+                Learn from industry experts with proven results.
+              </p>
+              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card tutor-card shadow-sm border-0">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold mb-1">Physics Tutors</h6>
+              <p class="text-muted small">
+                Concept-based learning with live sessions.
+              </p>
+              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="container mt-4">
+    <div class="hero-visual">
+
+      <!-- Boy -->
+      <div class="boy-wrap">
+        <img src="assets/images/about/boy.svg" class="boy-img" alt="Boy">
+
+        <!-- Button below boy -->
+        <div class="badge badge-boy">
+          <strong>2k+</strong>
+          <span>Student</span>
+          <div class="avatars">
+            <img src="assets/images/users/u1.png">
+            <img src="assets/images/users/u2.png">
+            <img src="assets/images/users/u3.png">
+            <span class="plus">+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Girl -->
+      <div class="girl-wrap">
+        <img src="assets/images/about/girl.svg" class="girl-img" alt="Girl">
+
+        <!-- Button above girl -->
+        <div class="badge badge-girl">
+          <strong>5.8k</strong>
+          <span>Success Courses</span>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </section>
+  <section class="container mt-4">
+    <div class="kids-wrapper">
+
+      <!-- LEFT KID -->
+      <div class="kid-block">
+        <div class="bg-shape yellow"></div>
+
+        <img src="assets/images/kid1.png" class="kid-img" alt="Kid" />
+
+        <!-- Badge -->
+        <div class="info-badge bottom-left">
+          <strong>2k+</strong>
+          <span>Students</span>
+        </div>
+      </div>
+
+      <!-- RIGHT KID -->
+      <div class="kid-block">
+        <div class="bg-shape pink"></div>
+
+        <img src="assets/images/kid-2.png" class="kid-img" alt="Kid" />
+
+        <!-- Badge -->
+        <div class="info-badge top-right">
+          <strong>5.8k</strong>
+          <span>Success Courses</span>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- all scripts -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    new Swiper(".tutorSwiper", {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      loop: true,
+      speed: 800,
+
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2,
+        },
+        576: {
+          slidesPerView: 2,
+        },
+        992: {
+          slidesPerView: 4.5,
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>

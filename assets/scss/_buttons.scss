@@ -1,0 +1,19 @@
+.btn-secondary {
+    color: $white;
+
+    &:hover {
+        background-color: $white;
+        border-color: $secondary;
+        color: $secondary;
+    }
+}
+
+.btn-outline-secondary {
+    border-color: $secondary;
+    color: $secondary;
+
+    &:hover {
+        background: $secondary;
+        color: #fff;
+    }
+}

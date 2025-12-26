@@ -1,0 +1,346 @@
+html[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+html[dir="rtl"] .toggle-password {
+  cursor: pointer;
+  direction: ltr !important;
+}
+
+html[dir="rtl"] .position-absolute {
+  direction: ltr !important;
+}
+
+/* Section layout */
+.login-section {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.no-caret::after {
+  display: none !important;
+}
+
+/* Left section */
+.left-section {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.image-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+.bg-login {
+  background-image: url('/assets/images/form/login.jpg');
+}
+
+.bg-register {
+  background-image: url('/assets/images/form/signup.png');
+}
+
+.bg-forgot {
+  background-image: url('/assets/images/form/forgotpass.png');
+}
+
+.bg-otp {
+  background-image: url('/assets/images/form/otp.png');
+}
+
+.bg-changepassword {
+  background-image: url('/assets/images/form/password.png');
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.right-section {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding-top: 7rem;
+}
+
+.form-wrapper {
+  width: 75%;
+  max-width: 400px;
+  align-self: flex-start;
+
+}
+
+.toggle-password {
+  cursor: pointer;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--primary);
+}
+
+.divider:not(:empty)::before {
+  margin-right: .75em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: .75em;
+}
+
+.btn-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* OTP Form Styling */
+
+.otp-box {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.otp-box:focus {
+  border-color: var(--primary, #0b2c47);
+  box-shadow: 0 0 5px rgba(11, 44, 71, 0.3);
+}
+
+.btn-primary {
+  background-color: #0b2c47;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #103a5e;
+}
+
+/* hide caret remove dropdown arrow */
+.no-caret::after {
+  display: none !important;
+  content: none !important;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.gradient-line {
+  width: 7px;
+  height: 35px;
+  border-radius: 6px;
+  background: linear-gradient(357.66deg, #F18C3E 1.68%, #F9B040 97.75%);
+
+}
+
+.step-circle {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: linear-gradient(357.66deg, #F18C3E 1.68%, #F9B040 97.75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Wrapper */
+.side-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  /* click issues nahi honge */
+}
+
+/* Image */
+.section-side-image {
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  width: 6%;
+  min-width: 60px;
+  max-width: 90px;
+  opacity: 0.25;
+  animation: floatY 4s ease-in-out infinite;
+}
+
+.card-img-top {
+  height: 400px;
+}
+
+/* Floating animation (vahi ke vahi) */
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-visual {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  margin: auto;
+}
+
+.boy-wrap {
+  position: absolute;
+  top: 0;
+  left: 0px;
+}
+
+.boy-img {
+  width: 200px;
+  display: block;
+}
+
+.girl-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.girl-img {
+  width: 200px;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
+  z-index: 5;
+}
+
+.badge strong {
+  display: block;
+  font-size: 16px;
+}
+
+.badge-boy {
+  bottom: -132px;
+  left: -10px;
+}
+
+.badge-girl {
+  top: -131px;
+  right: 30px;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.avatars img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -8px;
+}
+
+.plus {
+  width: 22px;
+  height: 22px;
+  background: orange;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -6px;
+}
+
+/* Tutor Card */
+.tutor-card img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* responsive for screens <= 991px */
+@media (max-width: 991px) {
+  .login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+    padding-top: 0rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .section-side-image {
+    display: none;
+  }
+}

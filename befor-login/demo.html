@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxor Search Bar - Responsive with Guest Dropdown</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Converted SCSS to CSS: Exact match for search-bar/main container—equal-width fields, flex layout, mobile stack. No changes; all three fields uniform. */
+        :root {
+            --primary: #007bff; /* Matches $primary for consistency */
+        }
+
+        body { font-family: Arial, sans-serif; padding: 2rem; background: #f8f9fa; }
+        .hero-content { max-width: 1200px; margin: 0 auto; } /* Demo wrapper—replace with your hero */
+
+        /* ===================================
+           SEARCH BAR WRAPPER (unchanged)
+        ================================== */
+        .search-bar {
+            background: rgba(255, 255, 255, 0.70);
+            /* backdrop-filter: blur(6px); */
+            padding: 22px;
+            border-radius: 16px;
+            max-width: 1050px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            .search-bar { padding: 18px; }
+        }
+
+        /* ===================================
+           SEARCH BAR TITLE (unchanged)
+        ================================== */
+        .search-title {
+            width: 100%;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* ===================================
+           EQUAL WIDTH FIELDS (unchanged: All uniform via .field base)
+        ================================== */
+        .search-bar > .field,
+        .search-bar > .date-field,
+        .search-bar > .guest-field {
+            flex: 1 1 0;
+            min-width: 0;
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #ddd;
+
+            i {
+                color: var(--primary);
+                font-size: 18px;
+            }
+
+            input {
+                border: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+                background: transparent;
+                width: 100%;
+                font-size: 0.95rem;
+                color: var(--primary);
+
+                &::placeholder {
+                    color: var(--primary);
+                    opacity: 0.5;
+                }
+
+                &:focus,
+                &:active {
+                    border: none !important;
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+            }
+        }
+
+        .guest-field input { cursor: pointer; } /* Clickable trigger */
+
+        /* ===================================
+           SEARCH BUTTON (unchanged)
+        ================================== */
+        .search-btn {
+            flex: 0 0 auto;
+            padding: 10px 26px;
+            border-radius: 30px;
+            white-space: nowrap;
+            text-decoration: none;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 600;
+            transition: background 0.2s;
+
+            &:hover { background: #0056b3; }
+        }
+
+        /* ===================================
+           MOBILE (unchanged)
+        ================================== */
+        @media (max-width: 768px) {
+            .search-bar {
+                gap: 12px;
+            }
+
+            .search-bar > .field,
+            .search-bar > .date-field,
+            .search-bar > .guest-field,
+            .search-btn {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Flatpickr overrides (unchanged: above-open to avoid hero push-down) */
+        .flatpickr-calendar {
+            position: absolute !important;
+            max-width: none !important;
+            z-index: 99999 !important;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 767.98px) {
+            .flatpickr-calendar { width: auto !important; }
+            .flatpickr-days table { table-layout: fixed !important; width: 100% !important; }
+            .flatpickr-days th, .flatpickr-days td { width: calc(100% / 7) !important; padding: 4px 2px !important; box-sizing: border-box !important; }
+        }
+
+        @media (min-width: 768px) {
+            .flatpickr-calendar { width: 650px !important; left: 50% !important; transform: translateX(-50%) !important; }
+        }
+
+        /* ===================================
+           GUEST DROPDOWN CSS (minimal, clean: Opens ABOVE input—fixes layout "ganda" push-down; matches field width)
+        ================================== */
+        .guest-dropdown {
+            display: none;
+            position: absolute;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 9999;
+            min-width: 200px;
+            font-size: 0.95rem;
+        }
+
+        .guest-dropdown.show { display: block; } /* Toggle via JS class */
+
+        .guest-box { /* Wrapper for rows—keeps compact */
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .guest-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .guest-row:last-child { border-bottom: none; } /* No line under rooms */
+
+        .guest-row label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .counter button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--primary);
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        .counter button:hover { background: #e9ecef; }
+
+        .counter button:disabled { opacity: 0.5; cursor: not-allowed; color: #6c757d; }
+
+        .counter span { min-width: 20px; text-align: center; font-weight: 500; }
+
+        .done-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
+
+        .done-btn:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="hero-content">
+        <div class="search-bar">
+            <h2 class="search-title">Go Luxor</h2>
+
+            <!-- Uniform fields: All .field-based for equal space/styles (unchanged layout) -->
+            <div class="field"> <!-- Location -->
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" class="location-field" placeholder="Where are you headed?">
+            </div>
+
+            <div class="field date-field"> <!-- Date range: Flatpickr above-open -->
+                <i class="fa-regular fa-calendar"></i>
+                <input type="text" id="date-range" class="date-input" placeholder="Check-in date — Check-out date" data-datepicker>
+            </div>
+
+            <div class="field guest-field" id="guest-field"> <!-- Guest: Clickable input, dropdown above -->
+                <i class="fa-solid fa-users"></i>
+                <input type="text" id="guestInput" readonly placeholder="2 Adults · 0 Children · 1 Room">
+            </div>
+
+            <a href="/befor-login/search-screen.html" class="btn btn-primary rounded-pill search-btn">Search</a>
+        </div>
+
+        <!-- Guest Dropdown: Placed after search-bar for relative positioning; opens above input (JS measures height) -->
+        <div class="guest-dropdown" id="guestDropdown"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Flatpickr: Unchanged—range mode, responsive months, above-open (no hero overlap)
+        let fpInstance = null;
+
+        function initDateRangePicker() {
+            const isMobile = window.innerWidth < 768;
+
+            if (fpInstance) fpInstance.destroy();
+
+            fpInstance = flatpickr("#date-range", {
+                mode: "range",
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                showMonths: isMobile ? 1 : 2,
+                conjunction: " — ",
+                ariaLabel: "Booking date range",
+                onReady: (selectedDates, dateStr, instance) => {
+                    const cal = instance.calendarContainer;
+                    const inputRect = document.getElementById("date-range").getBoundingClientRect();
+                    const calHeight = cal.offsetHeight;
+
+                    cal.style.top = `${inputRect.top + window.scrollY - calHeight - 5}px`; // Above: Subtract height + gap
+                    cal.style.left = isMobile ? `${inputRect.left}px` : "50%";
+                    cal.style.width = isMobile ? `${inputRect.width}px` : "650px";
+                    if (!isMobile) cal.style.transform = "translateX(-50%)";
+
+                    if (isMobile) {
+                        const table = cal.querySelector(".flatpickr-days table");
+                        if (table) { table.style.tableLayout = "fixed"; table.style.width = "100%"; }
+                    }
+
+                    const arrow = cal.querySelector(".arrow");
+                    if (arrow) { arrow.style.left = "50%"; arrow.style.transform = "translateX(-50%)"; }
+                },
+                onChange: (selectedDates) => {
+                    if (selectedDates.length === 2) console.log("Booking range:", selectedDates); // For search/booking API
+                }
+            });
+        }
+
+        initDateRangePicker();
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(initDateRangePicker, 250);
+        });
+
+        // Guest Dropdown: Integrated your script—defaults to 2/0/1 (matches placeholder); opens ABOVE (measure height post-show, fixes below-push "ganda layout"); uses .show class for toggle. Why above? Hero/search-bar has limited below-space—prevents scroll/jank for admins booking shifts/templates.
+        const guestField = document.getElementById("guest-field");
+        const dropdown = document.getElementById("guestDropdown");
+        const guestInput = document.getElementById("guestInput");
+
+        let adults = 2, children = 0, rooms = 1; // Defaults: Match placeholder for realistic UX (e.g., solo traveler)
+
+        function updateText() {
+            guestInput.value = `${adults} adults · ${children} children · ${rooms} rooms`;
+        }
+
+        // Build dropdown HTML with initial values
+        dropdown.innerHTML = `
+            <div class="guest-box">
+                <div class="guest-row">
+                    <label>Adults</label>
+                    <div class="counter">
+                        <button class="minus" data-type="adults" ${adults <= 1 ? 'disabled' : ''}>-</button>
+                        <span id="adultsCount">${adults}</span>
+                        <button class="plus" data-type="adults">+</button>
+                    </div>
+                </div>
+                <div class="guest-row">
+                    <label>Children</label>
+                    <div class="counter">
+                        <button class="minus" data-type="children" ${children <= 0 ? 'disabled' : ''}>-</button>
+                        <span id="childrenCount">${children}</span>
+                        <button class="plus" data-type="children">+</button>
+                    </div>
+                </div>
+                <div class="guest-row">
+                    <label>Rooms</label>
+                    <div class="counter">
+                        <button class="minus" data-type="rooms" ${rooms <= 1 ? 'disabled' : ''}>-</button>
+                        <span id="roomsCount">${rooms}</span>
+                        <button class="plus" data-type="rooms">+</button>
+                    </div>
+                </div>
+                <button class="done-btn" id="guestDone">Done</button>
+            </div>
+        `;
+
+        // Initial text update
+        updateText();
+
+        guestField.addEventListener("click", function (e) {
+            dropdown.classList.add("show"); // Show first to measure height
+
+            const rect = guestField.getBoundingClientRect();
+            const dropdownHeight = dropdown.offsetHeight; // Measure after show
+
+            // Position ABOVE: Subtract height + gap (scroll-safe; fits hero without push-down)
+            dropdown.style.top = (rect.top + window.scrollY - dropdownHeight - 8) + "px";
+            dropdown.style.left = rect.left + "px";
+            dropdown.style.width = rect.width + "px";
+
+            e.stopPropagation();
+        });
+
+        dropdown.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent doc click close
+
+            if (e.target.classList.contains("plus")) {
+                const type = e.target.dataset.type;
+                if (type === "adults") adults++;
+                if (type === "children") children++;
+                if (type === "rooms") rooms++;
+                updateCounts(); // Refactored for DRY
+            }
+
+            if (e.target.classList.contains("minus")) {
+                const type = e.target.dataset.type;
+                if (type === "adults" && adults > 1) adults--;
+                if (type === "children" && children > 0) children--;
+                if (type === "rooms" && rooms > 1) rooms--;
+                updateCounts();
+            }
+        });
+
+        function updateCounts() {
+            document.getElementById("adultsCount").textContent = adults;
+            document.getElementById("childrenCount").textContent = children;
+            document.getElementById("roomsCount").textContent = rooms;
+            updateText();
+
+            // Re-disable buttons dynamically
+            document.querySelector('[data-type="adults"].minus').disabled = adults <= 1;
+            document.querySelector('[data-type="children"].minus').disabled = children <= 0;
+            document.querySelector('[data-type="rooms"].minus').disabled = rooms <= 1;
+        }
+
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target) && !guestField.contains(e.target)) {
+                dropdown.classList.remove("show");
+            }
+        });
+
+        document.getElementById("guestDone").addEventListener("click", () => {
+            dropdown.classList.remove("show");
+            // Hook for booking logic (e.g., validate rooms <= adults; log for API)
+            console.log("Guest selection:", { adults, children, rooms });
+        });
+
+        // Click outside close (enhanced: checks guestField too)
+    </script>
+</body>
+</html> 

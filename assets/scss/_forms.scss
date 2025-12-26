@@ -1,0 +1,58 @@
+@import "variables";
+.form-control,
+.form-select {
+  border: 1px solid $border-color;
+  border-radius:0.5rem;
+  background-color: $bg-color;
+  color: $text-color;
+  font-size: 0.95rem;
+  height:2.2rem; 
+  padding: 0.25rem 0.75rem;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: $text-color ;
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 0.15rem rgba($primary, 0.25);
+    outline: none;
+    color: $primary;
+  }
+
+  &:disabled {
+    background-color: rgba($bg-color, 0.6);
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+
+.form-label {
+  color: $text-color;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-check-input {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid rgba($primary, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:checked {
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.15rem rgba($primary, 0.25);
+  }
+}
+
+.form-check-label {
+  color: $text-color;
+  font-size: 0.9rem;
+}

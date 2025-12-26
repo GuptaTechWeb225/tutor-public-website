@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/images/fav.png">
+    <title data-translate="login_page_title">Student Login</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+    <section class="login-section p-2">
+        <div class="left-section">
+            <div class="image-container bg-login ">
+                <div class="text-overlay text-white text-center">
+                    <h2 class="fw-bold" data-translate="left_title">Access Your Luxor Getaways</h2>
+                    <p class="mb-0" data-translate="left_subtitle">
+                        Sign in to unlock exclusive stays and unforgettable experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="form-wrapper">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="fw-bold text-primary mb-2" data-translate="login_title">Login</h3>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="/assets/images/form/english.png" alt="EN" width="20" height="20" />
+                        <div class="dropdown">
+                            <button class="btn p-1 btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret"
+                                type="button" data-bs-toggle="dropdown">
+                                EN
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"> <img
+                                            src="/assets/images/form/english.png" alt="EN" width="18" height="18"
+                                            class="me-2" />
+                                        EN</a></li>
+                                <li><a class="dropdown-item d-flex align-items-center" href="#"> <img
+                                            src="/assets/images/form/ar.png" alt="AR" width="18" height="18"
+                                            class="me-2" />
+                                        AR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <p class="text-muted mb-4" data-translate="login_subtitle">
+                    Please enter your details to access your account.
+                </p>
+
+                <form>
+                    <!-- Email -->
+                    <div class="mb-3 position-relative">
+                        <input type="email" class="form-control py-2 ps-5 pe-5" data-translate="email_placeholder"
+                            placeholder="Email address" required>
+                        <i
+                            class="fa-regular fa-envelope position-absolute top-50 start-0 translate-middle-y ps-3 text-color"></i>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3 position-relative">
+                        <input type="password" class="form-control py-2 ps-5 pe-5 password-field"
+                            data-translate="password_placeholder" placeholder="Password" required>
+                        <i
+                            class="fa-solid fa-lock position-absolute top-50 start-0 translate-middle-y ps-3 text-color"></i>
+                        <i
+                            class="fa-solid fa-eye-slash position-absolute top-50 end-0 translate-middle-y pe-3 text-color toggle-password"></i>
+                    </div>
+
+                    <div class="text-end mb-4">
+                        <a href="forgotpw.html" class="text-decoration-none text-primary fw-medium"
+                            data-translate="forgot_password">Forgot password?</a>
+                    </div>
+
+                    <a href="/after-login/landing.html" type="submit" class="btn btn-primary w-100 py-2 rounded-pill"
+                        data-translate="login_button">Login</a>
+                </form>
+
+                <div class="divider" data-translate="or_text">Or</div>
+
+                <div class="d-flex flex-column flex-sm-row gap-2 mb-3">
+
+                    <button
+                        class="btn btn-outline-primary rounded-5 flex-fill d-flex align-items-center justify-content-center gap-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Google"
+                            width="18" height="18">
+                        Google
+                    </button>
+
+                    <button
+                        class="btn btn-outline-primary rounded-5 flex-fill d-flex align-items-center justify-content-center gap-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"
+                            width="18" height="18">
+                        Apple
+                    </button>
+
+                    <button
+                        class="btn btn-outline-primary rounded-5 flex-fill d-flex align-items-center justify-content-center gap-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                            alt="Facebook" width="18" height="18">
+                        Facebook
+                    </button>
+
+                </div>
+
+                <p class="text-muted text-center">
+                    <span data-translate="no_account">Don’t have an account?</span>
+                    <a href="Signup.html" class="text-decoration-none text-primary fw-bold" data-translate="signup">Sign
+                        up</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/form.js"></script>
+    <script src="/assets/js/lang.js"></script>
+</body>
+</html>

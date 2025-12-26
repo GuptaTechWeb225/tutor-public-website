@@ -1,0 +1,16 @@
+{
+  "name": "bookingluxor",
+  "version": "1.0.0",
+  "scripts": {
+    "sass:watch": "sass --watch --style=expanded --load-path=node_modules assets/scss/main.scss assets/css/main.css",
+    "build:css": "sass --style=compressed --load-path=node_modules assets/scss/main.scss assets/css/main.min.css && postcss assets/css/main.min.css -o assets/css/main.min.css"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.77.5",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1"
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookLuxor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/demo.css">
+
+</head>
+
+<body>
+    <!-- Top Navbar -->
+   <nav class="navbar navbar-expand-lg topbar">
+      <div class="container-fluid px-4">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="/index.html">
+          <img src="/assets/images/hero/logo.png" class="logo-img" alt="BookLuxor">
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Toggle Content -->
+        <div class="collapse navbar-collapse justify-content-end" id="topbarMenu">
+          <ul class="navbar-nav jus align-items-start gap-3">
+
+            <!-- Language -->
+            <li class="nav-item">
+
+              <div class="dropdown">
+                <button class="btn p-1 btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                  data-bs-toggle="dropdown">
+                  <img class="mb-1" src="/assets/images/form/english.png" width="15"> EN
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item d-flex align-items-center" href="#"> <img
+                        src="/assets/images/form/english.png" alt="EN" width="18" height="18" class="me-2" />
+                      EN</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center" href="#"> <img src="/assets/images/form/ar.png"
+                        alt="AR" width="18" height="18" class="me-2" />
+                      AR</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- Buttons -->
+            <li class="nav-item">
+              <a href="/befor-login/login-flow/login.html"
+                class="btn btn-outline-primary rounded-pill px-4 py-1 w-100">Login</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/befor-login/login-flow/Signup.html" class="btn btn-primary rounded-pill px-4 py-1 w-100">Sign
+                Up</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container py-5 my-5">
+
+        <div id="page-payment" class="row g-4 justify-content-center">
+            <!-- Left booking summary -->
+            <aside class="col-md-4">
+                <div class="card shadow-sm rounded-4 overflow-hidden">
+
+                    <!-- Image -->
+                    <img src="/assets/images/hotels image/my-booking4.png" alt="Pyramisa Hotel Luxor"
+                        class="w-100" style="height: 220px; object-fit: cover;">
+
+                    <!-- Content -->
+                    <div class="p-3 pt-2 border-bottom">
+
+                        <h4 class="fw-bold text-primary mb-2">Pyramisa Hotel Luxor</h4>
+
+                        <p class="mb-1 text-primary">
+                            Very Good | 8.8
+                            <img src="/assets/images/hotels image/rating.png" height="14"
+                                alt="Rating Stars" />
+                            | 2050 reviews
+                        </p>
+                          <p class="mb-2 text-muted">2.4 km from centre
+                                        <a href="../map-view.html" class="show-map-btn">Show On Map</a>
+                                      </p>
+                        <p class="mb-0 text-muted">
+                            <i class="bi bi-geo-alt-fill text-primary"></i>
+                            Khaled Ibn El Walid Street, Luxor, Egypt
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-3">
+                        <p class="fw-bold fs-5  text-primary">Your booking details</p>
+                    </div>
+                    <div class="d-flex  justify-content-between align-items-center border-top border-bottom mb-3">
+                        <!-- Check-in -->
+                        <div class="text-center  text-primary flex-fill pe-3 border-end">
+                            <div class="text-muted small mb-1 ">Check-in</div>
+                            <div class="fw-bold">31 Oct, 2025</div>
+                            <div class="fw-semibold">3:00 PM</div>
+                        </div>
+
+                        <!-- Check-out -->
+                        <div class="text-center  text-primary flex-fill ps-3">
+                            <div class="text-muted small mb-1">Check-out</div>
+                            <div class="fw-bold">01 Nov, 2025</div>
+                            <div class="fw-semibold">12:00</div>
+                        </div>
+                    </div>
+
+                    <div class=" ms-md-3 text-primary ">
+                        <div class="fw-bold mb-1">Total Time Stay</div>
+                        <div class="mb-3">2 Nights</div>
+                    </div>
+
+
+                    <div class="mb-2 ps-3 p-2 border-bottom border-top text-primary">
+                        <div
+                            class="fw-bold  text-primary text-primary mb-1 d-flex justify-content-between align-items-center">
+                            <span>You Selected</span>
+
+                        </div>
+                        <div>1 Room, 2 Adults, 0 Children</div>
+                    </div>
+
+
+                    <div class="p-3">
+                        <!-- Price Summary Title -->
+                        <h5 class="fw-bold mb-3 text-primary">Price Summary</h5>
+
+                        <!-- Price lines -->
+                        <div class="d-flex justify-content-between align-items-center mb-1 text-primary">
+                            <div class="fw-semibold">$ 7155 x 2 night</div>
+                            <div class="fw-bold fs-6">$ 7,155</div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-2 text-primary">
+                            <div class="fw-semibold">Last-minute Deal</div>
+                            <div class="text-primary">-$ 250</div>
+                        </div>
+
+                        <div class="small text-muted  text-primary">
+                            You’re getting a reduced rate because this property is offering a discount
+                        </div>
+
+                    </div>
+                    <hr />
+
+                    <div class="p-3">
+                        <!-- Total price -->
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <div class="fw-bold fs-5">Total</div>
+                            <div class="fw-bold fs-5">$ 6,905</div>
+                        </div>
+
+                        <div class="small  text-muted  text-end mt-0 pt-0" style="margin-top: -0px;">
+                            +$ 655 taxes and Charges
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+            <section class="col-md-7 d-flex justify-content-center align-items-start"
+                style="min-height:80vh; padding-top:140px;">
+                <div class="text-center w-100">
+                    <img src="/assets/images/icon/check 1.png" alt="Payment Image"
+                        style="width:120px; height:auto;">
+
+                    <h4 class="fw-bold mt-3 text-primary">Your Booking is Confirm</h4>
+                    <p class="text-muted">Please check your mail</p>
+                    <a href="/befor-login/search-screen.html" class="btn-primary btn-lg rounded-5 px-5  py-2 text-white text-decoration-none">Book More</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/flatpickr-custome.js"></script>
+
+</body>
+
+</html>
