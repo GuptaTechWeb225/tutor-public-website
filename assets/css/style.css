@@ -155,6 +155,35 @@ html[dir="rtl"] .position-absolute {
   content: none !important;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 520px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 25px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.search-btn {
+  background: #f7931e;
+  color: #ffffff;
+  border: none;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+}
+
 .section-heading {
   display: flex;
   align-items: center;
@@ -233,31 +262,37 @@ html[dir="rtl"] .position-absolute {
 }
 
 .hero-visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* center inner block */
+}
+
+.hero-inner {
   position: relative;
-  width: 420px;
-  height: 420px;
-  margin: auto;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
 }
 
 .boy-wrap {
   position: absolute;
   top: 0;
-  left: 0px;
-}
-
-.boy-img {
-  width: 200px;
-  display: block;
+  left: 0;
+  width: 48%;
 }
 
 .girl-wrap {
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 52%;
 }
 
+.boy-img,
 .girl-img {
-  width: 200px;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -268,22 +303,16 @@ html[dir="rtl"] .position-absolute {
   border-radius: 30px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   font-size: 13px;
-  z-index: 5;
-}
-
-.badge strong {
-  display: block;
-  font-size: 16px;
 }
 
 .badge-boy {
-  bottom: -132px;
-  left: -10px;
+  bottom: -50%;
+  left: 23%;
 }
 
 .badge-girl {
-  top: -131px;
-  right: 30px;
+  top: -33%;
+  right: 25%;
 }
 
 .avatars {
@@ -320,6 +349,12 @@ html[dir="rtl"] .position-absolute {
   border-radius: 12px 12px 0 0;
 }
 
+@media (min-width:1900px) {
+  .container {
+    max-width: 1900px;
+  }
+}
+
 /* responsive for screens <= 991px */
 @media (max-width: 991px) {
   .login-section {
@@ -342,5 +377,20 @@ html[dir="rtl"] .position-absolute {
 @media (max-width: 768px) {
   .section-side-image {
     display: none;
+  }
+
+  .hero-inner {
+    max-width: 360px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-inner {
+    max-width: 300px;
   }
 }

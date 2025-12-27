@@ -7,194 +7,9 @@
   <title>SmartBrain Academy</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/fonts/">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #f7f9ff, #eef2ff);
-      overflow: hidden;
-      padding: 40px 20px;
-    }
+  <link rel="stylesheet" href="assets/css/hero.css">
 
-    .hero-content {
-      max-width: 600px;
-      z-index: 2;
-      margin-left: 10%;
-    }
-
-    .hero-content h1 {
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .hero-content p {
-      font-size: 18px;
-      margin: 15px 0;
-    }
-
-    .float-img {
-      position: absolute;
-    }
-
-    .img-1 {
-      top: 15%;
-      left: 2%;
-      width: 180px;
-    }
-
-    .img-3 {
-      bottom: 8%;
-      left: 15%;
-      width: 70px;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .img-4 {
-      bottom: 10%;
-      right: 45%;
-      width: 70px;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .img-5 {
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      max-width: 600px;
-    }
-
-    .img-5 img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: center;
-      max-width: 520px;
-      width: 100%;
-      background: #ffffff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      margin-top: 25px;
-    }
-
-    .search-bar input {
-      flex: 1;
-      padding: 14px 16px;
-      border: none;
-      outline: none;
-      font-size: 15px;
-    }
-
-    .search-btn {
-      background: #f7931e;
-      border: none;
-      width: 54px;
-      height: 54px;
-      cursor: pointer;
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-15px);
-      }
-    }
-
-
-    /* TABLET */
-    @media (max-width: 992px) {
-      .hero {
-        min-height: 50vh;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .hero-content {
-        margin-left: 8%;
-        max-width: 50%;
-      }
-
-      .hero-content h1 {
-        font-size: 36px;
-      }
-
-      .img-5 {
-        display: none;
-      }
-
-      .img-1 {
-        top: 25%;
-        left: 23%;
-        width: 131px;
-      }
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .hero {
-
-        min-height: auto;
-        padding: 60px 20px;
-      }
-
-      .hero-content {
-        margin: 0;
-        max-width: 100%;
-      }
-
-      .hero-content h1 {
-        font-size: 30px;
-      }
-
-      .search-bar {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* hide big image on mobile */
-      .img-5 {
-        display: none;
-      }
-
-      .img-1 {
-        width: 120px;
-        top: 10%;
-        left: 5%;
-      }
-
-      .img-3,
-      .img-4 {
-        bottom: 5%;
-      }
-    }
-
-    /* SMALL MOBILE */
-    @media (max-width: 576px) {
-      .hero-content h1 {
-        font-size: 24px;
-      }
-
-      .search-bar {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -292,7 +107,7 @@
       <h2>Start Learning in 3 Simple Steps</h2>
     </div>
     <div class="row g-4">
-      <!-- STEP 1 -->
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
           <div class="d-flex align-items-start gap-3">
@@ -309,7 +124,6 @@
         </div>
       </div>
 
-      <!-- STEP 2 -->
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
           <div class="d-flex align-items-start gap-3">
@@ -326,7 +140,6 @@
         </div>
       </div>
 
-      <!-- STEP 3 -->
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
           <div class="d-flex align-items-start gap-3">
@@ -345,7 +158,6 @@
     </div>
 
   </section>
-  <!-- decorative Image-->
   <div class="position-relative py-3 side-image-wrapper">
     <img src="assets/images/side-images/side-img1.svg" class="section-side-image" alt="Decoration" />
   </div>
@@ -451,38 +263,27 @@
     </div>
   </section>
   <section class="container mt-4">
-    <div class="hero-visual">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="hero-visual">
+          <div class="hero-inner">
 
-      <!-- Boy -->
-      <div class="boy-wrap">
-        <img src="assets/images/about/boy.svg" class="boy-img" alt="Boy">
+            <div class="boy-wrap">
+              <img src="assets/images/about/Background (1).png" class="boy-img" />
+              <div class="badge badge-boy">2k+ Students</div>
+            </div>
 
-        <!-- Button below boy -->
-        <div class="badge badge-boy">
-          <strong>2k+</strong>
-          <span>Student</span>
-          <div class="avatars">
-            <img src="assets/images/users/u1.png">
-            <img src="assets/images/users/u2.png">
-            <img src="assets/images/users/u3.png">
-            <span class="plus">+</span>
+            <div class="girl-wrap">
+              <img src="assets/images/about/Background.png" class="girl-img" />
+              <div class="badge badge-girl">5.8k Courses</div>
+            </div>
+
           </div>
         </div>
+
       </div>
-
-      <!-- Girl -->
-      <div class="girl-wrap">
-        <img src="assets/images/about/girl.svg" class="girl-img" alt="Girl">
-
-        <!-- Button above girl -->
-        <div class="badge badge-girl">
-          <strong>5.8k</strong>
-          <span>Success Courses</span>
-        </div>
-      </div>
-
+      <div class="col-12 col-lg-6">content</div>
     </div>
-
 
 
   </section>
