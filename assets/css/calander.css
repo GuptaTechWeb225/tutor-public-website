@@ -1,0 +1,113 @@
+    .time-slot {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .time-slot:hover {
+            border-color: var(--secondary);
+        }
+
+        .time-slot.disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .day-nav {
+            position: absolute;
+            top: 58%;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #e0f2fe;
+            color: var(--secondary);
+            font-size: 20px;
+        }
+
+        .day-nav.left {
+            left: -45px;
+        }
+
+        .day-nav.right {
+            right: -45px;
+        }
+
+        .slot-scroll,
+        .day-slot-scroll {
+            max-height: 210px;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .slot-scroll::-webkit-scrollbar,
+        .day-slot-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .calendar-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .cal-nav {
+            border: none;
+            background: transparent;
+            font-size: 20px;
+            color: var(--secondary);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+
+        .day-name {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6b7280;
+        }
+
+        .day {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            max-width: 40px;
+            margin-inline: auto;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .day:hover {
+            background: #e0f2fe;
+        }
+
+        .day.active {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        @media(max-width:767px) {
+            .day-nav {
+                display: none;
+            }
+        }

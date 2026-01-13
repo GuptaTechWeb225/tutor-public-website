@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/fonts/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Hide step connecting line below 768px */
+        @media (max-width: 768px) {
+            .d-flex.flex-column.align-items-center .border-start {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/assets/images/logo.svg" alt="logo" class="logo">
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+        <div class="dropdown">
+          <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+            data-bs-toggle="dropdown">
+            <img src="/assets/images/form/english.png" width="15" alt=""> EN
+          </button>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">EN</a></li>
+            <li><a class="dropdown-item" href="#">AR</a></li>
+          </ul>
+        </div>
+        <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+        <ul class="navbar-nav mx-auto gap-xl-3">
+
+          <li class="nav-item">
+            <a class="nav-link " href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              Find a Tutor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              How It Works </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+              <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+              <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+              <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+              <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+    <section class="container">
+        <div class="">
+            <a href="/Blogs/blog-detail.html">
+                <div class="h-100 position-relative text-white rounded-3 overflow-hidden">
+                    <img src="/assets/images/how-it-work/how-it-work.png" class="img-fluid w-100 h-100" alt=""
+                        style="object-fit: cover;">
+                    <div
+                        class="position-absolute top-0  w-100 h-100 d-flex flex-column text-center justify-content-center p-4">
+                        <h3 class="fw-bold mb-2">You’re fully capable of learning this.</h3>
+                        <p class="mb-0 text-secondary fs-5 fw-bold">
+                            Learning this is completely within your reach.
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <div class="wrapper">
+        <img src="/assets/images/side-images/paper-plane-fill.png" alt="Plane Arrow" class="side-plane">
+        <div class="heading-content">
+            <h6 class="text-h">
+                Find Your Ideal Instructor in Three Easy Steps </h6>
+            <p class="text-p">
+                Find the right instructor, book sessions smoothly, <br>
+                and stay connected with ease. You focus on growing. We handle the <br> rest. Here’s how it works:
+            </p>
+        </div>
+    </div>
+    <section class="container py-3">
+
+        <!-- STEP 1 -->
+        <div class="row align-items-center">
+            <!-- Left: Step number + Text -->
+            <div class="col-md-4 d-flex">
+                <div class="d-flex flex-column align-items-center me-3">
+                    <!-- Step Circle -->
+                    <div class="rounded-circle bg-secondary text-white fw-bold d-flex align-items-center justify-content-center"
+                        style="width:36px; height:36px;">
+                        1
+                    </div>
+                    <!-- Connecting Line -->
+                    <div class="border-start border-2 border-secondary flex-grow-1" style="height:290px;"></div>
+                </div>
+                <div>
+                    <h5 class="mb-2">Pick Your Instructor</h5>
+                    <small class="text-muted d-block mb-1">
+                        With Smartbrain Academy’s tutor search tools, you can easily find the instructors that fit your
+                        goals.
+                    </small>
+                    <small class="text-muted d-block mb-3">
+                        Next, explore their qualifications, see what other students say, and confirm if they’ve passed a
+                        background check or ask for one. </small>
+                </div>
+            </div>
+            <!-- Right: Slider -->
+            <div class="col-md-8">
+                <div class="swiper workSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 p-3 text-center">
+                                <img src="/assets/images/how-it-work/how-it-work1.png"
+                                    class="rounded-circle mx-auto mb-3" width="100" alt="Tutor">
+                                <div class="mb-1">
+                                    <span class="text-secondary fs-5">★★★★★</span>
+                                    <small class="text-muted">(32)</small>
+                                </div>
+                                <h6 class="fw-bold mb-1">Physics Tutor</h6>
+                                <div class="fw-semibold text-secondary mb-2">$40/Hr</div>
+                                <p class="text-muted small mb-0">Teaching Organic Chemistry for 7 years...</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 p-3 text-center">
+                                <img src="/assets/images/how-it-work/how-it-work1.png"
+                                    class="rounded-circle mx-auto mb-3" width="100" alt="Tutor">
+                                <div class="mb-1">
+                                    <span class="text-secondary fs-5">★★★★★</span>
+                                    <small class="text-muted">(32)</small>
+                                </div>
+                                <h6 class="fw-bold mb-1">Physics Tutor</h6>
+                                <div class="fw-semibold text-secondary mb-2">$40/Hr</div>
+                                <p class="text-muted small mb-0">Teaching Organic Chemistry for 7 years...</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 p-3 text-center">
+                                <img src="/assets/images/how-it-work/how-it-work1.png"
+                                    class="rounded-circle mx-auto mb-3" width="100" alt="Tutor">
+                                <div class="mb-1">
+                                    <span class="text-secondary fs-5">★★★★★</span>
+                                    <small class="text-muted">(32)</small>
+                                </div>
+                                <h6 class="fw-bold mb-1">Physics Tutor</h6>
+                                <div class="fw-semibold text-secondary mb-2">$40/Hr</div>
+                                <p class="text-muted small mb-0">Teaching Organic Chemistry for 7 years...</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 p-3 text-center">
+                                <img src="/assets/images/how-it-work/how-it-work1.png"
+                                    class="rounded-circle mx-auto mb-3" width="100" alt="Tutor">
+                                <div class="mb-1">
+                                    <span class="text-secondary fs-5">★★★★★</span>
+                                    <small class="text-muted">(32)</small>
+                                </div>
+                                <h6 class="fw-bold mb-1">Physics Tutor</h6>
+                                <div class="fw-semibold text-secondary mb-2">$40/Hr</div>
+                                <p class="text-muted small mb-0">Teaching Organic Chemistry for 7 years...</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card shadow-sm border-0 p-3 text-center">
+                                <img src="/assets/images/how-it-work/how-it-work1.png"
+                                    class="rounded-circle mx-auto mb-3" width="100" alt="Tutor">
+                                <div class="mb-1">
+                                    <span class="text-secondary fs-5">★★★★★</span>
+                                    <small class="text-muted">(32)</small>
+                                </div>
+                                <h6 class="fw-bold mb-1">Physics Tutor</h6>
+                                <div class="fw-semibold text-secondary mb-2">$40/Hr</div>
+                                <p class="text-muted small mb-0">Teaching Organic Chemistry for 7 years...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="row align-items-center">
+            <!-- Left: Step number + Text -->
+            <div class="col-md-4 d-flex">
+                <div class="d-flex flex-column align-items-center me-3">
+                    <div class="rounded-circle bg-secondary text-white fw-bold d-flex align-items-center justify-content-center"
+                        style="width:36px; height:36px;">
+                        2
+                    </div>
+                    <div class="border-start border-2 border-secondary flex-grow-1" style="height:290px;"></div>
+                </div>
+                <div>
+                    <h5 class="mb-2">Chat With Your Instructor</h5>
+                    <small class="text-muted d-block mb-3">Once you’ve found the instructor you like, just send them a
+                        message right on Smartbrain Academy. Prefer chatting on the go? Use our app and stay connected
+                        anytime. Messaging is fast and effortless either way.</small>
+                </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-md-8 text-center">
+                <img src="/assets/images/how-it-work/chat-screenshot.png" class="rounded img-fluid"
+                    style="max-width:200px;" alt="Chat Screenshot">
+            </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="row align-items-start mb-5">
+            <!-- Left: Step number + Text -->
+            <div class="col-md-4 d-flex">
+                <div class="d-flex flex-column align-items-center me-3">
+                    <div class="rounded-circle bg-secondary text-white fw-bold d-flex align-items-center justify-content-center"
+                        style="width:36px; height:36px;">
+                        3
+                    </div>
+                </div>
+                <div>
+                    <h5 class="mb-2">Book Your Lesson</h5>
+                    <small class="text-muted d-block mb-3">
+                        Found the right instructor? Book your first lesson — and don’t worry. With Smartbrain Academy’s
+                        Good Fit Guarantee, your first hour is free if you’re not satisfied. </small>
+                </div>
+            </div>
+
+            <!-- Right: Option Cards -->
+            <div class="col-md-8">
+                <div class="row g-3 text-center justify-content-center mt-2">
+                    <!-- Card 1 -->
+                    <div class="col-md-6 col-12">
+                        <div class="position-relative overflow-hidden rounded-3">
+                            <img src="/assets/images/how-it-work/how-it-work3.png" height="220" class=" option-img"
+                                alt="In-Person">
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                <i class="bi bi-person-fill text-white fs-4 d-block mb-2"></i>
+                                <a href="#" class="btn    btn-primary btn-sm rounded-2 text-nowrap">Get started in
+                                    Person</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-md-6 col-12">
+                        <div class="position-relative overflow-hidden rounded-3">
+                            <img src="/assets/images/how-it-work/how-it-work2.png" height="220" class="option-img"
+                                alt="Online">
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                <div class="position-relative d-inline-block mb-2">
+                                    <i class="bi bi-laptop fs-4 text-white"></i>
+                                    <i
+                                        class="bi bi-person-fill position-absolute top-50 start-50 translate-middle text-white fs-7"></i>
+                                </div><br>
+                                <a href="#" class="btn    btn-primary btn-sm rounded-2 text-nowrap">Get Started
+                                    Online</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container py-2 mb-5">
+        <!-- TOP ROW : HEADING + IMAGE -->
+        <div class="wrapper mb-3">
+            <!-- <img src="/assets/images/side-images/side-imageeee.png" alt="Plane Arrow" class="side-plane"> -->
+            <div class="heading-content">
+                <h6 class="text-h">
+                    Learn from Smartbrain Academy’s community
+                    of verified, expert instructors. </h6>
+            </div>
+        </div>
+        <!-- CARDS ROW -->
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center border-0">
+                    <img src="/assets/images/how-it-work/how-it-card-1.png" height="60" width="60" class="mx-auto mb-3"
+                        width="40">
+                    <h4 class="fw-bold">Trusted Experts</h4>
+                    <p class="text-muted mb-0">
+                        The widest selection of skilled instructors, here to help you succeed. </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center border-0">
+                    <img src="/assets/images/how-it-work/how-it-card-2.png" height="60" width="60" class="mx-auto mb-3"
+                        width="40">
+                    <h4 class="fw-bold">Ideal Fit</h4>
+                    <p class="text-muted mb-0">
+                        Find the right expert tailored to your needs and preferred way of learning. </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center border-0">
+                    <img src="/assets/images/how-it-work/how-it-card-3.png" height="60" width="70" class="mx-auto mb-3"
+                        width="40">
+                    <h4 class="fw-bold">Visible Results</h4>
+                    <p class="text-muted mb-0">
+                        A trusted community of experts driving meaningful, visible outcomes. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container py-4 mb-5  border border-1 rounded-3">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+
+            <!-- Left Image -->
+            <div class="me-md-3 mb-3 mb-md-0">
+                <img src="/assets/images/how-it-work/how-it-bottom.png" alt="Image" height="50">
+            </div>
+
+            <!-- Middle Text -->
+            <div class="flex-fill  mb-3 mb-md-0">
+                <span class="fw-bold">Have Questions?</span> <br>
+                <span class="fw-semibold">This is the line of text in the middle</span>
+            </div>
+
+            <!-- Right Buttons -->
+            <div class="d-flex gap-3">
+                <button class="btn    btn-primary rounded-2 px-4">Get Answer</button>
+                <button class="btn    btn-primary rounded-2 px-4">Contact us</button>
+            </div>
+
+        </div>
+    </section>
+
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        new Swiper(".workSwiper", {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            loop: true,
+            speed: 800,
+
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                },
+                576: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

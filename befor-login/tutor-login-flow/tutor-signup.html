@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="signup_page_title">BookLuxor Login</title>
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <style>
+        .left-section h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .feature-item i {
+            font-size: 26px;
+            color: #0d6efd;
+        }
+
+        .feature-item h6 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 300px;
+            margin-left: auto;
+        }
+
+        .signup-card h6 {
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .signup-card small {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        @media (max-width:992px) {
+            .signup-card {
+                min-width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-12 col-lg-8 order-2 order-lg-1">
+                <h1>
+                    Smart Brain Academy Connects,
+                    Expert Tutors with Online Students
+                </h1>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center border-0 shadow-sm p-3">
+                            <div class="mb-3">
+                                <i class="bi bi-laptop fs-1 text-primary"></i>
+                            </div>
+                            <h6 class="fw-semibold">Teach Students Online Worldwide</h6>
+                            <p class="text-muted small mb-0">
+                                Deliver live 1-to-1 or group sessions from anywhere using our online platform.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center border-0 shadow-sm p-3">
+                            <div class="mb-3">
+                                <i class="bi bi-currency-dollar fs-1 text-success"></i>
+                            </div>
+                            <h6 class="fw-semibold">Set Your Own Rates</h6>
+                            <p class="text-muted small mb-0">
+                                Charge based on your expertise, experience, and subject specialization.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center border-0 shadow-sm p-3">
+                            <div class="mb-3">
+                                <i class="bi bi-shield-check fs-1 text-secondary"></i>
+                            </div>
+                            <h6 class="fw-semibold">Secure & Timely Payments</h6>
+                            <p class="text-muted small mb-0">
+                                Get paid reliably for every completed session without follow-ups.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 mb-4 mb-lg-0 order-1 order-lg-2">
+                <div class="signup-card shadow-sm mx-auto">
+
+                    <h6>APPLY AS A TUTOR</h6>
+                    <small>Join Smart Brain Academy</small>
+
+                    <div class="row">
+                        <div class="col-6 col-md-6 col-lg-12 mb-2">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="first_name" required>
+                        </div>
+
+                        <div class="col-6 col-md-6 col-lg-12 mb-2">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="last_name" required>
+                        </div>
+
+                        <div class="col-6 col-md-6 col-lg-12 mb-2">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+
+                        <div class="col-6 col-md-6 col-lg-12 mb-2">
+                            <label class="form-label">Create Password</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Zip Code</label>
+                            <input type="text" class="form-control" name="zipcode" required>
+                        </div>
+                    </div>
+                    <div class="text-center mb-2">
+                        <a href="/tutor-flow-after-login/tutor-signup-steps.html" class="btn btn-secondary py-1">
+                            CONTINUE →
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <span class="small">
+                            <span data-translate="no_account">Already have an account?</span>
+                            <a href="../login-flow/login.html" class="text-decoration-none text-secondary">Login</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/form.js"></script>
+    <script src="/assets/js/lang.js"></script>
+</body>
+
+</html>

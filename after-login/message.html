@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/fonts/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .my-account-side.active {
+            background-color: #F18C3E;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div> <!-- Notifications -->
+                <div class="nav-item mx-2">
+                    <a href="/after-login/message.html" class="btn btn-sm border-0 text-dark position-relative p-0">
+
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <!-- Notification badge -->
+                        <span class="position-absolute top-0 start-100 mt-1
+                            translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" 
+                        />
+                    </a>
+                    <!-- Dropdown -->
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <!-- Arrow ke liye extra space -->
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+                        <!-- Dropdown items -->
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/after-login/dashbord.html" class="fs-6 dropdown-item my-account-side ">
+                                <i class="bi bi-speedometer2"></i>
+                                Dashboard
+                            </a>
+                            <a href="/after-login/message.html" class="fs-6 dropdown-item my-account-side active">
+                                <i class="bi bi-chat-dots"></i>
+                                Messages
+                            </a>
+                            <a href="/after-login/my-tutor.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-mortarboard"></i>
+                                My Tutor
+                            </a>
+                            <a href="/after-login/my-lesson.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-journal-bookmark"></i>
+                                My Lessons
+                            </a>
+                            <a href="/after-login/transaction.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-credit-card-2-front"></i>
+                                Transactions
+                            </a>
+                            <a href="/after-login/my-account-setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Find a Tutor</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Math</a></li>
+                            <li><a class="dropdown-item" href="#">Science</a></li>
+                            <li><a class="dropdown-item" href="#">Programming</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">How It Works</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Blogs</a></li>
+                            <li><a class="dropdown-item" href="#">Guides</a></li>
+                            <li><a class="dropdown-item" href="#">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Become a Tutor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="d-flex flex-column app-container overflow-hidden">
+            <div class="row flex-grow-1 overflow-hidden position-relative gx-0" id="chatApp">
+                
+                <!-- CHAT LIST  -->
+                <div class="col-12 col-lg-4 border-end chat-list" id="chatListPanel">
+                    <div>
+                        <h4 class="fw-bold ms-3">Messages</h4>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search for tutor"
+                            oninput="filterChats(this.value)">
+                    </div>
+                    <div id="chatListItems" class="flex-grow-1 overflow-auto"></div>
+                </div>
+
+                <div class="col-12 col-lg-8 chat-window-wrapper p-0" id="chatWindowWrapper">
+                    <div id="chatWindow" class="d-flex flex-column h-100">
+                        <div class="d-flex align-items-center border-bottom p-3 bg-white flex-shrink-0">
+                            <button class="btn btn-link back-btn-mobile me-2" onclick="backToList()"><i
+                                    class="fa-solid fa-arrow-left"></i></button>
+                            <img src="/assets/images/tutor/tutor5.png" id="chatAvatar" class="rounded-circle me-2"
+                                width="40" height="40">
+                            <div class="flex-grow-1">
+                                <div id="chatUserName" class="fw-bold"></div>
+                                <div id="chatUserContact" class="text-muted small"></div>
+                            </div>
+                        </div>
+                        <div id="chatBody" class="flex-grow-1 overflow-auto" style="background:#f5f5f5;"></div>
+                        <div class="chat-footer border-top p-3">
+                            <div class="chat-input-wrapper bg-white rounded-4 p-2 shadow-sm">
+                                <div class="d-flex align-items-center px-2 chat-input-wrapper">
+                                    <i class="fa-solid fa-paperclip fs-5 text-muted me-2"></i>
+                                    <input type="text" id="chatInput"
+                                        class="form-control border-0 shadow-none flex-grow-1"
+                                        placeholder="Write something..." oninput="toggleSendIcon()"
+                                        onkeydown="handleEnter(event)">
+
+                                    <div id="actionIconWrapper" class="ms-2 text-primary fs-5">
+                                        <i id="micIcon"></i>
+                                    </div>
+                                </div>
+                                <script>
+                                    const chats = [
+                                        {
+                                            id: 1, type: 'user', name: "Ingrid M.", contact: "+1 212 555 0111",
+                                            avatar: "/assets/images/tutor/tutor5.png", unread: 3,
+                                            messages: [
+                                                { type: "incoming", from: "Ingrid M.", text: "Will Schedule the Lesson", time: "10:30" },
+                                            ]
+                                        },
+                                        {
+                                            id: 2, type: 'user', name: "Sara Phillips", contact: "+1 212 555 0111",
+                                            avatar: "/assets/images/tutor/tutor6.png", unread: 2,
+                                            messages: [
+                                                { type: "incoming", from: "Sara", text: "Server is down!", time: "14:10" },
+                                            ]
+                                        },
+                                    ];
+                                    let currentChatId = null;
+                                    let currentFilter = 'all';
+                                    function renderChatList() {
+                                        const list = document.getElementById('chatListItems');
+                                        let filtered = chats;
+
+                                        if (currentFilter === 'unread') filtered = chats.filter(c => c.unread > 0);
+                                        else if (currentFilter === 'teams') filtered = chats.filter(c => c.type === 'group');
+
+                                        list.innerHTML = filtered.map(chat => {
+                                            const last = chat.messages[chat.messages.length - 1] || {};
+                                            const isGroup = chat.type === 'group';
+                                            return `
+                                           <div class="d-flex align-items-center py-2 chat-item" onclick="openChat(${chat.id})">
+                                             <div class="position-relative">
+                                               <img src="${chat.avatar}" class="rounded-circle me-2" width="45">
+                                               
+                                             </div>    
+                                             <div class="flex-grow-1">
+                                               <div class="d-flex justify-content-between">
+                                                 <span class="fw-bold">${chat.name}</span>
+                                                 <small class="text-muted">${last.time || ''}</small>
+                                               </div>
+                                               <div class="d-flex justify-content-between align-items-center">
+                                                 <small class="text-truncate text-muted" style="max-width:70%;">
+                                                   ${last.text ? last.text.slice(0, 30) + '...' : ''}
+                                                 </small>
+                                               </div>
+                                             </div>
+                                             
+                                           </div>`;
+                                        }).join('');
+                                    }
+
+                                    // ==================== OPEN CHAT ====================
+                                    function openChat(id) {
+                                        currentChatId = id;
+                                        const chat = chats.find(c => c.id === id);
+                                        if (!chat) return;
+
+                                        chat.unread = 0;
+
+                                        document.getElementById('chatUserName').innerText = chat.name;
+                                        document.getElementById('chatUserContact').innerText = chat.type === 'group'
+                                            ? `${chat.members} members` : chat.contact;
+                                        document.getElementById('chatAvatar').src = chat.avatar;
+
+                                        const body = document.getElementById('chatBody');
+                                        body.innerHTML = chat.messages.map(m => `
+                                        <div class="message ${m.type}">
+                                          <small class="d-block text-primary fw-bold">${m.from}:</small>
+                                          ${m.text}
+                                          <small class="d-block text-muted text-end" style="font-size:10px;">${m.time}</small>
+                                        </div>`).join('');
+
+                                        // mobile view
+                                        if (window.innerWidth <= 992) {
+                                            document.getElementById('chatListPanel').classList.add('hidden');
+                                            document.getElementById('chatWindowWrapper').classList.add('active');
+                                        }
+
+                                        setTimeout(() => body.scrollTop = body.scrollHeight, 0);
+                                        renderChatList();
+                                    }
+
+                                    function backToList() {
+                                        if (window.innerWidth <= 992) {
+                                            document.getElementById('chatListPanel').classList.remove('hidden');
+                                            document.getElementById('chatWindowWrapper').classList.remove('active');
+                                        }
+                                    }
+
+                                    // ==================== SEND MESSAGE ====================
+                                    function sendMessage() {
+                                        const input = document.getElementById('chatInput');
+                                        const text = input.value.trim();
+                                        if (!text || !currentChatId) return;
+
+                                        const chat = chats.find(c => c.id === currentChatId);
+                                        chat.messages.push({
+                                            type: "outgoing",
+                                            from: "You",
+                                            text,
+                                            time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                                        });
+
+                                        input.value = '';
+                                        toggleSendIcon();
+                                        openChat(currentChatId);
+                                    }
+
+                                    function handleEnter(e) { if (e.key === 'Enter') sendMessage(); }
+
+                                    // ==================== SEARCH & FILTER ====================
+                                    function filterChats(term) {
+                                        const lower = term.toLowerCase();
+                                        let filtered = chats;
+
+                                        if (currentFilter === 'unread') filtered = filtered.filter(c => c.unread > 0);
+                                        else if (currentFilter === 'teams') filtered = filtered.filter(c => c.type === 'group');
+
+                                        if (lower) filtered = filtered.filter(c => c.name.toLowerCase().includes(lower));
+
+                                        const list = document.getElementById('chatListItems');
+                                        list.innerHTML = filtered.map(chat => { /* same HTML as renderChatList */
+                                            const last = chat.messages[chat.messages.length - 1] || {};
+                                            const isGroup = chat.type === 'group';
+                                            return `
+                                            <div class="d-flex align-items-center  py-2 chat-item" onclick="openChat(${chat.id})">
+                                              <div class="position-relative">
+                                                <img src="${chat.avatar}" class="rounded-circle me-2" width="45">
+                                              </div>
+                                              <div class="flex-grow-1">
+                                                <div class="d-flex justify-content-between">
+                                                  <span class="fw-bold">${chat.name}</span>
+                                                  <small class="text-muted">${last.time || ''}</small>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                  <small class="text-truncate text-muted" style="max-width:70%;">
+                                                    ${last.text ? last.text.slice(0, 30) + '...' : ''}
+                                                  </small>
+                                                </div>
+                                              </div>
+                                            </div>`;
+                                        }).join('');
+                                    }
+
+                                    document.querySelectorAll('.filter-tab').forEach(tab => {
+                                        tab.addEventListener('click', () => {
+                                            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                                            tab.classList.add('active');
+                                            currentFilter = tab.dataset.filter;
+                                            renderChatList();
+                                        });
+                                    });
+
+                                    // ==================== SEND ICON TOGGLE ====================
+                                    function toggleSendIcon() {
+                                        const input = document.getElementById('chatInput');
+                                        const wrapper = document.getElementById('actionIconWrapper');
+                                        let send = document.getElementById('sendIcon');
+
+                                        if (input.value.trim()) {
+                                            if (!send) {
+                                                send = document.createElement('i');
+                                                send.id = 'sendIcon';
+                                                send.className = 'fa-solid fa-paper-plane';
+                                                send.style.cursor = 'pointer';
+                                                send.onclick = sendMessage;
+                                                wrapper.appendChild(send);
+                                            }
+                                        } else if (send) {
+                                            send.remove();
+                                        }
+                                    }
+
+                                    // ==================== INITIALISE ====================
+                                    renderChatList();
+                                    openChat(chats[0].id);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

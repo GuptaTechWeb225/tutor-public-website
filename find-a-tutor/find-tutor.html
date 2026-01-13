@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link href="/assets/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/assets/images/logo.svg" alt="logo" class="logo">
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+        <div class="dropdown">
+          <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+            data-bs-toggle="dropdown">
+            <img src="/assets/images/form/english.png" width="15" alt=""> EN
+          </button>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">EN</a></li>
+            <li><a class="dropdown-item" href="#">AR</a></li>
+          </ul>
+        </div>
+        <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+        <ul class="navbar-nav mx-auto gap-xl-3">
+
+          <li class="nav-item">
+            <a class="nav-link " href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              Find a Tutor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              How It Works </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+              <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+              <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+              <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+              <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+    <div class="modal fade" id="subjectModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">
+                        What subject do you need help with?
+                    </h5>
+                </div>
+
+                <div class="modal-body">
+                    <select id="subjectSelect" class="form-select form-select-lg">
+                        <option value="">Select Subject</option>
+                        <option value="Math">Math</option>
+                        <option value="Algebra">Algebra</option>
+                        <option value="Computer">Computer</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                    </select>
+
+                    <button class="btn btn-secondary w-100 mt-3" onclick="applySubject()">
+                        Continue
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const subjectModal = new bootstrap.Modal(
+                document.getElementById('subjectModal'),
+                {
+                    backdrop: 'static', // bahar click disable
+                    keyboard: false     // ESC disable
+                }
+            );
+
+            subjectModal.show();
+        });
+        function applySubject() {
+            const subject = document.getElementById('subjectSelect').value;
+
+            if (!subject) {
+                alert('Please select a subject');
+                return;
+            }
+
+            // Search input me subject set karna
+            document.querySelector('.search-bar input').value = subject + ' Tutor';
+
+            // Heading update
+            document.querySelector('h6.text-muted').innerText =
+                'Showing tutors for ' + subject;
+
+            // Modal close
+            bootstrap.Modal.getInstance(
+                document.getElementById('subjectModal')
+            ).hide();
+        }
+    </script>
+    <div class="modal fade" id="subSubjectModal" tabindex="-1">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content px-5">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">
+                        Select Topics You Need Help With
+                    </h5>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+
+                        <!-- LEFT COLUMN -->
+                        <div class="col-md-6">
+                            <div class="form-check mb-4 ">
+                                <input class="form-check-input" type="checkbox" value="Algebra">
+                                <label class="form-check-label">Algebra</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Geometry">
+                                <label class="form-check-label">Geometry</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Trigonometry">
+                                <label class="form-check-label">Trigonometry</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Statistics">
+                                <label class="form-check-label">Statistics</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Probability">
+                                <label class="form-check-label">Probability</label>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT COLUMN -->
+                        <div class="col-md-6">
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Calculus">
+                                <label class="form-check-label">Calculus</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Linear Algebra">
+                                <label class="form-check-label">Linear Algebra</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Word Problems">
+                                <label class="form-check-label">Word Problems</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Exam Prep">
+                                <label class="form-check-label">Exam Prep</label>
+                            </div>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" value="Homework Help">
+                                <label class="form-check-label">Homework Help</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="text-center mt-4 d-flex justify-content-center gap-3">
+                        <button class="btn btn-secondary btn-sm" onclick="applySubSubjects()">
+                            Continue
+                        </button>
+
+                        <button class="btn btn-outline-secondary btn-sm" onclick="skipSubSubjects()">
+                            Skip
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function applySubject() {
+            const subject = document.getElementById('subjectSelect').value;
+
+            if (!subject) {
+                alert('Please select a subject');
+                return;
+            }
+
+            // First modal close
+            bootstrap.Modal.getInstance(
+                document.getElementById('subjectModal')
+            ).hide();
+
+            // ⏳ Delay ke baad second modal open
+            setTimeout(function () {
+
+                const subSubjectModal = new bootstrap.Modal(
+                    document.getElementById('subSubjectModal'),
+                    {
+                        backdrop: 'static',
+                        keyboard: false
+                    }
+                );
+
+                subSubjectModal.show();
+
+            }, 1500); // 👈 time in milliseconds (1500 = 1.5 sec)
+        }
+        function skipSubSubjects() {
+
+            // Optional: clear any checked boxes
+            document.querySelectorAll(
+                '#subSubjectModal input[type="checkbox"]'
+            ).forEach(cb => cb.checked = false);
+
+            console.log('Topics skipped');
+
+            // Modal close
+            bootstrap.Modal.getInstance(
+                document.getElementById('subSubjectModal')
+            ).hide();
+        }
+
+        function applySubSubjects() {
+            const checked = document.querySelectorAll(
+                '#subSubjectModal input[type="checkbox"]:checked'
+            );
+
+            if (checked.length === 0) {
+                alert('Please select at least one topic');
+                return;
+            }
+
+            let topics = [];
+            checked.forEach(cb => topics.push(cb.value));
+
+            console.log('Selected Topics:', topics);
+
+            // Example: search input me add karna
+            document.querySelector('.search-bar input').value =
+                topics.join(', ') + ' Tutor';
+
+            // Close modal
+            bootstrap.Modal.getInstance(
+                document.getElementById('subSubjectModal')
+            ).hide();
+        }
+    </script>
+    <section class="py-5 container">
+
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <aside class="col-lg-3 d-none d-lg-block">
+                    <div class="p-3 shadow-sm bg-white rounded-2">
+                        <h6 class="fw-bold mb-3">Filter</h6>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold" id="priceLabel">
+                                Hourly Rate: $30 – $80
+                            </label>
+
+                            <div class="range-container">
+                                <input type="range" min="10" max="200" value="30" id="priceMin">
+                                <input type="range" min="10" max="200" value="80" id="priceMax">
+                                <div class="slider-track" id="priceTrack"></div>
+                            </div>
+
+                            <div class="d-flex justify-content-between small text-muted mt-2">
+                                <span>$10</span>
+                                <span>$200</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Credentials</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label small">Background check on file</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label small">IXL Certified</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label small">Licensed Teacher</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Additional Language Spoken</label>
+                            <select class="select2-enable" style="width:100%">
+                                <option>Default</option>
+                                <option>English</option>
+                                <option>Arebic</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Student's level</label>
+                            <select class="select2-enable" style="width:100%">
+                                <option>Elementary</option>
+                                <option>Middle School</option>
+                                <option>Hight School</option>
+                                <option>College</option>
+                                <option>Adult</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold" id="ageLabel">
+                                Tutor Age: 25 - 45 yrs
+                            </label>
+
+                            <div class="range-container">
+                                <input type="range" min="18" max="60" value="25" id="ageMin">
+                                <input type="range" min="18" max="60" value="45" id="ageMax">
+                                <div class="slider-track" id="ageTrack"></div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary w-100">Reset</button>
+                            <button class="btn btn-secondary w-100">Apply</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <main class="col-lg-9">
+                    <div class="mb-5">
+                        <div class="search-bar mt-0">
+                            <input type="text" placeholder="Algebra Tutors" value="Algebra Tutors" class="w-100">
+                            <button class="search-btn">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-3">
+                        <div class="row align-items-center mb-3">
+
+                            <div class="col-12 col-md-6 col-lg-9 mb-3 mb-md-0">
+                                <h6 class="mb-0 text-muted">
+                                    8,563 Algebra 10 Tutors
+                                </h6>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <div class="d-flex justify-content-lg-end align-items-center gap-3">
+
+                                    <button class="btn btn-outline-secondary d-lg-none w-50" data-bs-toggle="offcanvas"
+                                        data-bs-target="#filterCanvas">
+                                        <i class="bi bi-funnel"></i> Filters
+                                    </button>
+
+                                    <select class="select2-enable">
+                                        <option>Sort</option>
+                                        <option>Highest Rated</option>
+                                        <option>Lowest Price</option>
+                                        <option>Most Reviews</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutors">
+                            <div class="card tutor-card shadow-sm border-0 mb-4">
+                                <div class="card-body">
+
+                                    <div class="row g-3 align-items-start">
+
+                                        <div class="col-12 col-md-auto d-flex align-items-start justify-content-start">
+                                            <div class="tutor-img-wrap mx- mx-md-0">
+                                                <img src="/assets/images/tutor/tutor2.png" alt="Tutor">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <h6 class="fw-bold mb-1">Ingrid M.</h6>
+
+                                            <p class="mb-1 text-primary fw-semibold">
+                                                UC Berkeley Maths BA with 20+ Years of Teaching Experience
+                                            </p>
+
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <div class="text-warning">★ ★ ★ ★ ★</div>
+                                                <span class="fw-semibold">5.0</span>
+                                                <span class="text-muted">(1190)</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-4 text-muted small">
+                                                <div><strong class="text-dark">$50/hour</strong></div>
+                                                <div>⏱ 6,389 Hours Tutoring</div>
+                                                <div>⚡ Response Time: <strong>31 Minutes</strong></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted small mb-0">
+                                                    I have a degree in mathematics and teaching mathematics. I've been
+                                                    teaching and tutoring math for over 20 years. I taught Algebra 1 as
+                                                    a
+                                                    high school teacher. Through tutoring...
+
+                                                    <a href="#" class="text-warning text-decoration-none">See Ingrid's
+                                                        full
+                                                        profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-auto text-md-end align-self-start">
+                                            <a href="/find-a-tutor/tutor-detail.html"
+                                                class="btn btn-secondary px-4 w-100 w-md-auto">
+                                                View Profile
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-3 p-3 rounded review-box">
+                                        <h6 class="fw-bold mb-1">Highly recommended Math Teacher</h6>
+                                        <p class="mb-0 small text-muted">
+                                            “Ingrid has been an incredible help for my 7th grader in getting ahead in
+                                            Algebra, and i couldn't be happier
+                                            that we founder her. She took the time to thoroughly discuss my child’s
+                                            needs
+                                            and our goals, ensuring she was
+                                            well informed....
+                                            <a href="#" class="text-warning text-decoration-none">Read full Review</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card tutor-card shadow-sm border-0 mb-4">
+                                <div class="card-body">
+
+                                    <div class="row g-3 align-items-start">
+
+                                        <div class="col-12 col-md-auto d-flex align-items-start justify-content-start">
+                                            <div class="tutor-img-wrap mx- mx-md-0">
+                                                <img src="/assets/images/tutor/tutor2.png" alt="Tutor">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <h6 class="fw-bold mb-1">Ingrid M.</h6>
+
+                                            <p class="mb-1 text-primary fw-semibold">
+                                                UC Berkeley Maths BA with 20+ Years of Teaching Experience
+                                            </p>
+
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <div class="text-warning">★ ★ ★ ★ ★</div>
+                                                <span class="fw-semibold">5.0</span>
+                                                <span class="text-muted">(1190)</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-4 text-muted small">
+                                                <div><strong class="text-dark">$50/hour</strong></div>
+                                                <div>⏱ 6,389 Hours Tutoring</div>
+                                                <div>⚡ Response Time: <strong>31 Minutes</strong></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted small mb-0">
+                                                    I have a degree in mathematics and teaching mathematics. I've been
+                                                    teaching and tutoring math for over 20 years. I taught Algebra 1 as
+                                                    a
+                                                    high school teacher. Through tutoring...
+
+                                                    <a href="#" class="text-warning text-decoration-none">See Ingrid's
+                                                        full
+                                                        profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-auto text-md-end align-self-start">
+                                            <a href="/find-a-tutor/tutor-detail.html"
+                                                class="btn btn-secondary px-4 w-100 w-md-auto">
+                                                View Profile
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-3 p-3 rounded review-box">
+                                        <h6 class="fw-bold mb-1">Highly recommended Math Teacher</h6>
+                                        <p class="mb-0 small text-muted">
+                                            “Ingrid has been an incredible help for my 7th grader in getting ahead in
+                                            Algebra, and i couldn't be happier
+                                            that we founder her. She took the time to thoroughly discuss my child’s
+                                            needs
+                                            and our goals, ensuring she was
+                                            well informed....
+                                            <a href="#" class="text-warning text-decoration-none">Read full Review</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card tutor-card shadow-sm border-0 mb-4">
+                                <div class="card-body">
+
+                                    <div class="row g-3 align-items-start">
+
+                                        <div class="col-12 col-md-auto d-flex align-items-start justify-content-start">
+                                            <div class="tutor-img-wrap mx- mx-md-0">
+                                                <img src="/assets/images/tutor/tutor2.png" alt="Tutor">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <h6 class="fw-bold mb-1">Ingrid M.</h6>
+
+                                            <p class="mb-1 text-primary fw-semibold">
+                                                UC Berkeley Maths BA with 20+ Years of Teaching Experience
+                                            </p>
+
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <div class="text-warning">★ ★ ★ ★ ★</div>
+                                                <span class="fw-semibold">5.0</span>
+                                                <span class="text-muted">(1190)</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-4 text-muted small">
+                                                <div><strong class="text-dark">$50/hour</strong></div>
+                                                <div>⏱ 6,389 Hours Tutoring</div>
+                                                <div>⚡ Response Time: <strong>31 Minutes</strong></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted small mb-0">
+                                                    I have a degree in mathematics and teaching mathematics. I've been
+                                                    teaching and tutoring math for over 20 years. I taught Algebra 1 as
+                                                    a
+                                                    high school teacher. Through tutoring...
+
+                                                    <a href="#" class="text-warning text-decoration-none">See Ingrid's
+                                                        full
+                                                        profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-auto text-md-end align-self-start">
+                                            <a href="/find-a-tutor/tutor-detail.html"
+                                                class="btn btn-secondary px-4 w-100 w-md-auto">
+                                                View Profile
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-3 p-3 rounded review-box">
+                                        <h6 class="fw-bold mb-1">Highly recommended Math Teacher</h6>
+                                        <p class="mb-0 small text-muted">
+                                            “Ingrid has been an incredible help for my 7th grader in getting ahead in
+                                            Algebra, and i couldn't be happier
+                                            that we founder her. She took the time to thoroughly discuss my child’s
+                                            needs
+                                            and our goals, ensuring she was
+                                            well informed....
+                                            <a href="#" class="text-warning text-decoration-none">Read full Review</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card tutor-card shadow-sm border-0 mb-4">
+                                <div class="card-body">
+
+                                    <div class="row g-3 align-items-start">
+
+                                        <div class="col-12 col-md-auto d-flex align-items-start justify-content-start">
+                                            <div class="tutor-img-wrap mx- mx-md-0">
+                                                <img src="/assets/images/tutor/tutor2.png" alt="Tutor">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <h6 class="fw-bold mb-1">Ingrid M.</h6>
+
+                                            <p class="mb-1 text-primary fw-semibold">
+                                                UC Berkeley Maths BA with 20+ Years of Teaching Experience
+                                            </p>
+
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <div class="text-warning">★ ★ ★ ★ ★</div>
+                                                <span class="fw-semibold">5.0</span>
+                                                <span class="text-muted">(1190)</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-4 text-muted small">
+                                                <div><strong class="text-dark">$50/hour</strong></div>
+                                                <div>⏱ 6,389 Hours Tutoring</div>
+                                                <div>⚡ Response Time: <strong>31 Minutes</strong></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted small mb-0">
+                                                    I have a degree in mathematics and teaching mathematics. I've been
+                                                    teaching and tutoring math for over 20 years. I taught Algebra 1 as
+                                                    a
+                                                    high school teacher. Through tutoring...
+
+                                                    <a href="#" class="text-warning text-decoration-none">See Ingrid's
+                                                        full
+                                                        profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-auto text-md-end align-self-start">
+                                            <a href="/find-a-tutor/tutor-detail.html"
+                                                class="btn btn-secondary px-4 w-100 w-md-auto">
+                                                View Profile
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-3 p-3 rounded review-box">
+                                        <h6 class="fw-bold mb-1">Highly recommended Math Teacher</h6>
+                                        <p class="mb-0 small text-muted">
+                                            “Ingrid has been an incredible help for my 7th grader in getting ahead in
+                                            Algebra, and i couldn't be happier
+                                            that we founder her. She took the time to thoroughly discuss my child’s
+                                            needs
+                                            and our goals, ensuring she was
+                                            well informed....
+                                            <a href="#" class="text-warning text-decoration-none">Read full Review</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card tutor-card shadow-sm border-0 mb-4">
+                                <div class="card-body">
+
+                                    <div class="row g-3 align-items-start">
+
+                                        <div class="col-12 col-md-auto d-flex align-items-start justify-content-start">
+                                            <div class="tutor-img-wrap mx- mx-md-0">
+                                                <img src="/assets/images/tutor/tutor2.png" alt="Tutor">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <h6 class="fw-bold mb-1">Ingrid M.</h6>
+
+                                            <p class="mb-1 text-primary fw-semibold">
+                                                UC Berkeley Maths BA with 20+ Years of Teaching Experience
+                                            </p>
+
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <div class="text-warning">★ ★ ★ ★ ★</div>
+                                                <span class="fw-semibold">5.0</span>
+                                                <span class="text-muted">(1190)</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-4 text-muted small">
+                                                <div><strong class="text-dark">$50/hour</strong></div>
+                                                <div>⏱ 6,389 Hours Tutoring</div>
+                                                <div>⚡ Response Time: <strong>31 Minutes</strong></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted small mb-0">
+                                                    I have a degree in mathematics and teaching mathematics. I've been
+                                                    teaching and tutoring math for over 20 years. I taught Algebra 1 as
+                                                    a
+                                                    high school teacher. Through tutoring...
+
+                                                    <a href="#" class="text-warning text-decoration-none">See Ingrid's
+                                                        full
+                                                        profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-auto text-md-end align-self-start">
+                                            <a href="/find-a-tutor/tutor-detail.html"
+                                                class="btn btn-secondary px-4 w-100 w-md-auto">
+                                                View Profile
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-3 p-3 rounded review-box">
+                                        <h6 class="fw-bold mb-1">Highly recommended Math Teacher</h6>
+                                        <p class="mb-0 small text-muted">
+                                            “Ingrid has been an incredible help for my 7th grader in getting ahead in
+                                            Algebra, and i couldn't be happier
+                                            that we founder her. She took the time to thoroughly discuss my child’s
+                                            needs
+                                            and our goals, ensuring she was
+                                            well informed....
+                                            <a href="#" class="text-warning text-decoration-none">Read full Review</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card tutor-card shadow-sm border-0 mb-4">
+                                <div class="card-body">
+
+                                    <div class="row g-3 align-items-start">
+
+                                        <div class="col-12 col-md-auto d-flex align-items-start justify-content-start">
+                                            <div class="tutor-img-wrap mx- mx-md-0">
+                                                <img src="/assets/images/tutor/tutor2.png" alt="Tutor">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <h6 class="fw-bold mb-1">Ingrid M.</h6>
+
+                                            <p class="mb-1 text-primary fw-semibold">
+                                                UC Berkeley Maths BA with 20+ Years of Teaching Experience
+                                            </p>
+
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <div class="text-warning">★ ★ ★ ★ ★</div>
+                                                <span class="fw-semibold">5.0</span>
+                                                <span class="text-muted">(1190)</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-4 text-muted small">
+                                                <div><strong class="text-dark">$50/hour</strong></div>
+                                                <div>⏱ 6,389 Hours Tutoring</div>
+                                                <div>⚡ Response Time: <strong>31 Minutes</strong></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted small mb-0">
+                                                    I have a degree in mathematics and teaching mathematics. I've been
+                                                    teaching and tutoring math for over 20 years. I taught Algebra 1 as
+                                                    a
+                                                    high school teacher. Through tutoring...
+
+                                                    <a href="#" class="text-warning text-decoration-none">See Ingrid's
+                                                        full
+                                                        profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-auto text-md-end align-self-start">
+                                            <a href="/find-a-tutor/tutor-detail.html"
+                                                class="btn btn-secondary px-4 w-100 w-md-auto">
+                                                View Profile
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-3 p-3 rounded review-box">
+                                        <h6 class="fw-bold mb-1">Highly recommended Math Teacher</h6>
+                                        <p class="mb-0 small text-muted">
+                                            “Ingrid has been an incredible help for my 7th grader in getting ahead in
+                                            Algebra, and i couldn't be happier
+                                            that we founder her. She took the time to thoroughly discuss my child’s
+                                            needs
+                                            and our goals, ensuring she was
+                                            well informed....
+                                            <a href="#" class="text-warning text-decoration-none">Read full Review</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card tutor-card shadow-sm border-0 mb-4">
+                                <div class="card-body">
+
+                                    <div class="row g-3 align-items-start">
+
+                                        <div class="col-12 col-md-auto d-flex align-items-start justify-content-start">
+                                            <div class="tutor-img-wrap mx- mx-md-0">
+                                                <img src="/assets/images/tutor/tutor2.png" alt="Tutor">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <h6 class="fw-bold mb-1">Ingrid M.</h6>
+
+                                            <p class="mb-1 text-primary fw-semibold">
+                                                UC Berkeley Maths BA with 20+ Years of Teaching Experience
+                                            </p>
+
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <div class="text-warning">★ ★ ★ ★ ★</div>
+                                                <span class="fw-semibold">5.0</span>
+                                                <span class="text-muted">(1190)</span>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-4 text-muted small">
+                                                <div><strong class="text-dark">$50/hour</strong></div>
+                                                <div>⏱ 6,389 Hours Tutoring</div>
+                                                <div>⚡ Response Time: <strong>31 Minutes</strong></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <p class="text-muted small mb-0">
+                                                    I have a degree in mathematics and teaching mathematics. I've been
+                                                    teaching and tutoring math for over 20 years. I taught Algebra 1 as
+                                                    a
+                                                    high school teacher. Through tutoring...
+
+                                                    <a href="#" class="text-warning text-decoration-none">See Ingrid's
+                                                        full
+                                                        profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-auto text-md-end align-self-start">
+                                            <a href="/find-a-tutor/tutor-detail.html"
+                                                class="btn btn-secondary px-4 w-100 w-md-auto">
+                                                View Profile
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 p-3 rounded review-box">
+                                        <h6 class="fw-bold mb-1">Highly recommended Math Teacher</h6>
+                                        <p class="mb-0 small text-muted">
+                                            “Ingrid has been an incredible help for my 7th grader in getting ahead in
+                                            Algebra, and i couldn't be happier
+                                            that we founder her. She took the time to thoroughly discuss my child’s
+                                            needs
+                                            and our goals, ensuring she was
+                                            well informed....
+                                            <a href="#" class="text-warning text-decoration-none">Read full Review</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="filterCanvas">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Filters</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <div class="p-3">
+                    <h6 class="fw-bold mb-3">Filter</h6>
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold" id="priceLabel">
+                            Hourly Rate: $30 – $80
+                        </label>
+
+                        <div class="range-container">
+                            <input type="range" min="10" max="200" value="30" id="priceMin">
+                            <input type="range" min="10" max="200" value="80" id="priceMax">
+                            <div class="slider-track" id="priceTrack"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between small text-muted mt-2">
+                            <span>$10</span>
+                            <span>$200</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Credentials</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label small">Background check on file</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label small">IXL Certified</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label small">Licensed Teacher</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Additional Language Spoken</label>
+                        <select class="select2-enable" style="width:100%">
+                            <option>Default</option>
+                            <option>English</option>
+                            <option>Arebic</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Student's level</label>
+                        <select class="select2-enable" style="width:100%">
+                            <option>Elementary</option>
+                            <option>Middle School</option>
+                            <option>Hight School</option>
+                            <option>College</option>
+                            <option>Adult</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold" id="ageLabel">
+                            Tutor Age: 18 - 45 yrs
+                        </label>
+
+                        <div class="range-container">
+                            <input type="range" min="18" max="60" value="25" id="ageMin">
+                            <input type="range" min="18" max="60" value="45" id="ageMax">
+                            <div class="slider-track" id="ageTrack"></div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary w-100">Reset</button>
+                        <button class="btn btn-secondary w-100">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+    <script src="/assets/js/jquery.min.js"></script>
+    <!-- select 2 css -->
+    <script src="/assets/js/select2/select2.min.js"></script>
+
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- all scripts -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function initDualSlider(minId, maxId, trackId, labelId, prefix = "", suffix = "") {
+            const minRange = document.getElementById(minId);
+            const maxRange = document.getElementById(maxId);
+            const track = document.getElementById(trackId);
+            const label = document.getElementById(labelId);
+
+            const minGap = 1;
+
+            function update() {
+                let min = parseInt(minRange.min);
+                let max = parseInt(minRange.max);
+
+                let minVal = parseInt(minRange.value);
+                let maxVal = parseInt(maxRange.value);
+
+                if (maxVal - minVal <= minGap) {
+                    if (event.target === minRange) {
+                        minRange.value = maxVal - minGap;
+                    } else {
+                        maxRange.value = minVal + minGap;
+                    }
+                }
+
+                const minPercent = ((minVal - min) / (max - min)) * 100;
+                const maxPercent = ((maxVal - min) / (max - min)) * 100;
+
+                track.style.left = minPercent + "%";
+                track.style.width = (maxPercent - minPercent) + "%";
+
+                label.innerText = `${prefix}${minVal} – ${maxVal}${suffix}`;
+            }
+
+            minRange.addEventListener("input", update);
+            maxRange.addEventListener("input", update);
+            update();
+        }
+
+        /* INIT BOTH */
+        initDualSlider("priceMin", "priceMax", "priceTrack", "priceLabel", "Hourly Rate: $", "");
+        initDualSlider("ageMin", "ageMax", "ageTrack", "ageLabel", "Tutor Age: ", " yrs");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/fonts/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .my-account-side.active {
+            background-color: #F18C3E;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div> <!-- Notifications -->
+                <div class="nav-item mx-2">
+                    <a href="/after-login/message.html" class="btn btn-sm border-0 text-dark position-relative p-0">
+
+                        <i class="bi bi-chat-dots fs-5"></i>
+
+                        <!-- Notification badge -->
+                        <span class="position-absolute top-0 start-100 mt-1
+                            translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <!-- Dropdown -->
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <!-- Arrow ke liye extra space -->
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+                        <!-- Dropdown items -->
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/after-login/dashbord.html" class="fs-6 dropdown-item my-account-side ">
+                                <i class="bi bi-speedometer2"></i>
+                                Dashboard
+                            </a>
+
+                            <a href="/after-login/message.html" class="fs-6 dropdown-item my-account-side ">
+                                <i class="bi bi-chat-dots"></i>
+                                Messages
+                            </a>
+
+                            <a href="/after-login/my-tutor.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-mortarboard"></i>
+                                My Tutor
+                            </a>
+
+                            <a href="/after-login/my-lesson.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-journal-bookmark"></i>
+                                My Lessons
+                            </a>
+
+                            <a href="/after-login/transaction.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-credit-card-2-front"></i>
+                                Transactions
+                            </a>
+
+                            <a href="/after-login/my-account-setting.html"
+                                class="fs-6 dropdown-item my-account-side active">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Find a Tutor</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Math</a></li>
+                            <li><a class="dropdown-item" href="#">Science</a></li>
+                            <li><a class="dropdown-item" href="#">Programming</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">How It Works</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Blogs</a></li>
+                            <li><a class="dropdown-item" href="#">Guides</a></li>
+                            <li><a class="dropdown-item" href="#">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Become a Tutor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="fw-bold text-primary ">Account Setting</h5>
+            <button class="btn btn-outline-secondary btn-sm  px-4 rounded-1" id="editBtn"> <i class="bi bi-pencil"></i>
+                Edit</button>
+        </div>
+        <!-- Form -->
+        <form id="accountForm">
+            <!-- Row 1 -->
+            <div class="d-flex justify-content-center align-items-center text-center my-2 position-relative"
+                style="width: 100px; margin: auto;">
+
+                <!-- Profile Image -->
+                <img id="profileImage" src="/assets/images/tutor/tutor6.png"
+                    class="rounded-circle border border-3 border-white" width="100" height="100">
+
+                <!-- Camera Icon -->
+                <button type="button"
+                    class="btn btn-primary rounded-circle position-absolute d-flex justify-content-center align-items-center"
+                    style="bottom: 0; right: 0; width: 30px; height: 30px;"
+                    onclick="document.getElementById('imageInput').click()">
+                    <i class="bi bi-camera"></i>
+                </button>
+
+                <!-- Hidden File Input -->
+                <input type="file" id="imageInput" accept="image/*" style="display: none;"
+                    onchange="previewImage(event)">
+            </div>
+
+
+            <div class="row mb-3 ">
+                <div class="col-md-6">
+                    <label class="form-label text-dark">First Name</label>
+                    <input type="text" class="form-control" value="Emily" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label text-dark">Last Name</label>
+                    <input type="text" class="form-control" value="Parker" disabled>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label text-dark">Email Address</label>
+                    <input type="email" class="form-control" value="emily@example.com" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label text-dark">Password</label>
+                    <input type="text" class="form-control" value="*************" disabled>
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label text-dark">Phone Number</label>
+                    <input type="text" class="form-control" value="+91321456789" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label text-dark">Zip Code</label>
+                    <input type="text" class="form-control" value="54984" disabled>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label text-dark">Tutoring is for:</label>
+                    <input type="text" class="form-control" value="My Self" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label text-dark"> Academic Name</label>
+                    <input type="text" class="form-control" value="Emily" disabled>
+                </div>
+            </div>
+            <!-- Row 5 : Column wise checkbox content -->
+            <div class="row mt-4">
+
+                <!-- LEFT COLUMN -->
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="form-check mt-1">
+                            <input class="form-check-input" type="checkbox" id="leftCheck">
+                        </div>
+                        <div>
+                            <h6 class="mb-1 fw-semibold">Request Lesson Summary</h6>
+                            <p class="mb-0 text-muted small">
+                                Tutors will write a summary of each lesson
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="col-md-6">
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="form-check mt-1">
+                            <input class="form-check-input" type="checkbox" id="rightCheck">
+                        </div>
+                        <div>
+                            <h6 class="mb-1 fw-semibold">Share My Requests</h6>
+                            <p class="mb-0 text-muted small">
+                                To help you find the right tutor, SmartBrain Academy
+                                can connect you with qualified tutors who fit your needs. No personal information will
+                                be shared. Up to five tutors may contact you. </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </section>
+
+    <!-- Save + Cancel Buttons (initially hidden) -->
+    <div class="text-center p-3" id="actionButtons" style="display:none;">
+        <button id="saveBtn" class="btn btn-outline-secondary px-5 rounded-1 me-2">Save</button>
+        <button id="cancelBtn" class="btn btn-outline-dark px-5 rounded-1">Cancel</button>
+    </div>
+
+
+    <footer class="bg-white pt-5">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+    <script>
+        const editBtn = document.getElementById('editBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const saveBtn = document.getElementById('saveBtn');
+        const actionButtons = document.getElementById('actionButtons');
+        const inputs = document.querySelectorAll('#accountForm input');
+
+        // Backup original values
+        let originalValues = [];
+
+        editBtn.addEventListener('click', () => {
+            // Save original values
+            originalValues = [];
+            inputs.forEach(input => originalValues.push(input.value));
+
+            // Enable inputs
+            inputs.forEach(input => input.disabled = false);
+
+            // Hide Edit button, show Save + Cancel
+            editBtn.style.display = 'none';
+            actionButtons.style.display = 'block';
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            // Revert values
+            inputs.forEach((input, index) => {
+                input.value = originalValues[index];
+                input.disabled = true;
+            });
+
+            // Hide Save + Cancel, show Edit
+            actionButtons.style.display = 'none';
+            editBtn.style.display = 'inline-block';
+        });
+
+        saveBtn.addEventListener('click', () => {
+
+            // Hide Save + Cancel, show Edit
+            actionButtons.style.display = 'none';
+            editBtn.style.display = 'inline-block';
+        });
+    </script>
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const reader = new FileReader();
+            reader.onload = function () {
+                const img = document.getElementById('profileImage');
+                img.src = reader.result; // Replace image with selected file
+            };
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

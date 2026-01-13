@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/message.css">
+</head>
+
+<body>
+     <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-2">
+                    <a href="tutor-message.html" class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="dashboard.html" class="fs-6 dropdown-item my-account-side active">
+                                <i class="bi bi-speedometer2"></i>
+                                Dashboard
+                            </a>
+                            <a href="/after-login/message.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-chat-dots"></i>
+                                Messages
+                            </a>
+                            <a href="/after-login/my-tutor.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-mortarboard"></i>
+                                My Tutor
+                            </a>
+                            <a href="/after-login/my-lesson.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-journal-bookmark"></i>
+                                My Lessons
+                            </a>
+                            <a href="/after-login/transaction.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-credit-card-2-front"></i>
+                                Transactions
+                            </a>
+                            <a href="/after-login/my-account-setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Lessons</a></li>
+                            <li><a class="dropdown-item" href="#">Calander</a></li>
+                            <li><a class="dropdown-item" href="#">Shedule Lesson</a></li>
+                            <li><a class="dropdown-item" href="#">Submit Lesson</a></li>
+                            <li><a class="dropdown-item" href="#">Students</a></li>
+                            <li><a class="dropdown-item" href="#">payment</a></li>
+                            <li><a class="dropdown-item" href="#">Prefrance</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <section>
+        <div class="container py-4">
+            <div class="shadow-sm my-3 px-3  vh-100 d-flex flex-column">
+                <div class="row flex-grow-1 overflow-hidden" id="chatApp">
+                    <div class="col-12 col-lg-6 border-end-none  border-md-end chat-list py-3 px-0">
+
+                        <div class="px-3 flex-shrink-0">
+
+                            <input type="text" class="form-control " placeholder="Search Student..."
+                                oninput="filterChats(this.value)">
+                        </div>
+
+                        <div id="chatListItems" class="flex-grow-1 overflow-auto"></div>
+                    </div>
+
+                    <!-- Chat Window -->
+                    <div class="col-12 col-lg-6  chat-window-wrapper p-0 d-flex flex-column" id="chatWindowWrapper">
+
+                        <!-- Placeholder -->
+                        <div class="flex-grow-1 d-flex align-items-center justify-content-center text-muted"
+                            id="chatPlaceholder">
+                            <p>Select a chat to start messaging</p>
+                        </div>
+
+                        <!-- Chat Window (hidden initially) -->
+                        <div class="chat-window d-none flex-column h-100" id="chatWindow">
+                            <!-- Header -->
+                            <div class="d-flex align-items-center border-bottom p-2 bg-light flex-shrink-0">
+                                <button class="btn btn-link d-md-none me-2" onclick="backToList()">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </button>
+                                <img src="" id="chatAvatar" class="rounded-circle me-2" width="40">
+                                <div>
+                                    <div id="chatUserName" class="fw-bold"></div>
+                                    <div id="chatUserContact" class="text-muted small"></div>
+                                </div>
+                            </div>
+
+                            <!-- Body -->
+                            <div id="chatBody" class="flex-grow-1 p-3 d-flex flex-column overflow-auto"
+                                style="background-color:#f5f5f5;">
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="border-top p-2 d-flex align-items-center flex-shrink-0">
+                                <button class="btn btn-primary rounded-circle me-2"
+                                    onclick="document.getElementById('fileInput').click()">+</button>
+                                <input type="file" id="fileInput" style="display:none"
+                                    accept="image/*,.pdf,.doc,.zip" />
+                                <input type="text" id="chatInput" class="form-control me-2"
+                                    placeholder="Type a message...">
+                                <button class="btn btn-primary rounded-circle" onclick="sendMessage()">➤</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white pt-5">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
