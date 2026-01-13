@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+  <link href="/assets/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/fonts/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+        <a href="/befor-login/login-flow/login.html" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="/befor-login/login-flow/Signup.html" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="/index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+                            Find a Tutor
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+                            <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+                            How It Works </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+                            <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+                            <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+                            <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+                            <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
+
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="hero-main-ask d-flex align-items-center justify-content-center text-center">
+        <div class="hero-overlay-main-ask"></div>
+
+        <div class="container hero-content-main-ask">
+            <h3 class="text-white fw-bold mb-3">
+                Ask with Confidence. Get Trusted Answers.
+            </h3>
+            <p class="text-secondary mb-4">
+                Verified experts ready to answer your academic and career questions
+            </p>
+
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a href="/online-tutor/ask question.html" class="btn btn-primary rounded-2 px-4">
+                    Ask A Question
+                </a>
+
+                <a href="/find-a-tutor/find-online-tutor.html" class="btn btn-outline-light rounded-2 px-4">
+                    Find an Online Tutor Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container  my-2 ">
+        <div class="row justify-content-center">
+            <div class="py-4">
+                <div class="input-group search-box border border-1 rounded-2">
+                    <span class="input-group-text bg-transparent border-0" id="search-icon">
+                        <img src="/assets/images/icon/serach icon.png" height="15" alt="Search">
+                    </span>
+                    <input type="text" class="form-control border-0" placeholder="Search for questions......"
+                        aria-label="Search">
+                    <button class="btn btn-primary rounded-1" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+        <!-- Filters Row -->
+        <div class="row mb-3 d-flex align-items-center justify-content-center">
+      <div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+
+  <!-- Tabs -->
+  <ul class="nav mb-2 mb-md-0" id="filterTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active fw-bold text-dark" id="newest-tab" data-bs-toggle="tab"
+        data-bs-target="#newest" type="button" role="tab">
+        Newest
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link text-muted" id="active-tab" data-bs-toggle="tab"
+        data-bs-target="#active" type="button" role="tab">
+        Active
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link text-muted" id="oldest-tab" data-bs-toggle="tab"
+        data-bs-target="#oldest" type="button" role="tab">
+        Oldest
+      </button>
+    </li>
+  </ul>
+
+  <!-- Select Dropdown -->
+  <div class="ms-auto" style="min-width: 200px;">
+    <select class="form-select select2-enable">
+      <option>Answered Questions</option>
+      <option>All Questions</option>
+      <option>Unanswered Questions</option>
+    </select>
+  </div>
+
+</div>
+
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="filterTabsContent">
+            <div class="tab-pane fade show active" id="newest" role="tabpanel">
+                <!-- Question Cards Row -->
+                <div class="row g-3 align-items-center justify-content-center">
+                    <a href="tutor-description.html" class="text-decoration-none">
+                        <div class="card p-3 shadow-sm">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 badge-row-main-ask">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-light me-2 custom-badge-main-ask text-dark">Math</span>
+                                    <span class="badge bg-light  custom-badge-main-ask text-dark">Algebra</span>
+                                </div>
+                                <span class="text-muted small">05/01/25</span>
+                            </div>
+
+                            <h5 class="mb-3">What is Algebra, exactly? What is it for, why do we want to learn it?</h5>
+                            <p class="mb-3">What's the point of being able to do algebra? What can I do with it?</p>
+
+                            <div class="text-muted small d-flex align-items-center flex-wrap">
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/wifi.png" class="me-1" height="11" alt="">
+                                    Follows • 2
+                                </span>
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/tick.png" class="me-1" height="13" alt="">
+                                    Expert Answers • 9
+                                </span>
+
+                                <span class="avatar-group ms-2">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user3.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tutor-description.html" class="text-decoration-none">
+                        <div class="card p-3 shadow-sm">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 badge-row-main-ask">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-light me-2 custom-badge-main-ask text-dark">Math</span>
+                                    <span class="badge bg-light custom-badge-main-ask text-dark">Algebra</span>
+                                </div>
+                                <span class="text-muted small">05/01/25</span>
+                            </div>
+
+                            <h5 class="mb-3">What is Algebra, exactly? What is it for, why do we want to learn it?</h5>
+                            <p class="mb-3">What's the point of being able to do algebra? What can I do with it?</p>
+
+                            <div class="text-muted small d-flex align-items-center flex-wrap">
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/wifi.png" class="me-1" height="11" alt="">
+                                    Follows • 2
+                                </span>
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/tick.png" class="me-1" height="13" alt="">
+                                    Expert Answers • 9
+                                </span>
+
+                                <span class="avatar-group ms-2">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user3.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tutor-description.html" class="text-decoration-none">
+                        <div class="card p-3 shadow-sm">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 badge-row-main-ask">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-light me-2 custom-badge-main-ask text-dark">Math</span>
+                                    <span class="badge bg-light custom-badge-main-ask text-dark">Algebra</span>
+                                </div>
+                                <span class="text-muted small">05/01/25</span>
+                            </div>
+
+                            <h5 class="mb-3">What is Algebra, exactly? What is it for, why do we want to learn it?</h5>
+                            <p class="mb-3">What's the point of being able to do algebra? What can I do with it?</p>
+
+                            <div class="text-muted small d-flex align-items-center flex-wrap">
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/wifi.png" class="me-1" height="11" alt="">
+                                    Follows • 2
+                                </span>
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/tick.png" class="me-1" height="13" alt="">
+                                    Expert Answers • 9
+                                </span>
+
+                                <span class="avatar-group ms-2">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user3.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tutor-description.html" class="text-decoration-none">
+                        <div class="card p-3 shadow-sm">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 badge-row-main-ask">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-light me-2 custom-badge-main-ask text-dark">Math</span>
+                                    <span class="badge bg-light custom-badge-main-ask text-dark">Algebra</span>
+                                </div>
+                                <span class="text-muted small">05/01/25</span>
+                            </div>
+
+                            <h5 class="mb-3">What is Algebra, exactly? What is it for, why do we want to learn it?</h5>
+                            <p class="mb-3">What's the point of being able to do algebra? What can I do with it?</p>
+
+                            <div class="text-muted small d-flex align-items-center flex-wrap">
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/wifi.png" class="me-1" height="11" alt="">
+                                    Follows • 2
+                                </span>
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/tick.png" class="me-1" height="13" alt="">
+                                    Expert Answers • 9
+                                </span>
+
+                                <span class="avatar-group ms-2">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user3.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tutor-description.html" class="text-decoration-none">
+                        <div class="card p-3 shadow-sm">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 badge-row-main-ask">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-light me-2 custom-badge-main-ask text-dark">Math</span>
+                                    <span class="badge bg-light  custom-badge-main-ask text-dark">Algebra</span>
+                                </div>
+                                <span class="text-muted small">05/01/25</span>
+                            </div>
+
+                            <h5 class="mb-3">What is Algebra, exactly? What is it for, why do we want to learn it?</h5>
+                            <p class="mb-3">What's the point of being able to do algebra? What can I do with it?</p>
+
+                            <div class="text-muted small d-flex align-items-center flex-wrap">
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/wifi.png" class="me-1" height="11" alt="">
+                                    Follows • 2
+                                </span>
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/tick.png" class="me-1" height="13" alt="">
+                                    Expert Answers • 9
+                                </span>
+
+                                <span class="avatar-group ms-2">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user3.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tutor-description.html" class="text-decoration-none">
+                        <div class="card p-3 shadow-sm">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 badge-row-main-ask">
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-light me-2 custom-badge-main-ask text-dark">Math</span>
+                                    <span class="badge bg-light custom-badge-main-ask text-dark">Algebra</span>
+                                </div>
+                                <span class="text-muted small">05/01/25</span>
+                            </div>
+
+                            <h5 class="mb-3">What is Algebra, exactly? What is it for, why do we want to learn it?</h5>
+                            <p class="mb-3">What's the point of being able to do algebra? What can I do with it?</p>
+
+                            <div class="text-muted small d-flex align-items-center flex-wrap">
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/wifi.png" class="me-1" height="11" alt="">
+                                    Follows • 2
+                                </span>
+                                <span class="me-3 d-flex align-items-center">
+                                    <img src="/assets/images/tutor-online/tick.png" class="me-1" height="13" alt="">
+                                    Expert Answers • 9
+                                </span>
+
+                                <span class="avatar-group ms-2">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user3.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user1.png" class="rounded-circle avatar-main-ask">
+                                    <img src="/assets/images/users/user2.png" class="rounded-circle avatar-main-ask">
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="active" role="tabpanel">
+        </div>
+        <div class="tab-pane fade" id="oldest" role="tabpanel">
+        </div>
+        <!-- Pagination -->
+        <nav class="mt-5" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center gap-2">
+                <li class="page-item">
+                    <a class="page-link rounded-circle" href="#"><i class="bi bi-chevron-left"></i></a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link rounded-3 bg-secondary border-0 text-white fw-bold" href="#">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link rounded-3 fw-bold" href="#">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link rounded-3 fw-bold" href="#">3</a>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link bg-transparent border-0">...</span>
+                </li>
+                <li class="page-item">
+                    <a class="page-link rounded-3 fw-bold" href="#">10</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link rounded-circle" href="#"><i class="bi bi-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Centered Line Below Pagination -->
+    <div class="text-center py-4">
+        <h3 class="mb-0 fw-bold">Still looking for help? Get the right answer, fast.</h3>
+    </div>
+    <!-- Buttons Section -->
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2 mb-3 py-2">
+
+        <!-- Button 1 -->
+        <div class="text-center">
+            <a href="/online-tutor/ask question.html" type="button" class="btn btn-primary rounded-2 mb-2">
+                Ask a Question for Free
+            </a>
+            <p class="mb-0">
+                Ask a quick question for free and get a <br>
+                response in just a few hours.
+            </p>
+        </div>
+        <!-- OR Text -->
+        <div class="mx-2 fw-bold">OR</div>
+        <!-- Button 2 -->
+        <div class="text-center">
+            <a href="/find-a-tutor/find-online-tutor.html" type="button" class="btn btn-success rounded-2 mb-2">
+                Find an Online Tutor Now
+            </a>
+            <p class="mb-0">
+                Select an expert and start your session online.<br>
+                Pay only for the time you spend.
+            </p>
+        </div>
+
+    </div>
+
+    <footer class="bg-white pt-5">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+  <script src="/assets/js/jquery.min.js"></script>
+  <!-- select 2 css -->
+  <script src="/assets/js/select2/select2.min.js"></script>
+
+  <script src="/assets/js/select2/select-custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- all scripts -->
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('#filterTabs .nav-link').forEach(tab => {
+            tab.addEventListener('shown.bs.tab', function () {
+                document.querySelectorAll('#filterTabs .nav-link').forEach(t => {
+                    t.classList.remove('text-dark', 'fw-bold');
+                    t.classList.add('text-muted');
+                });
+
+                this.classList.remove('text-muted');
+                this.classList.add('text-dark', 'fw-bold');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

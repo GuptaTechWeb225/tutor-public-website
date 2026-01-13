@@ -5,23 +5,344 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smartbrain Academy Video</title>
-    <link rel="stylesheet" href="assets/c" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        .Video-frame {
-            width: 100%;
-            height: 500px;
+        /* ---------- TIME SLOTS ---------- */
+        .time-slot {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .time-slot:hover {
+            background: #eff6ff;
+            border-color: #2563eb;
+        }
+
+        .time-slot.disabled {
+            opacity: .4;
+            pointer-events: none;
+        }
+
+        /* ---------- DAY VIEW NAV ---------- */
+        .day-nav {
+            position: absolute;
+            top: 40%;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
             border: none;
-            border-radius: 1.5rem;
+            background: #e0f2fe;
+            color: #2563eb;
+            font-size: 20px;
+        }
+
+        .day-nav.left {
+            left: -45px;
+        }
+
+        .day-nav.right {
+            right: -45px;
+        }
+
+        /* ---------- SCROLL (NO BAR) ---------- */
+        .slot-scroll,
+        .day-slot-scroll {
+            max-height: 340px;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .slot-scroll::-webkit-scrollbar,
+        .day-slot-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* ---------- CALENDAR ---------- */
+        /* CALENDAR BOX */
+        .calendar-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 18px;
+            background: #fff;
+        }
+
+        /* HEADER */
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .cal-nav {
+            border: none;
+            background: transparent;
+            font-size: 22px;
+            color: #2563eb;
+            padding: 4px 8px;
+        }
+
+        /* GRID */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .day-name {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+        }
+
+        /* DAY */
+        .day {
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all .2s ease;
+        }
+
+        .day:hover {
+            background: #e0f2fe;
+        }
+
+        .day.active {
+            background: #2563eb;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, .3);
+        }
+
+        /* TIME SLOTS */
+        .time-slot {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 12px;
+            background: #fff;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all .2s ease;
+        }
+
+        .time-slot:hover {
+            background: #eff6ff;
+            border-color: #2563eb;
+        }
+
+        /* SCROLL */
+        .slot-scroll {
+            max-height: 340px;
+            overflow-y: auto;
+            padding-bottom: 40px;
+
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .slot-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* WHITE FADE BOTTOM */
+        .slot-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0),
+                    rgba(255, 255, 255, .9),
+                    #fff);
+            pointer-events: none;
+        }
+
+
+        /* MOBILE */
+        @media(max-width:767px) {
+            .day-nav {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
+    <section class="container my-5">
 
-    <iframe class="Video-frame" src="https://www.youtube.com/embed/dftqATKuRIc?si=J_Y4xvIskW7C-cso"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- TITLE -->
+        <div class="text-center mb-4">
+            <h4 class="fw-semibold">When would you like to meet?</h4>
+            <p class="text-muted small">
+                Your time zone: <strong>India Standard Time</strong>
+            </p>
+        </div>
+
+        <!-- TOGGLE -->
+        <div class="d-flex justify-content-center gap-3 mb-4">
+            <button id="dayBtn" class="btn btn-primary rounded-pill px-4">Day</button>
+            <button id="monthBtn" class="btn btn-outline-primary rounded-pill px-4">Month</button>
+        </div>
+
+        <!-- ================= DAY VIEW ================= -->
+        <div id="dayView">
+
+            <div class="position-relative">
+                <button class="day-nav left" onclick="prevDays()">‹</button>
+                <button class="day-nav right" onclick="nextDays()">›</button>
+
+                <div class="row g-4 text-center" id="dayContainer"></div>
+            </div>
+
+        </div>
+
+        <!-- MONTH VIEW -->
+        <div id="monthView" class="d-none">
+
+            <div class="row g-4">
+
+                <!-- CALENDAR -->
+                <div class="col-md-7">
+                    <div class="calendar-box">
+                        <div class="calendar-header">
+                            <button class="cal-nav" onclick="prevMonth()">‹</button>
+                            <strong id="monthTitle"></strong>
+                            <button class="cal-nav" onclick="nextMonth()">›</button>
+                        </div>
+
+                        <div class="calendar-grid" id="calendarGrid"></div>
+                    </div>
+                </div>
+
+                <!-- TIME SLOTS -->
+                <div class="col-md-5 position-relative">
+                    <h6 class="fw-semibold text-center mb-2" id="selectedDateTitle"></h6>
+
+                    <div class="slot-scroll" id="monthSlots"></div>
+
+                    <!-- WHITE FADE OVERLAY -->
+                    <div class="slot-fade"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+    <script>
+        /* ---------------- TOGGLE ---------------- */
+        const dayBtn = document.getElementById("dayBtn");
+        const monthBtn = document.getElementById("monthBtn");
+        const dayView = document.getElementById("dayView");
+        const monthView = document.getElementById("monthView");
+
+        dayBtn.onclick = () => {
+            dayView.classList.remove("d-none");
+            monthView.classList.add("d-none");
+            dayBtn.classList.replace("btn-outline-primary", "btn-primary");
+            monthBtn.classList.replace("btn-primary", "btn-outline-primary");
+        };
+
+        monthBtn.onclick = () => {
+            monthView.classList.remove("d-none");
+            dayView.classList.add("d-none");
+            monthBtn.classList.replace("btn-outline-primary", "btn-primary");
+            dayBtn.classList.replace("btn-primary", "btn-outline-primary");
+        };
+
+        /* ---------------- DAY VIEW ---------------- */
+        let dayStart = 0;
+        const daysToShow = 3;
+        const timeSlots = Array.from({ length: 24 }, (_, i) => `${i % 12 || 12}:30 ${i < 12 ? 'am' : 'pm'}`);
+
+        function renderDayView() {
+            const container = document.getElementById("dayContainer");
+            container.innerHTML = "";
+
+            for (let i = 0; i < daysToShow; i++) {
+                const date = new Date();
+                date.setDate(date.getDate() + dayStart + i);
+
+                container.innerHTML += `
+      <div class="col-md-4">
+        <h6 class="fw-semibold">${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</h6>
+        <small class="text-muted">${date.toLocaleDateString('en-US', { weekday: 'long' })}</small>
+        <div class="day-slot-scroll mt-3">
+          ${timeSlots.map(t => `<div class="time-slot">${t}</div>`).join("")}
+        </div>
+      </div>`;
+            }
+        }
+        function nextDays() { dayStart += daysToShow; renderDayView(); }
+        function prevDays() { dayStart = Math.max(0, dayStart - daysToShow); renderDayView(); }
+
+        /* ---------------- MONTH VIEW ---------------- */
+        let currentMonth = new Date();
+
+        function renderMonth() {
+            const grid = document.getElementById("calendarGrid");
+            const title = document.getElementById("monthTitle");
+            grid.innerHTML = "";
+
+            title.innerText = currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+            const days = ["S", "M", "T", "W", "T", "F", "S"];
+            days.forEach(d => grid.innerHTML += `<div class="day-name">${d}</div>`);
+
+            const first = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1).getDay();
+            const total = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0).getDate();
+
+            for (let i = 0; i < first; i++) grid.innerHTML += `<div></div>`;
+
+            for (let d = 1; d <= total; d++) {
+                grid.innerHTML += `<div class="day" onclick="selectDate(${d})">${d}</div>`;
+            }
+        }
+
+        function selectDate(day) {
+            document.querySelectorAll(".day").forEach(d => d.classList.remove("active"));
+            event.target.classList.add("active");
+
+            const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
+            document.getElementById("selectedDateTitle").innerHTML =
+                `${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}<br>
+     <small class="text-muted">${date.toLocaleDateString('en-US', { weekday: 'long' })}</small>`;
+
+            document.getElementById("monthSlots").innerHTML =
+                timeSlots.map(t => `<div class="time-slot">${t}</div>`).join("");
+        }
+
+        function nextMonth() { currentMonth.setMonth(currentMonth.getMonth() + 1); renderMonth(); }
+        function prevMonth() { currentMonth.setMonth(currentMonth.getMonth() - 1); renderMonth(); }
+
+        /* INIT */
+        renderDayView();
+        renderMonth();
+    </script>
 
 </body>
 

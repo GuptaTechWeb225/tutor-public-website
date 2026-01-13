@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Request Receive</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link href="/assets/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <style>
+        .payment-tabs .nav-link {
+            border: 1px solid #dee2e6;
+            margin-right: 8px;
+            border-radius: 8px;
+            color: #000;
+        }
+
+        .payment-tabs .nav-link.active {
+            background: #fff;
+            border-color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .payment-box {
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .check-icon {
+            width:18px;
+            height:18px;
+            background: var(--secondary);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+                <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+                            Find a Tutor
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="#">Search for Tutors</a></li>
+                            <li><a class="dropdown-item" href="#">Request a Tutor</a></li>
+                            <li><a class="dropdown-item" href="#">Online Tutoring</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How It Works</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Blogs</a></li>
+                            <li><a class="dropdown-item" href="#">Guides</a></li>
+                            <li><a class="dropdown-item" href="#">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Become a Tutor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <ul class="nav nav-tabs payment-tabs border-0 w-100 d-flex gap-2">
+                        <li class="nav-item flex-fill">
+                            <button class="nav-link active w-100 text-center" data-bs-toggle="tab"
+                                data-bs-target="#card">
+                                <i class="bi bi-credit-card-fill me-1"></i>
+                                Add a card
+                            </button>
+                        </li>
+
+                        <li class="nav-item flex-fill">
+                            <button class="nav-link w-100 text-center" data-bs-toggle="tab" data-bs-target="#paypal">
+                                <i class="bi bi-paypal me-1"></i>
+                                Paypal
+                            </button>
+                        </li>
+
+                        <li class="nav-item flex-fill">
+                            <button class="nav-link w-100 text-center" data-bs-toggle="tab" data-bs-target="#stripe">
+                                Stripe
+                            </button>
+                        </li>
+                    </ul>
+
+
+                    <div class="tab-content payment-box bg-white">
+                        <div class="tab-pane fade show active border-0" id="card">
+                            <form>
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="">First Name</label>
+                                        <input type="text" class="form-control" placeholder="First Name">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">last Name</label>
+                                        <input type="text" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Card Number</label>
+                                    <input type="text" class="form-control" placeholder="Card Number">
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col">
+                                        <label for="">Expiry Date</label>
+                                        <input type="date" class="form-control" placeholder="MM / YY">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">CVV</label>
+                                        <input type="text" class="form-control" placeholder="CVV">
+                                    </div>
+                                </div>
+
+                                <h6 class="fw-semibold mt-4">Billing Address</h6>
+
+                                <div class="mb-3">
+                                    <label for="">Address</label>
+                                    <input type="text" class="form-control" placeholder="Street Address">
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Apartment & Suite">
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col">
+                                        <label for="">City</label>
+                                        <input type="text" class="form-control" placeholder="City">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">State</label>
+                                        <input type="text" class="form-control" placeholder="State">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">ZIP Code</label>
+                                        <input type="text" class="form-control" placeholder="ZIP Code">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-primary w-50 py-2">Save</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="paypal">
+                            <div class="p-4 bg-light rounded-3 my-2">
+                                <p class="text-muted mb-0">
+                                    Link your PayPal account via the PayPal site. A $1 temporary charge may appear
+                                    to verify your account and will be reversed in a few business days.
+                                </p>
+                            </div>
+
+                            <div class="text-center mt-5">
+                                <button class="btn btn-primary w-50">Continue with PayPal</button>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="stripe">
+                            <div class="p-4 bg-light rounded-3 my-2">
+                                <p class="text-muted mb-0">
+                                    Link your PayPal account via the PayPal site. A $1 temporary charge may appear
+                                    to verify your account and will be reversed in a few business days.
+                                </p>
+                            </div>
+
+                            <div class="text-center mt-5">
+                                <button class="btn btn-primary w-50">Continue with Strip</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 rounded-4 bg-light">
+
+                        <h5 class="fw-bold mb-3">
+                            Complete your free Smartbrain Academy Account
+                        </h5>
+
+                        <p class="small  text-muted mb-4">
+                            Add a payment method so tutors know you're ready to book a lesson.
+                        </p>
+
+                        <ul class="list-unstyled mb-1">
+                            <li class="d-flex align-items-start mb-1">
+                                <span class="check-icon me-3">✓</span>
+                                <span class="small">Seamless, hassle-free payments</span>
+                            </li>
+
+                            <li class="d-flex align-items-start mb-2">
+                                <span class="check-icon me-3">✓</span>
+                                <span class="small">No upfront payment—pay after your lesson.</span>
+                            </li>
+
+                            <li class="d-flex align-items-start mb-2">
+                                <span class="check-icon me-3">✓</span>
+                                <span class="small">Safe and encrypted payments</span>
+                            </li>
+
+                            <li class="d-flex align-items-start">
+                                <span class="check-icon me-3">✓</span>
+                                <span class="small">
+                                    Not happy with your lesson? We’ll refund the first hour.
+                                </span>
+                            </li>
+                        </ul>
+
+                        <hr>
+
+                        <p class="fw-semibold mb-1">Questions?</p>
+                        <p class="mb-1 small ">
+                            <a href="#" class="text-secondary fw-semibold text-decoration-none">
+                                Read our payment policies
+                            </a>
+                        </p>
+                        <p class="mb-0 small ">
+                            Need help? Review our help center article on
+                            <a href="#" class="text-secondary
+                             fw-semibold text-decoration-none">
+                                How To Add Payment
+                            </a>
+                            for more information.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+   
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <!-- select 2 css -->
+    <script src="/assets/js/select2/select2.min.js"></script>
+
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- all scripts -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+   
+</body>
+
+</html>
