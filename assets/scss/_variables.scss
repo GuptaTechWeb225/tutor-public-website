@@ -9,6 +9,7 @@ $border-color:#C5CBDE;
 $text-color: #9AA0B6;
 $bg-color: #ffffff;
 $border-light: #eee;
+$light:#FFF7F4;
 
 // CSS variables synced with these SCSS colors
 :root {
@@ -17,6 +18,7 @@ $border-light: #eee;
   --text-color: #{$text-color};
   --bg-color: #{$bg-color};
   --border-color:#{$border-color};
+  
 }
 .text-color
 {
@@ -28,5 +30,4 @@ color: $text-color;
 .btn-primary
 {
   background: linear-gradient(357.66deg, #F18C3E 1.68%, #F9B040 97.75%);
-
 }

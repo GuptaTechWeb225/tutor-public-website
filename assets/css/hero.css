@@ -107,10 +107,8 @@
    }
  }
 
- /* MOBILE */
  @media (max-width: 768px) {
    .hero {
-
      min-height: auto;
      padding: 60px 20px;
    }

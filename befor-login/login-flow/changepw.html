@@ -12,55 +12,71 @@
 
 <body>
 
-    <section class="login-section p-2">
-        <!-- Left image section -->
-        <div class="left-section">
-            <div class="image-container bg-changepassword">
-                <div class="text-overlay text-white text-center">
-                    <h2 class="fw-bold">Restore Your Luxor Access</h2>
-                    <p class="mb-0">Sign in to unlock exclusive stays and
-                        unforgettable experiences.</p>
+    <section class="login-section min-vh-100 d-flex align-items-center justify-content-center p-3">
+
+        <div class="col-lg-4 col-md-6 col-sm-10">
+            <div class="card border-0 shadow rounded-4">
+
+                <div class="card-body p-4 p-lg-5">
+
+                    <!-- Header -->
+                    <div class="text-center mb-4">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-key fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="fw-bold mb-2">Create New Password</h3>
+                        <p class="text-muted small mb-0">
+                            Your new password must be different from previous ones.
+                        </p>
+                    </div>
+
+                    <!-- Form -->
+                    <form>
+
+                        <!-- New Password -->
+                        <div class="mb-3 position-relative">
+                            <input type="password" name="new_password"
+                                class="form-control form-control-lg ps-5 password-field" placeholder="New password"
+                                required>
+                            <i
+                                class="fa-solid fa-lock position-absolute top-50 start-0 translate-middle-y ms-3 text-muted">
+                            </i>
+
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-3 position-relative">
+                            <input type="password" name="password_confirmation"
+                                class="form-control form-control-lg ps-5 password-field" placeholder="Confirm password"
+                                required>
+                            <i
+                                class="fa-solid fa-lock position-absolute top-50 start-0 translate-middle-y ms-3 text-muted">
+                            </i>
+
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-semibold">
+                            Update Password
+                        </button>
+
+                    </form>
+
+                    <!-- Footer -->
+                    <div class="text-center mt-4">
+                        <a href="login.html" class="small fw-semibold text-decoration-none">
+                            ← Back to login
+                        </a>
+                    </div>
+
                 </div>
-            </div>
-        </div>
-
-        <!-- Right Form Section -->
-        <div class="right-section">
-            <div class="form-wrapper">
-                <h3 class="fw-bold text-primary mb-2">Create Password</h3>
-                <p class="text-muted mb-4">Please enter your details to access your account.</p>
-
-                <form>
-                    <!-- Password -->
-                    <div class="mb-3 position-relative">
-                        <input type="password" class="form-control py-2 ps-5 pe-5 password-field"
-                            data-translate="password_placeholder" placeholder="Password" required>
-                        <i
-                            class="fa-solid fa-lock position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
-                        <i
-                            class="fa-solid fa-eye-slash position-absolute top-50 end-0 translate-middle-y pe-3 text-secondary toggle-password"></i>
-                    </div>
-
-                    <!-- Re-enter Password -->
-                    <div class="mb-3 position-relative">
-                        <input type="password" class="form-control py-2 ps-5 pe-5 password-field"
-                            data-translate="password_placeholder" placeholder="Confirm Password" required>
-                        <i
-                            class="fa-solid fa-lock position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
-                        <i
-                            class="fa-solid fa-eye-slash position-absolute top-50 end-0 translate-middle-y pe-3 text-secondary toggle-password"></i>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill">Create</button>
-                </form>
-
             </div>
         </div>
 
     </section>
 
+
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/form.js"></script>
 
 </body>
 

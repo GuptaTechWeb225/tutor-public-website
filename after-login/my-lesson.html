@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/assets/images/logo.svg" alt="logo" class="logo">
+      </a>
+
+      <!-- Right Section (Always Visible) -->
+      <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+        <!-- Language -->
+        <div class="dropdown">
+          <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle" type="button"
+            data-bs-toggle="dropdown">
+            <img src="/assets/images/form/english.png" width="15" alt=""> EN
+          </button>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">EN</a></li>
+            <li><a class="dropdown-item" href="#">AR</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-item mx-2">
+          <a href="/after-login/message.html" class="btn btn-sm border-0 text-dark position-relative p-0">
+
+            <i class="bi bi-chat-dots fs-5"></i>
+
+            <!-- Notification badge -->
+            <span class="position-absolute top-0 start-100 mt-1
+                            translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+              1
+            </span>
+          </a>
+        </div>
+        <div class="nav-item dropdown user-profile-hover">
+          <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+            data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+            <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+              width="35" height="35" alt="User" />
+          </a>
+          <!-- Dropdown -->
+
+          <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-lg rounded-4"
+            style=" min-width: 240px;">
+            <!-- Arrow ke liye extra space -->
+            <li>
+              <div class="pt-2"></div>
+            </li>
+            <!-- Dropdown items -->
+            <div class="text-start d-flex mt-1 flex-column gap-1">
+
+              <a href="/after-login/dashbord.html" class="fs-6 dropdown-item my-account-side ">
+                <i class="bi bi-speedometer2"></i>
+                Dashboard
+              </a>
+
+              <a href="/after-login/message.html" class="fs-6 dropdown-item my-account-side ">
+                <i class="bi bi-chat-dots"></i>
+                Messages
+              </a>
+
+              <a href="/after-login/my-tutor.html" class="fs-6 dropdown-item my-account-side">
+                <i class="bi bi-mortarboard"></i>
+                My Tutor
+              </a>
+
+              <a href="/after-login/my-lesson.html" class="fs-6 dropdown-item my-account-side active">
+                <i class="bi bi-journal-bookmark"></i>
+                My Lessons
+              </a>
+
+              <a href="/after-login/transaction.html" class="fs-6 dropdown-item my-account-side">
+                <i class="bi bi-credit-card-2-front"></i>
+                Transactions
+              </a>
+
+              <a href="/after-login/my-account-setting.html" class="fs-6 dropdown-item my-account-side ">
+                <i class="bi bi-gear"></i>
+                Settings
+              </a>
+              <div class="dropdown-divider"></div>
+
+              <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                <i class="bi bi-box-arrow-right"></i>
+                Logout
+              </a>
+            </div>
+
+          </ul>
+        </div>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+   <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+        <ul class="navbar-nav mx-auto gap-xl-3">
+
+          <li class="nav-item">
+            <a class="nav-link " href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              Find a Tutor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              How It Works </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+              <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+              <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+              <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+              <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="p-2 rounded-2 overflow-hidden">
+            <div class="align-items-center mb-4">
+                <h4 class="fw-bold text-primary mb-0">Upcoming Lessons</h4>
+            </div>
+            <!-- Lesson Card 1 -->
+            <div class="card mb-3 shadow-sm border-1 position-relative">
+
+                <!-- Top-left badge -->
+                <span class="position-absolute small top-0 start-0 badge bg-primary rounded-1">
+                    Today
+                </span>
+
+                <div class="card-body pt-5">
+                    <div class="row g-3 align-items-start">
+                        <!-- LEFT: Tutor Info -->
+                        <div class="col-12 col-md-8">
+                            <div class="d-flex align-items-start">
+                                <img src="/assets/images/tutor/tutor5.png" class="rounded" width="60" height="60"
+                                    alt="Tutor">
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Ingrid M</h5>
+                                    <small class="text-muted d-block">Algebra 1</small>
+                                    <div class="mt-2 p-2 bg-light rounded small">
+                                        <div>
+                                            <i class="bi bi-calendar-fill me-1"></i>
+                                            Today • 26 Dec 2025
+                                            <span class="ms-2">
+                                                <i class="bi bi-clock-fill me-1"></i>
+                                                4:00 PM - 5:00 PM
+                                            </span>
+                                        </div>
+                                        <div class="mt-1">
+                                            <i class="bi bi-clock-fill me-1"></i>
+                                            Starts in 2 hours 15 mins
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Actions (Desktop / Tablet) -->
+                        <div class="col-12 col-md-4 d-none d-md-block">
+                            <div class="d-flex flex-column gap-2 align-items-end">
+                                <button class="btn btn-primary btn-sm rounded-5">
+                                    <i class="bi bi-camera-video-fill me-1"></i> Join Class
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm rounded-5">
+                                    <i class="bi bi-chat-dots me-1"></i> Message Tutor
+                                </button>
+                                <a href="#" class="text-secondary small text-decoration-none">
+                                    Reschedule
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- MOBILE ACTION ROW -->
+                    <div class="row mt-3 d-md-none">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="d-flex gap-2 justify-content-center">
+                                <button class="btn btn-primary btn-sm">
+                                    Join Class
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Message Tutor
+                                </button>
+                                <a href="#" class="btn btn-outline-secondary btn-sm">
+                                    Reschedule
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card mb-3 shadow-sm border-1">
+                <div class="card-body">
+                    <div class="row g-3 align-items-start">
+                        <!-- LEFT: Tutor Info -->
+                        <div class="col-12 col-md-8">
+                            <div class="d-flex align-items-start">
+                                <img src="/assets/images/tutor/tutor6.png" class="rounded" width="60" height="60"
+                                    alt="Tutor">
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Sara Phillips</h5>
+                                    <small class="text-muted d-block">Physics</small>
+                                    <div class="mt-2 p-2 bg-light rounded small">
+                                        <div>
+                                            <i class="bi bi-calendar-fill me-1"></i>
+                                            Today • 26 Dec 2025
+                                            <span class="ms-2">
+                                                <i class="bi bi-clock-fill me-1"></i>
+                                                4:00 PM - 5:00 PM
+                                            </span>
+                                        </div>
+                                        <div class="mt-1">
+                                            <i class="bi bi-camera-video-fill me-1"></i>
+                                            Online Video Call
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT ACTIONS (Desktop / Tablet) -->
+                        <div class="col-12 col-md-4 d-none d-md-block">
+                            <div class="d-flex flex-column gap-2 align-items-end">
+                                <button class="btn btn-primary btn-sm rounded-5">
+                                    <i class="bi bi-camera-video-fill me-1"></i> Join Class
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm rounded-5">
+                                    <i class="bi bi-chat-dots me-1"></i> Message Tutor
+                                </button>
+                                <a href="#" class="text-secondary small text-decoration-none">
+                                    Reschedule
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- MOBILE ACTION ROW -->
+                    <div class="row mt-3 d-md-none">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="d-flex gap-2 justify-content-center">
+                                <button class="btn btn-primary btn-sm">
+                                    Join Class
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Message Tutor
+                                </button>
+                                <a href="#" class="btn btn-outline-secondary btn-sm">
+                                    Reschedule
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 shadow-sm border-1 position-relative">
+                <div class="card-body">
+                    <div class="row g-3 align-items-start">
+                        <!-- LEFT: Tutor Info -->
+                        <div class="col-12 col-md-8">
+                            <div class="d-flex align-items-start">
+                                <img src="/assets/images/tutor/tutor5.png" class="rounded" width="60" height="60"
+                                    alt="Tutor">
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Ingrid M</h5>
+                                    <small class="text-muted d-block">Algebra 1</small>
+
+                                    <div class="mt-2 p-2 bg-light rounded small">
+                                        <div>
+                                            <i class="bi bi-calendar-fill me-1"></i>
+                                            Today • 26 Dec 2025
+                                            <span class="ms-2">
+                                                <i class="bi bi-clock-fill me-1"></i>
+                                                4:00 PM - 5:00 PM
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Actions (Desktop / Tablet) -->
+                        <div class="col-12 col-md-4 d-none d-md-block">
+                            <div class="d-flex flex-column gap-2 align-items-end">
+                                <button class="btn btn-outline-secondary btn-sm rounded-5">
+                                    <i class="bi bi-chat-dots me-1"></i> Message Tutor
+                                </button>
+                                <a href="#" class="text-secondary small text-decoration-none">
+                                    Reschedule
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- MOBILE ACTION ROW -->
+                    <div class="row mt-3 d-md-none">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="d-flex gap-2 justify-content-center">
+
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    Message Tutor
+                                </button>
+
+                                <a href="#" class="btn btn-outline-secondary btn-sm">
+                                    Reschedule
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" p-3">
+                <!-- Table Heading -->
+                <h5 class="mb-3">Lesson Schedule</h5>
+
+                <!-- Table -->
+                <div class="table-responsive shadow-sm border-1">
+                    <table class="table mb-0 ">
+                        <thead class="table">
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Tutor</th>
+                                <th>Subject</th>
+                                <th>Date Paid</th>
+                                <th>Lesson Price</th>
+                                <th>Rating</th>
+                                <th>Lesson Summary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dec 22,2025 <br>2:00 PM - 3:00 PM</td>
+                                <td><img src="/assets/images/users/user1.png" height="20" alt="">Ingrid M</td>
+                                <td>Physics</td>
+                                <td>22 Dec 2025</td>
+                                <td>$45</td>
+                                <td>★★★★★</td>
+                                <td>
+                                    Worked on congruent
+                                    Triangles
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dec 22,2025 <br>2:00 PM - 3:00 PM</td>
+                                <td><img src="/assets/images/users/user1.png" height="20" alt="">Ingrid M</td>
+                                <td>Physics</td>
+                                <td>22 Dec 2025</td>
+                                <td>$45</td>
+                                <td>★★★★★</td>
+                                <td>
+                                    Worked on congruent
+                                    Triangles
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dec 22,2025 <br>2:00 PM - 3:00 PM</td>
+                                <td><img src="/assets/images/users/user1.png" height="20" alt="">Ingrid M</td>
+                                <td>Physics</td>
+                                <td>22 Dec 2025</td>
+                                <td>$45</td>
+                                <td>★★★★★</td>
+                                <td>
+                                    Worked on congruent
+                                    Triangles
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dec 22,2025 <br>2:00 PM - 3:00 PM</td>
+                                <td><img src="/assets/images/users/user1.png" height="20" alt="">Ingrid M</td>
+                                <td>Physics</td>
+                                <td>22 Dec 2025</td>
+                                <td>$45</td>
+                                <td>★★★★★</td>
+                                <td>
+                                    Worked on congruent
+                                    Triangles
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="active" role="tabpanel">
+            </div>
+            <div class="tab-pane fade" id="oldest" role="tabpanel">
+            </div>
+            <!-- Pagination -->
+            <nav class="mt-5" aria-label="Page navigation example">
+                <ul class="pagination justify-content-center gap-2">
+                    <li class="page-item">
+                        <a class="page-link rounded-circle" href="#"><i class="bi bi-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link rounded-3 bg-secondary border-0 text-white fw-bold" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-3 fw-bold" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-3 fw-bold" href="#">3</a>
+                    </li>
+                    <li class="page-item disabled">
+                        <span class="page-link bg-transparent border-0">...</span>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-3 fw-bold" href="#">10</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-circle" href="#"><i class="bi bi-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="card mb-3 shadow-sm border-1">
+                <div class="card-body d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+                    <!-- Left: Tutor Info -->
+                    <div class="d-flex align-items-center">
+                        <img src="/assets/images/after-login-dashbord/dashbord-img.png" alt="Tutor">
+                        <div>
+                            <h5 class="mb-1">No Upcoming Lessons yet</h5>
+                            <p class="mb-1">Book a tutor to start learning today</p>
+                            <!-- Centered Button -->
+                            <a href="/career/open-position.html" class="btn btn-primary btn-sm rounded-1 ">
+                             Find a Tutor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

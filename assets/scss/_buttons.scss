@@ -1,9 +1,7 @@
 .btn-secondary {
     color: $white;
-
     &:hover {
-        background-color: $white;
-        border-color: $secondary;
+        background-color: transparent;
         color: $secondary;
     }
 }

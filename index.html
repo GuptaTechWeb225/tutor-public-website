@@ -5,95 +5,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartBrain Academy</title>
+  <link rel="favicon" type="img/svg+xml" href="/assets/images/fav.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/hero.css">
+  <style>
+    .testimonial-dots button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      opacity: 0.4;
+      border: 0;
+      background-color: #F18C3E;
+    }
 
+    .testimonial-dots button.active {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
-
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
         <img src="assets/images/logo.svg" alt="logo" class="logo">
       </a>
-
       <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
-
         <div class="dropdown">
           <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
             data-bs-toggle="dropdown">
             <img src="/assets/images/form/english.png" width="15" alt=""> EN
           </button>
-
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">EN</a></li>
             <li><a class="dropdown-item" href="#">AR</a></li>
           </ul>
         </div>
-        <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
-        <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
-
+        <a href="/befor-login/login-flow/login.html" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="/befor-login/login-flow/Signup.html" class="btn btn-secondary btn-sm px-3">Sign up</a>
         <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-
       <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
         <ul class="navbar-nav mx-auto gap-xl-3">
-
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="/index.html">Home</a>
           </li>
-
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
               Find a Tutor
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Math</a></li>
-              <li><a class="dropdown-item" href="#">Science</a></li>
-              <li><a class="dropdown-item" href="#">Programming</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
             </ul>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">How It Works</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              How It Works </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+              <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+              <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+              <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+            </ul>
           </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
               Resources
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Blogs</a></li>
-              <li><a class="dropdown-item" href="#">Guides</a></li>
-              <li><a class="dropdown-item" href="#">FAQs</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+              <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
             </ul>
           </li>
-
-          <li class="nav-item"><a class="nav-link" href="#">Become a Tutor</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
-
+          <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
         </ul>
       </div>
-
     </nav>
   </header>
   <section class="hero">
     <div class="hero-content">
       <h1>“Find Qualified Tutors for Every Skill, Anytime You Need.”</h1>
-      <div class="search-bar">
+      <div class="search-bar" style=" max-width: 520px;">
         <input type="text" placeholder="What Would you like to learn">
         <button class="search-btn">
+          <i class="bi bi-search"></i>
         </button>
       </div>
     </div>
-
     <img src="assets/images/hero/vector (4).png" class="float-img img-1">
     <img src="assets/images/hero/vector (3).png" class="float-img img-3">
     <img src="assets/images/hero/vector (1).png" class="float-img img-4">
@@ -107,7 +116,6 @@
       <h2>Start Learning in 3 Simple Steps</h2>
     </div>
     <div class="row g-4">
-
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
           <div class="d-flex align-items-start gap-3">
@@ -123,7 +131,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
           <div class="d-flex align-items-start gap-3">
@@ -139,7 +146,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card shadow-sm rounded-4 border-0 p-3 h-100">
           <div class="d-flex align-items-start gap-3">
@@ -156,12 +162,10 @@
         </div>
       </div>
     </div>
-
   </section>
   <div class="position-relative py-3 side-image-wrapper">
     <img src="assets/images/side-images/side-img1.svg" class="section-side-image" alt="Decoration" />
   </div>
-
   <section class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <div class="section-heading">
@@ -179,13 +183,12 @@
               <p class="text-muted small">
                 Learn from industry experts with proven results.
               </p>
-              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+              <a href="/find-a-tutor/tutor-detail.html" class="btn btn-outline-secondary btn-sm rounded-pill">
                 View Details
               </a>
             </div>
           </div>
         </div>
-
         <div class="swiper-slide">
           <div class="card tutor-card shadow-sm border-0">
             <img src="assets/images/tutor/tutor2.png" class="" />
@@ -194,7 +197,7 @@
               <p class="text-muted small">
                 Concept-based learning with live sessions.
               </p>
-              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+              <a href="/find-a-tutor/tutor-detail.html" class="btn btn-outline-secondary btn-sm rounded-pill">
                 View Details
               </a>
             </div>
@@ -208,13 +211,12 @@
               <p class="text-muted small">
                 Learn from industry experts with proven results.
               </p>
-              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+              <a href="/find-a-tutor/tutor-detail.html" class="btn btn-outline-secondary btn-sm rounded-pill">
                 View Details
               </a>
             </div>
           </div>
         </div>
-
         <div class="swiper-slide">
           <div class="card tutor-card shadow-sm border-0">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" />
@@ -223,7 +225,7 @@
               <p class="text-muted small">
                 Concept-based learning with live sessions.
               </p>
-              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+              <a href="/find-a-tutor/tutor-detail.html" class="btn btn-outline-secondary btn-sm rounded-pill">
                 View Details
               </a>
             </div>
@@ -237,13 +239,12 @@
               <p class="text-muted small">
                 Learn from industry experts with proven results.
               </p>
-              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+              <a href="/find-a-tutor/tutor-detail.html" class="btn btn-outline-secondary btn-sm rounded-pill">
                 View Details
               </a>
             </div>
           </div>
         </div>
-
         <div class="swiper-slide">
           <div class="card tutor-card shadow-sm border-0">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top" />
@@ -252,78 +253,496 @@
               <p class="text-muted small">
                 Concept-based learning with live sessions.
               </p>
-              <a href="#" class="btn btn-outline-warning btn-sm rounded-pill">
+              <a href="/find-a-tutor/tutor-detail.html" class="btn btn-outline-secondary btn-sm rounded-pill">
                 View Details
               </a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-  <section class="container mt-4">
-    <div class="row">
-      <div class="col-12 col-lg-6">
-        <div class="hero-visual">
-          <div class="hero-inner">
 
-            <div class="boy-wrap">
-              <img src="assets/images/about/Background (1).png" class="boy-img" />
-              <div class="badge badge-boy">2k+ Students</div>
-            </div>
-
-            <div class="girl-wrap">
-              <img src="assets/images/about/Background.png" class="girl-img" />
-              <div class="badge badge-girl">5.8k Courses</div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-      <div class="col-12 col-lg-6">content</div>
+  <section class="container my-5">
+    <div class="section-heading">
+      <span class="gradient-line"></span>
+      <h2>About Our Platform</h2>
     </div>
-
-
-  </section>
-  <section class="container mt-4">
-    <div class="kids-wrapper">
-
-      <!-- LEFT KID -->
-      <div class="kid-block">
-        <div class="bg-shape yellow"></div>
-
-        <img src="assets/images/kid1.png" class="kid-img" alt="Kid" />
-
-        <!-- Badge -->
-        <div class="info-badge bottom-left">
-          <strong>2k+</strong>
-          <span>Students</span>
+    <div class="row align-items-center">
+      <!-- LEFT IMAGES -->
+      <div class="col-lg-6 position-relative" style="min-height: 500px;">
+        <!-- Top Kid -->
+        <div class="position-absolute top-0" style="left: 40px;">
+          <img src="/assets/images/about/Background (1).png" alt="Kid" class="position-relative"
+            style="width: 200px; z-index: 2;" />
         </div>
-      </div>
-
-      <!-- RIGHT KID -->
-      <div class="kid-block">
-        <div class="bg-shape pink"></div>
-
-        <img src="assets/images/kid-2.png" class="kid-img" alt="Kid" />
 
         <!-- Badge -->
-        <div class="info-badge top-right">
-          <strong>5.8k</strong>
+        <div class="position-absolute bg-white px-4 py-1 rounded-pill shadow text-center"
+          style="top: 110px; left: 280px; font-size: 14px;">
+          <span class="text-secondary fs-4">5.8k</span><br>
           <span>Success Courses</span>
         </div>
+
+        <!-- Bottom Kid -->
+        <div class="position-absolute bottom-0" style="left: 220px;">
+          <img src="/assets/images/about/Background.png" alt="Kid" class="position-relative"
+            style="width: 260px; z-index: 2;" />
+        </div>
+
+        <!-- Student Badge -->
+        <div class="position-absolute bg-white px-3 py-2 rounded-pill shadow d-flex align-items-center gap-2"
+          style="bottom: 50px; font-size: 14px;">
+
+          <!-- Text -->
+          <div class="text-center">
+            <strong class="d-block fs-5">2k+</strong>
+            <span>Students</span>
+          </div>
+          <!-- Overlapping user images -->
+          <div class="avatar-wrapper d-flex">
+            <div class="avatar"><img src="/assets/images/users/user1.png" height="20"></div>
+            <div class="avatar"><img src="/assets/images/users/user2.png" height="20"></div>
+            <div class="avatar"><img src="/assets/images/users/user3.png" height="20"></div>
+            <div class="avatar"><img src="/assets/images/users/user1.png" height="20"></div>
+            <div class="avatar"><img src="/assets/images/users/user2.png" height="20"></div>
+
+            <!-- Plus circle -->
+            <div class="avatar plus">
+              <span>+</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
+      <!-- RIGHT CONTENT -->
+      <div class="col-lg-6">
+        <h6 class="text-primary fw-semibold mb-2">About Our Platform</h6>
+        <h2 class="fw-bold mb-3">
+          Creative Learning for <br>
+          Curious Minds
+        </h2>
+        <p class="text-muted">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry’s standard dummy text ever since the
+          1500s.
+        </p>
+        <p class="text-muted">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry’s standard dummy text.
+        </p>
+      </div>
     </div>
-
-
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <section class="achievements py-5 px-4">
+    <div class="container achievements-container rounded-5 "
+      style="background-image: url('https://askexpert.guptatechweb.com/assets/front-end/img/achievement-bg.png'); background-color: #FFD25D;">
+      <div class="row justify-content-center g-4">
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <div
+            class="stat d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start text-center text-md-start">
+            <div class="d-flex align-items-center justify-content-center 
+            bg-white rounded-circle shadow 
+            me-0 me-md-3 mb-5 mb-md-0" style="width:70px; height:70px;">
 
-  <!-- all scripts -->
+              <img src="/assets/images/hero/male-landing.png" class="img-fluid" style="max-width:70%;" alt="">
+            </div>
+            <div>
+              <h2 class="mt-2">3564+</h2>
+              <p class="small">Students Admission</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <div
+            class="stat d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start text-center text-md-start">
+            <div class="d-flex align-items-center justify-content-center 
+            bg-white rounded-circle shadow 
+            me-0 me-md-3 mb-5 mb-md-0" style="width:70px; height:70px;">
+
+              <img src="/assets/images/hero/handshake-landing.png" class="img-fluid" style="max-width:70%;" alt="">
+            </div>
+            <div class="mt-2">
+              <h2>156+</h2>
+              <p class="small">Total No.of Class</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <div
+            class="stat d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start text-center text-md-start">
+            <div class="d-flex align-items-center justify-content-center 
+            bg-white rounded-circle shadow 
+            me-0 me-md-3 mb-5 mb-md-0" style="width:70px; height:70px;">
+
+              <img src="/assets/images/hero/people-landing.png" class="img-fluid" style="max-width:70%;" alt="">
+            </div>
+            <div class="mt-2">
+              <h2>76+</h2>
+              <p class="small">No.of Teachers Rate</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <div
+            class="stat d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start text-center text-md-start">
+            <div class="d-flex align-items-center justify-content-center 
+            bg-white rounded-circle shadow 
+            me-0 me-md-3 mb-md-0" style="width:70px; height:70px;">
+
+              <img src="/assets/images/hero/notebook-landing.png" class="img-fluid" style="max-width:70%;" alt="">
+            </div>
+
+            <div class="mt-2">
+              <h2>8+</h2>
+              <p class="small">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-light">
+    <div class="container py-5">
+      <div class="section-heading">
+        <span class="gradient-line"></span>
+        <h2>Become a Tutor - Join as an Instructor</h2>
+      </div>
+
+      <div class="row align-items-center">
+
+        <!-- LEFT IMAGE -->
+        <div class="col-lg-6 text-center position-relative mb-4 mb-lg-0">
+          <img src="/assets/images/hero/landing-bottom.png" alt="Learning Kid" class="img-fluid"
+            style="max-height: 350px;">
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="col-lg-6">
+          <h2 class="text-primary fw-semibold mb-2">
+            Benefits of joining
+          </h2>
+
+
+
+          <p class="text-muted">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy.
+          </p>
+
+
+          <!-- BUTTON -->
+          <a href="/befor-login/login-flow/tutor-signup-form.html" class="btn btn-primary px-4 rounded-1 mt-3">
+            Sign Up
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h4 class="fw-bold mb-4">
+      <span class="border-start border-4 border-secondary me-2"></span>
+      Student Testimonials
+    </h4>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- SLIDES -->
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3 bg-light">
+                <div>
+                  <img src="/assets/images/hero/landing-comma.png" height="30" alt="">
+                  <p>"The lessons are incredibly easy to follow, and my tutor explains even the toughest concepts with
+                    clarity. I've improved my grades and my confidence!"</p>
+                  <h6 class="mb-0">— Aarav S.</h6>
+                  <small>Grade 10</small>
+                </div>
+                <img src="/assets/images/hero/student-testnomial1.png" height="200" alt="Student">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3 bg-light">
+                <div>
+                  <img src="/assets/images/hero/landing-comma.png" height="30" alt="">
+                  <p>"The tutor really understands how to break down complex topics. My coding skills improved faster
+                    than I expected."</p>
+                  <h6 class="mb-0">— Emily P.</h6>
+                  <small>High School Student</small>
+                </div>
+                <img src="/assets/images/hero/student-testnomial2.png" height="200" alt="Student">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3 bg-light">
+                <div>
+                  <img src="/assets/images/hero/landing-comma.png" height="30" alt="">
+                  <p>"The lessons are incredibly easy to follow, and my tutor explains even the toughest concepts with
+                    clarity. I've improved my grades and my confidence!"</p>
+                  <h6 class="mb-0">— Aarav S.</h6>
+                  <small>Grade 10</small>
+                </div>
+                <img src="/assets/images/hero/student-testnomial1.png" height="200" alt="Student">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3 bg-light">
+                <div>
+                  <img src="/assets/images/hero/landing-comma.png" height="30" alt="">
+                  <p>"The tutor really understands how to break down complex topics. My coding skills improved faster
+                    than I expected."</p>
+                  <h6 class="mb-0">— Emily P.</h6>
+                  <small>High School Student</small>
+                </div>
+                <img src="/assets/images/hero/student-testnomial2.png" height="200" alt="Student">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ DOTS BELOW IMAGE -->
+    <div class="d-flex justify-content-center mt-4">
+      <div class="carousel-indicator testimonial-dots">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h4 class="fw-bold mb-4">
+      <span class="border-start border-4 border-secondary me-2"></span>
+      Your Trusted Learning Partner
+    </h4>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- SLIDES -->
+      <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4 p-3">
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3  shadow-sm">
+                <!-- LEFT IMAGE -->
+
+                <img src="/assets/images/hero/rearning-partner-learning.png" class="rounded-circle" alt="Student">
+
+
+                <!-- RIGHT CONTENT -->
+                <div class="col ms-3">
+                  <h5 class="fw-bold">Fantastic and Patient Tutor</h5>
+
+                  <p class="text-muted">
+                    Michal has been a huge help for my son in preparing for board
+                    exams. He is extremely patient and ensures every concept is
+                    understood clearly. We’ve seen a clear improvement in scores.
+                  </p>
+
+                  <span class="text-secondary fw-semibold">Physics Tutor</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3 shadow-sm">
+                <!-- LEFT IMAGE -->
+
+                <img src="/assets/images/hero/rearning-partner-learning.png" class="rounded-circle" width="120"
+                  height="120" alt="Student">
+
+
+                <!-- RIGHT CONTENT -->
+                <div class="col ms-3">
+                  <h5 class="fw-bold">Fantastic and Patient Tutor</h5>
+
+                  <p class="text-muted">
+                    Michael has been a huge help for my son in preparing for board exams. He is extremely patient and
+                    always ensures my son understands each concept fully. We’ve seen a clear jump in his scores.
+                  </p>
+
+                  <span class="text-secondary fw-semibold">Physics Tutor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item ">
+          <div class="row g-4 p-3">
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3  shadow-sm">
+                <!-- LEFT IMAGE -->
+
+                <img src="/assets/images/hero/rearning-partner-learning.png" class="rounded-circle" alt="Student">
+
+
+                <!-- RIGHT CONTENT -->
+                <div class="col ms-3">
+                  <h5 class="fw-bold ">Fantastic and Patient Tutor</h5>
+
+                  <p class="text-muted ">
+                    Michal has been a huge help for my son in preparing for board
+                    exams. He is extremely patient and ensures every concept is
+                    understood clearly. We’ve seen a clear improvement in scores.
+                  </p>
+
+                  <span class="text-secondary fw-semibold">Physics Tutor</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="testimonial-card d-flex justify-content-between align-items-center rounded-4 p-3 shadow-sm">
+                <!-- LEFT IMAGE -->
+                <img src="/assets/images/hero/rearning-partner-learning.png" class="rounded-circle" alt="Student">
+
+                <!-- RIGHT CONTENT -->
+                <div class="col ms-3">
+                  <h5 class="fw-bold">Fantastic and Patient Tutor</h5>
+
+                  <p class="text-muted">
+                    Michal has been a huge help for my son in preparing for board
+                    exams. He is extremely patient and ensures every concept is
+                    understood clearly. We’ve seen a clear improvement in scores.
+                  </p>
+
+                  <span class="text-secondary fw-semibold">Physics Tutor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ DOTS BELOW IMAGE -->
+    <div class="d-flex justify-content-center mt-4">
+      <div class="carousel-indicator testimonial-dots">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5">
+    <div class="card border-0 bg-white shadow-sm p-4 rounded-5 text-center">
+      <h2 class="fw-bold mb-3">Start Learning Today</h2>
+      <p class="mb-4">
+        Join thousands of students improving their skills with expert tutors. Learn at your pace and achieve your goals.
+      </p>
+      <div class="text-center">
+        <a href="/befor-login/login-flow/Signup.html" class="btn btn-outline-secondary btn-sm rounded-pill px-5">
+          Join as a Student
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a>
+            </li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as
+                Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
 
   <script>

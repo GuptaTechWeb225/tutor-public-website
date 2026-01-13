@@ -11,42 +11,59 @@
 </head>
 
 <body>
-  <section class="login-section p-2">
-    <!-- Left image section -->
-    <div class="left-section">
-      <div class="image-container bg-forgot">
-        <div class="text-overlay text-white text-center">
-          <h2 class="fw-bold" data-translate="forgotpw-left_title">Restore Your Luxor
-            Access</h2>
-          <p class="mb-0" data-translate="left_subtitle">
-            Sign in to unlock exclusive stays and
-            unforgettable experiences.
-          </p>
+  <section class="login-section min-vh-100 d-flex align-items-center justify-content-center p-3">
+
+    <div class="col-lg-4 col-md-6 col-sm-10">
+      <div class="card border-0 shadow rounded-4">
+
+        <div class="card-body p-4 p-lg-5">
+
+          <!-- Header -->
+          <div class="text-center mb-4">
+            <div class="mb-3">
+              <i class="fa-solid fa-lock fa-2x text-primary"></i>
+            </div>
+            <h3 class="fw-bold mb-2" data-translate="forgot_title">
+              Forgot your password?
+            </h3>
+            <p class="text-muted small mb-0" data-translate="forgot_subtitle">
+              Don’t worry. Enter your registered email and we’ll send you a reset link.
+            </p>
+          </div>
+
+          <!-- Form -->
+          <form action="/befor-login/login-flow/otp.html" method="POST">
+
+            <div class="mb-4 position-relative">
+              <input type="email" name="email" class="form-control form-control-lg ps-5 rounded-3"
+                placeholder="Email address" data-translate="forgotpw-email_placeholder" required>
+              <i class="fa-regular fa-envelope position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+            </div>
+
+            <a href="/befor-login/login-flow/otp.html" type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-semibold"
+              data-translate="forgot_button">
+              Send Reset Link
+          </a>
+
+          </form>
+
+
+          <!-- Footer -->
+          <div class="text-center mt-4">
+            <a href="login.html" class="small fw-semibold text-decoration-none">
+              ← Back to login
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
 
-    <!-- Right Form Section -->
-    <div class="right-section">
-      <div class="form-wrapper">
-        <h3 class="fw-bold text-primary mb-2" data-translate="forgot_title">Forgot Password</h3>
-        <p class="text-muted mb-4" data-translate="forgot_subtitle">Please enter your registered email.</p>
-        <form>
-          <div class="mb-3 position-relative">
-            <input type="email" class="form-control py-2 p-5" data-translate="forgotpw-email_placeholder"
-              placeholder="Email address" required>
-            <i
-              class="fa-regular fa-envelope position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"></i>
-          </div>
-
-          <a href="otp.html" type="submit" class="btn btn-primary w-100 py-2 rounded-pill" data-translate="forgot_button">Send</a>
-        </form>
-      </div>
-    </div>
   </section>
 
+
   <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-  <script src="../../assets/js/lang.js"></script>
+
 </body>
 
 </html>
