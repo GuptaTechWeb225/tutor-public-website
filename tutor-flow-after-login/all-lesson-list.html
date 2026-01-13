@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Lesson</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav.png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/message.css">
+</head>
+
+<body>
+    <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-2">
+                    <a href="tutor-message.html" class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="dashboard.html" class="fs-6 dropdown-item my-account-side active">
+                                <i class="bi bi-speedometer2"></i>
+                                Dashboard
+                            </a>
+                            <a href="/after-login/message.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-chat-dots"></i>
+                                Messages
+                            </a>
+                            <a href="/after-login/my-tutor.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-mortarboard"></i>
+                                My Tutor
+                            </a>
+                            <a href="/after-login/my-lesson.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-journal-bookmark"></i>
+                                My Lessons
+                            </a>
+                            <a href="/after-login/transaction.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-credit-card-2-front"></i>
+                                Transactions
+                            </a>
+                            <a href="/after-login/my-account-setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Lessons</a></li>
+                            <li><a class="dropdown-item" href="#">Calander</a></li>
+                            <li><a class="dropdown-item" href="#">Shedule Lesson</a></li>
+                            <li><a class="dropdown-item" href="#">Submit Lesson</a></li>
+                            <li><a class="dropdown-item" href="#">Students</a></li>
+                            <li><a class="dropdown-item" href="#">payment</a></li>
+                            <li><a class="dropdown-item" href="#">Prefrance</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <section>
+        <div class="container my-5">
+            <div class="row g-3 mb-4">
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-0 rounded-4 p-3 h-100">
+                        <small class="text-muted">Total Lessons</small>
+                        <h3 class="fw-bold mb-0">48</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-0 rounded-4 p-3 h-100 bg-warning bg-opacity-10">
+                        <small class="text-muted">Scheduled Lessons</small>
+                        <h3 class="fw-bold mb-0">6</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card shadow-sm border-0 rounded-4 p-3 h-100 bg-success bg-opacity-10">
+                        <small class="text-muted">Completed Lessons</small>
+                        <h3 class="fw-bold mb-0">42</h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card border-0 shadow-sm rounded-4 p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h6 class="fw-semibold mb-0">Lesson History</h6>
+                </div>
+
+                <div class="row g-3 align-items-end mb-3">
+
+                    <div class="col-md-3">
+                        <label class="form-label small">From</label>
+                        <input type="date" class="form-control" name="from_date">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label small">To</label>
+                        <input type="date" class="form-control" name="to_date">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label small">Status</label>
+                        <select class="select2-enable" name="lesson_status">
+                            <option value="">All</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="btn btn-primary w-100">
+                            Apply Filter
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0 lesson-table">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Lesson</th>
+                                <th>Student</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <!-- Scheduled -->
+                            <tr>
+                                <td>Math – Algebra</td>
+                                <td>Rahul Sharma</td>
+                                <td>18 Sep 2025</td>
+                                <td>4:00 PM</td>
+                                <td>
+                                    <span class="badge bg-warning text-dark">Scheduled</span>
+                                </td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                        data-bs-target="#lessonViewModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Completed -->
+                            <tr>
+                                <td>English – Grammar</td>
+                                <td>Mohit Verma</td>
+                                <td>10 Sep 2025</td>
+                                <td>5:00 PM</td>
+                                <td>
+                                    <span class="badge bg-success">Completed</span>
+                                </td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                        data-bs-target="#lessonViewModal">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white pt-5">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+    <div class="modal fade" id="lessonViewModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4 p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0">Lesson Details</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="mb-3">
+                    <small class="text-muted">Lesson</small>
+                    <div class="fw-semibold">Math – Algebra</div>
+                </div>
+
+                <div class="mb-3">
+                    <small class="text-muted">Student</small>
+                    <div class="fw-semibold">Rahul Sharma</div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-6">
+                        <small class="text-muted">Date</small>
+                        <div class="fw-semibold">18 Sep 2025</div>
+                    </div>
+                    <div class="col-6">
+                        <small class="text-muted">Time</small>
+                        <div class="fw-semibold">4:00 PM</div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <small class="text-muted">Status</small><br>
+                    <span class="badge bg-warning text-dark">Scheduled</span>
+
+                </div>
+
+                <div class="text-end mt-4">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -2,26 +2,164 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smartbrain Academy Video</title>
-    <link rel="stylesheet" href="assets/c" />
+    <meta charset="UTF-8">
+    <title>Tutor Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
     <style>
-        .Video-frame {
-            width: 100%;
-            height: 500px;
-            border: none;
-            border-radius: 1.5rem;
+        .fc-event {
+            font-size: 12px;
+            border-radius: 6px;
         }
     </style>
 </head>
 
 <body>
 
-    <iframe class="Video-frame" src="https://www.youtube.com/embed/dftqATKuRIc?si=J_Y4xvIskW7C-cso"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="container my-4">
+        <div class="card p-3 shadow-sm rounded-4">
+            <h5 class="fw-semibold mb-3">Tutor Calendar</h5>
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="submitModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">Submit Lesson</h6>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <select class="form-select mb-2" id="submitStudent">
+                        <option value="">Select Student</option>
+                        <option>Rahul Sharma</option>
+                        <option>Ayesha Khan</option>
+                        <option>Mohit Verma</option>
+                    </select>
+
+                    <input class="form-control mb-2" id="submitLesson" placeholder="Lesson Name">
+
+                    <textarea class="form-control" id="submitNotes" placeholder="Lesson Notes"></textarea>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" id="submitSave">Submit Lesson</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="scheduleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">Schedule Lesson</h6>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <select class="form-select mb-2" id="scheduleStudent">
+                        <option value="">Select Student</option>
+                        <option>Rahul Sharma</option>
+                        <option>Ayesha Khan</option>
+                        <option>Mohit Verma</option>
+                    </select>
+
+                    <input class="form-control mb-2" id="scheduleLesson" placeholder="Lesson Name">
+                    <input class="form-control mb-2" id="meetingLink" placeholder="Meeting Link">
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="scheduleSave">Schedule Lesson</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let calendar, selectedRange;
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const calendarEl = document.getElementById('calendar');
+            const now = new Date();
+
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridWeek',
+                firstDay: 1,
+                allDaySlot: false,
+
+                slotDuration: '01:00:00',
+                snapDuration: '01:00:00',
+
+                selectable: true,
+                selectOverlap: false,
+                eventOverlap: false,
+
+                select: function (info) {
+                    selectedRange = info;
+                    if (info.start < now) {
+                        new bootstrap.Modal('#submitModal').show();
+                    } else {
+                        new bootstrap.Modal('#scheduleModal').show();
+                    }
+                }
+            });
+
+            calendar.render();
+        });
+
+        document.getElementById('submitSave').onclick = function () {
+
+            const student = submitStudent.value;
+            const lesson = submitLesson.value;
+            const notes = submitNotes.value;
+
+            if (!student || !lesson || !notes) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            calendar.addEvent({
+                title: student + " – " + lesson,
+                start: selectedRange.start,
+                end: selectedRange.end,
+                color: '#fd7e14',
+                extendedProps: { student, lesson, notes }
+            });
+
+            bootstrap.Modal.getInstance(submitModal).hide();
+        };
+
+        document.getElementById('scheduleSave').onclick = function () {
+
+            const student = scheduleStudent.value;
+            const lesson = scheduleLesson.value;
+            const link = meetingLink.value;
+
+            if (!student || !lesson || !link) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            calendar.addEvent({
+                title: student + " – " + lesson,
+                start: selectedRange.start,
+                end: selectedRange.end,
+                color: '#28a745',
+                extendedProps: { student, lesson, link }
+            });
+            bootstrap.Modal.getInstance(scheduleModal).hide();
+        };
+    </script>
 
 </body>
 

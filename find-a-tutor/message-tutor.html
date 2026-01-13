@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link href="/assets/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <link rel="stylesheet" href="/assets/css/calander.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/assets/images/logo.svg" alt="logo" class="logo">
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+        <div class="dropdown">
+          <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+            data-bs-toggle="dropdown">
+            <img src="/assets/images/form/english.png" width="15" alt=""> EN
+          </button>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">EN</a></li>
+            <li><a class="dropdown-item" href="#">AR</a></li>
+          </ul>
+        </div>
+        <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+        <ul class="navbar-nav mx-auto gap-xl-3">
+
+          <li class="nav-item">
+            <a class="nav-link " href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              Find a Tutor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              How It Works </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+              <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+              <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+              <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+              <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+    <div class="position-relative py-3 side-image-wrapper">
+        <img src="/assets/images/side-images/msg-tutor.svg" class="section-rightside-image" alt="Decoration" />
+
+    </div>
+
+    <section class="py-4 container">
+
+        <div class=" mb-3 d-flex align-items-center justify-content-center gap-3">
+            <img src="/assets/images/tutor/tutor-3.png" class="rounded-2" alt="" width="40" height="40">
+            <h3 class=" mb-0">
+                Send a Message to Ingrid
+            </h3>
+        </div>
+
+        <div class="my-5">
+
+            <div class="text-center mb-3">
+                <h5 class="section-title">Tell Ingrid about your goals for tutoring.</h5>
+                <p class="text-muted small mb-0">
+                    Lesson type: Online &nbsp; Hourly rate: $165
+                </p>
+            </div>
+
+            <div class="card px-5 py-3">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <strong>Lesson type:</strong>
+                        <span class="editable-text">Online lesson - $165/hour</span>
+                    </div>
+                </div>
+
+                <input type="text" class="form-control d-none mb-3" id="lessonInput" value="Online lesson - $165/hour"
+                    onblur="saveField('lesson')">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <strong>Subject:</strong>
+                        <span class="editable-text" id="subjectText">Computer</span>
+                    </div>
+                    <button class="btn btn-outline-secondary rounded-2 px-1 py-0" onclick="editField('subject')">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                </div>
+
+                <input type="text" class="form-control d-none mb-3" id="subjectInput" value="Computer"
+                    onblur="saveField('subject')">
+
+                <!-- TEXTAREA -->
+                <textarea class="form-control goal-textarea" placeholder='ex. "Hi, I have a big exam coming up..." *'
+                    style="min-height: 200px;" required></textarea>
+
+                <small class="text-muted d-block mt-2">(* Required)</small>
+            </div>
+        </div>
+        <div class="my-2">
+            <div class="text-center mb-4">
+                <h4 class="fw-semibold">When would you like to meet?</h4>
+                <p class="text-muted small">
+                    Your time zone: <strong>Based On Browser TimeZone</strong>
+                    <i class="bi bi-info-circle text-primary" role="button" tabindex="0" data-bs-toggle="popover"
+                        data-bs-placement="bottom" data-bs-trigger="focus"
+                        data-bs-content="The times below are based on  your browser's time zone.If this is not correct, please use form below to communicate the correct time zone to your tutor.">
+                    </i>
+                </p>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <button id="dayBtn" class="btn btn-primary rounded-pill px-4">Day</button>
+                <button id="monthBtn" class="btn btn-outline-primary rounded-pill px-4">Month</button>
+            </div>
+
+            <div id="dayView">
+                <div class="position-relative">
+                    <button class="day-nav left" onclick="prevDays()"><i class="bi bi-chevron-left"></i></button>
+                    <button class="day-nav right" onclick="nextDays()"><i class="bi bi-chevron-right"></i></button>
+                    <div class="row g-4 text-center" id="dayContainer"></div>
+                </div>
+            </div>
+
+            <div id="monthView" class="d-none">
+                <div class="row g-4">
+                    <div class="col-md-7">
+                        <div class="calendar-box">
+                            <div class="calendar-header">
+                                <button class="cal-nav" onclick="prevMonth()">‹</button>
+                                <strong id="monthTitle"></strong>
+                                <button class="cal-nav" onclick="nextMonth()">›</button>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <h6 class="fw-semibold text-center mb-2" id="selectedDateTitle"></h6>
+                        <div class="slot-scroll" id="monthSlots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary px-5">Message Ingrid</button>
+        </div>
+    </section>
+
+   <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <!-- select 2 css -->
+    <script src="/assets/js/select2/select2.min.js"></script>
+
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- all scripts -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function editField(type) {
+            document.getElementById(type + "Text").classList.add("d-none");
+            document.getElementById(type + "Input").classList.remove("d-none");
+            document.getElementById(type + "Input").focus();
+        }
+
+        function saveField(type) {
+            const input = document.getElementById(type + "Input");
+            const text = document.getElementById(type + "Text");
+
+            text.innerText = input.value || "—";
+            input.classList.add("d-none");
+            text.classList.remove("d-none");
+        }
+    </script>
+    <script>
+        const dayBtn = document.getElementById("dayBtn");
+        const monthBtn = document.getElementById("monthBtn");
+        const dayView = document.getElementById("dayView");
+        const monthView = document.getElementById("monthView");
+
+        dayBtn.onclick = () => {
+            dayView.classList.remove("d-none");
+            monthView.classList.add("d-none");
+            dayBtn.classList.replace("btn-outline-primary", "btn-primary");
+            monthBtn.classList.replace("btn-primary", "btn-outline-primary");
+        };
+
+        monthBtn.onclick = () => {
+            monthView.classList.remove("d-none");
+            dayView.classList.add("d-none");
+            monthBtn.classList.replace("btn-outline-primary", "btn-primary");
+            dayBtn.classList.replace("btn-primary", "btn-outline-primary");
+        };
+
+        let dayStart = 0;
+        const daysToShow = 3;
+        const timeSlots = Array.from({ length: 24 }, (_, i) => `${i % 12 || 12}:30 ${i < 12 ? 'am' : 'pm'}`);
+
+        function renderDayView() {
+            const container = document.getElementById("dayContainer");
+            container.innerHTML = "";
+
+            for (let i = 0; i < daysToShow; i++) {
+                const date = new Date();
+                date.setDate(date.getDate() + dayStart + i);
+
+                container.innerHTML += `
+      <div class="col-md-4">
+        <h6 class="fw-semibold">${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</h6>
+        <small class="text-muted">${date.toLocaleDateString('en-US', { weekday: 'long' })}</small>
+        <div class="day-slot-scroll mt-3">
+          ${timeSlots.map(t => `<div class="time-slot">${t}</div>`).join("")}
+        </div>
+      </div>`;
+            }
+        }
+        function nextDays() { dayStart += daysToShow; renderDayView(); }
+        function prevDays() { dayStart = Math.max(0, dayStart - daysToShow); renderDayView(); }
+
+        let currentMonth = new Date();
+
+        function renderMonth() {
+            const grid = document.getElementById("calendarGrid");
+            const title = document.getElementById("monthTitle");
+            grid.innerHTML = "";
+
+            title.innerText = currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+            const days = ["S", "M", "T", "W", "T", "F", "S"];
+            days.forEach(d => grid.innerHTML += `<div class="day-name">${d}</div>`);
+
+            const first = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1).getDay();
+            const total = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0).getDate();
+
+            for (let i = 0; i < first; i++) grid.innerHTML += `<div></div>`;
+
+            for (let d = 1; d <= total; d++) {
+                grid.innerHTML += `<div class="day" onclick="selectDate(${d})">${d}</div>`;
+            }
+        }
+        function selectSlot(el) {
+            el.closest('.slot-scroll, .day-slot-scroll')
+                .querySelectorAll('.time-slot')
+                .forEach(slot => slot.classList.remove('selected'));
+            el.classList.add('selected');
+            const selectedTime = el.innerText;
+            console.log("Selected Slot:", selectedTime);
+        }
+
+        function selectDate(day) {
+            document.querySelectorAll(".day").forEach(d => d.classList.remove("active"));
+            event.target.classList.add("active");
+
+            const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
+            document.getElementById("selectedDateTitle").innerHTML =
+                `${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}<br>
+     <small class="text-muted">${date.toLocaleDateString('en-US', { weekday: 'long' })}</small>`;
+
+            document.getElementById("monthSlots").innerHTML =
+                timeSlots.map(t => `<div class="time-slot">${t}</div>`).join("");
+        }
+
+        function nextMonth() { currentMonth.setMonth(currentMonth.getMonth() + 1); renderMonth(); }
+        function prevMonth() { currentMonth.setMonth(currentMonth.getMonth() - 1); renderMonth(); }
+
+        /* INIT */
+        renderDayView();
+        renderMonth();
+    </script>
+
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        [...popoverTriggerList].map(el => new bootstrap.Popover(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/fonts/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/assets/images/logo.svg" alt="logo" class="logo">
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+        <div class="dropdown">
+          <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+            data-bs-toggle="dropdown">
+            <img src="/assets/images/form/english.png" width="15" alt=""> EN
+          </button>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">EN</a></li>
+            <li><a class="dropdown-item" href="#">AR</a></li>
+          </ul>
+        </div>
+        <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+        <ul class="navbar-nav mx-auto gap-xl-3">
+
+          <li class="nav-item">
+            <a class="nav-link " href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              Find a Tutor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              How It Works </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+              <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+              <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+              <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+              <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+    <section class=" container py-4">
+        <div class="d-flex align-items-center justify-content-between">
+            <!-- Search Bar -->
+            <div class="flex-grow-1 me-5 pe-5">
+                <input type="text" class="form-control" placeholder="Search here...">
+            </div>
+            <!-- Hamburger Icon -->
+            <button class="btn btn-outline-secondary text-dark ms-5 " type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </section>
+    <!-- Offcanvas Right -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <!-- Logo -->
+            <img src="/assets/images/logo.svg" height="390" width="390" alt="SmartBrain Logo" class="img-fluid"
+                style="max-height: 150px;">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <p class="text-center fw-bold">Help Center</p>
+        <div class="offcanvas-body ">
+            <div class="search-bar  d-flex p-3">
+                <input type="text" class="form-control rounded-3 border-1 px-3"
+                    placeholder="What would you like to learn?">
+                <button class="btn btn-primary rounded-3 ms-2 px-4">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            <ul class="list-unstyled text-decoration-none p-3 ">
+                <li><a href="#" class="d-block fw-semibold text-decoration-none  px-2">Help Center Home</a></li>
+                <hr>
+                <li><a href="#" class="d-block fw-semibold text-decoration-none px-2">Students & Parents</a></li>
+                <hr>
+                <li><a href="#" class="d-block fw-semibold text-decoration-none px-2">Tutors</a></li>
+                <hr>
+                <li><a href="#" class="d-block fw-semibold text-decoration-none px-2">Online Learning</a></li>
+                <hr>
+                <li><a href="#" class="d-block fw-semibold text-decoration-none px-2">SmartBrain Academy for Schools</a>
+                </li>
+                <hr>
+                <li><a href="#" class="d-block fw-semibold text-decoration-none px-2">SmartBrain Academy for Higher
+                        Ed.</a></li>
+                <hr>
+                <li><a href="#" class="d-block fw-semibold text-decoration-none px-2">Policies & Contact Us</a></li>
+                <hr>
+                <li><a href="#" class="d-block fw-semibold text-decoration-none px-2">Return to Smartbrain Academy</a>
+                </li>
+                <hr>
+            </ul>
+        </div>
+    </div>
+    <!-- Header Section -->
+    <section
+        class="container py-4 d-flex flex-column justify-content-center bg-dark text-white position-relative rounded-3"
+        style="background: url('/assets/images/faq/faq-bg.png') center/cover no-repeat; height: 350px;">
+        <h1 class="fw-bold p-3">Students & Parents</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-white p-3" id="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">Students & Parents</li>
+            </ol>
+        </nav>
+    </section>
+    <!-- Frequently Asked Questions Section -->
+    <section class="py-5 container">
+        <h3 class="fw-bold mb-4">Frequently Asked Questions</h3>
+        <div class="accordion" id="faqAccordion">
+            <!-- Category1 -->
+            <div class="accordion-item mb-3 border ">
+                <h2 class="accordion-header" id="headingCategory1">
+                    <button class="accordion-button collapsed category-btn" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCategory1" aria-expanded="false" aria-controls="collapseCategory1"
+                        data-category="Find a Tutor">
+                        Find a Tutor
+                    </button>
+                </h2>
+                <div id="collapseCategory1" class="accordion-collapse collapse" aria-labelledby="headingCategory1"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body p-0">
+                        <!-- Questions List -->
+                        <ul class="list-group list-group-flush question-list">
+                            <a href="/FAQ/faq-ans.html" class="list-group-item py-3 question-item">How do I find a
+                                tutor?
+                            </a>
+                            <li class="list-group-item py-3 question-item">How does
+                                Smartbrain Academy work?
+                            </li>
+                            <li class="list-group-item py-3 question-item">
+                                How does Smartbrain Academy vet tutors?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Category 2 -->
+            <div class="accordion-item mb-3 border">
+                <h2 class="accordion-header" id="headingCategory2">
+                    <button class="accordion-button collapsed category-btn" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCategory2" aria-expanded="false" aria-controls="collapseCategory2"
+                        data-category="Student Account">
+                        Student Account
+                    </button>
+                </h2>
+                <div id="collapseCategory2" class="accordion-collapse collapse" aria-labelledby="headingCategory2"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body p-0">
+                        <ul class="list-group list-group-flush question-list">
+                            <li class="list-group-item py-3 question-item"
+                                data-answer="You can manage your account settings, update profile, and reset password.">
+                                How do I manage my account?</li>
+                            <li class="list-group-item py-3 question-item"
+                                data-answer="You can reset your password through the 'Forgot Password' link.">How to
+                                reset password?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item mb-3 border ">
+                <h2 class="accordion-header" id="headingThree"><button
+                        class="accordion-button d-flex justify-content-between align-items-center collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree"><span>Student Billing</span></button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion">
+                </div>
+            </div> <!-- FAQ Item 4 -->
+            <div class="accordion-item mb-3 border ">
+                <h2 class="accordion-header" id="headingfour"> <button
+                        class="accordion-button d-flex justify-content-between align-items-center collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false"
+                        aria-controls="collapseThree"> <span>Lessons</span> </button>
+                </h2>
+                <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
+                    data-bs-parent="#faqAccordion">
+                </div>
+            </div>
+            <!-- FAQ Item 5 -->
+            <div class="accordion-item mb-2 border ">
+                <h2 class="accordion-header" id="headingfive"> <button
+                        class="accordion-button d-flex justify-content-between align-items-center collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false"
+                        aria-controls="collapseThree"> <span>Mobile Apps</span> </button>
+                </h2>
+                <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
+                    data-bs-parent="#faqAccordion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const breadcrumb = document.getElementById("breadcrumb");
+            const categoryBtns = document.querySelectorAll(".category-btn");
+            const questionItems = document.querySelectorAll(".question-item");
+            // Category click → breadcrumb update
+            categoryBtns.forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const category = this.dataset.category;
+                    breadcrumb.innerHTML = `
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-white text-decoration-none">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-white text-decoration-none">Students & Parents</a>
+                </li>
+                <li class="breadcrumb-item active text-white">
+                    ${category}
+                </li>
+            `;
+                });
+            });
+
+            // Question click → breadcrumb update
+            questionItems.forEach(q => {
+                q.addEventListener("click", function () {
+                    const questionText = this.textContent.trim();
+                    const category = this
+                        .closest(".accordion-item")
+                        .querySelector(".category-btn")
+                        .dataset.category;
+                    breadcrumb.innerHTML = `
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-white text-decoration-none">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-white text-decoration-none">Students & Parents</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-white text-decoration-none">${category}</a>
+                    </li>
+                    <li class="breadcrumb-item active text-white">
+                        ${questionText}
+                    </li>
+                `;
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

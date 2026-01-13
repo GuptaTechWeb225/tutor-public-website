@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBrain Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/fonts/">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light py-2 px-3">
+
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="/assets/images/logo.svg" alt="logo" class="logo">
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+
+        <div class="dropdown">
+          <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+            data-bs-toggle="dropdown">
+            <img src="/assets/images/form/english.png" width="15" alt=""> EN
+          </button>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">EN</a></li>
+            <li><a class="dropdown-item" href="#">AR</a></li>
+          </ul>
+        </div>
+        <a href="#" class=" btn btn-outline-secondary btn-sm px-3">Login</a>
+        <a href="#" class="btn btn-secondary btn-sm px-3">Sign up</a>
+
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+        <ul class="navbar-nav mx-auto gap-xl-3">
+
+          <li class="nav-item">
+            <a class="nav-link " href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              Find a Tutor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/find-a-tutor/find-tutor.html">Search for Tutors</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/request-tutor.html">Request a Tutor</a></li>
+              <li><a class="dropdown-item" href="/find-a-tutor/online-tutor.html">Online Tutoring</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown">
+              How It Works </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/how-it-work/for-student.html">For Students</a></li>
+              <li><a class="dropdown-item" href="/how-it-work/for-tutor.html">For Tutors</a></li>
+              <li><a class="dropdown-item" href="/FAQ/faq.html">FAQs</a></li>
+              <li><a class="dropdown-item" href="/Review/review.html">What peoples says</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/online-tutor/ask-an-expert.html">Search a question</a></li>
+              <li><a class="dropdown-item" href="/online-tutor/ask question.html">Ask a question</a></li>
+              <li><a class="dropdown-item" href="/Blogs/blogs.html">Blogs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="/become-tutor/become_tutor.html">Become a Tutor</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about-us/about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/contact-us.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/career/career.html">Careers</a></li>
+
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+
+
+    <div class="container my-2"> <!-- Header Row -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="fw-bold mb-0">
+                Ask Question
+            </h3>
+
+            <small class="text-muted">
+                Required fields <span class="text-danger">*</span>
+            </small>
+        </div>
+
+        <!-- Title Field -->
+        <div class="mb-4">
+            <h6 class="fw-semibold mb-1">
+                Title <span class="text-danger">*</span>
+            </h6>
+            <p class="text-muted small mb-3">
+                Be specific and imagine you're asking a question to another person. Minimum 15 characters.
+            </p>
+            <input type="text" id="questionTitle" class="form-control" placeholder="">
+            <small id="titleError" class="text-danger d-none">Title must be at least 15 characters</small>
+        </div>
+
+        <!-- Body Field -->
+        <h6 class="fw-semibold mb-1">
+            Body <span class="text-danger">*</span>
+        </h6>
+        <p class="text-muted small mb-3">
+            Include all the information someone would need to answer your question. Minimum 220 characters.
+        </p>
+        <textarea id="privacyPolicySummernote"></textarea>
+        <small id="bodyError" class="text-danger d-none">Body must be at least 220 characters</small>
+
+        <!-- Submit Button -->
+        <div class="d-flex justify-content-center mt-4">
+            <button id="submitBtn" class="btn btn-primary rounded-2 px-5" disabled>
+                Submit
+            </button>
+        </div>
+    </div><!-- Submit Confirmation Modal -->
+    <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="submitModalLabel">Confirm Submission</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Want to submit your question?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="confirmSubmit" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+  <footer class="bg-white pt-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-md-6 col-lg-5">
+          <div class="mb-3">
+            <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+          </div>
+          <p class="text-muted small mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            accumsan placerat libero, sed dapibus metus.
+          </p>
+
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-1">
+              <i class="bi bi-geo-alt me-2"></i>
+              Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-telephone me-2"></i>
+              +91 98765 43210
+            </li>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              info@smartbrainacademy.com
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a Tutor</a></li>
+            <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For Students</a></li>
+            <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+            <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+            <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request Tutor</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+            <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+            <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-2">
+          <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+            <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as Tutor</a></li>
+            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-secondary text-center text-white py-3 mt-4">
+      <small>© 2025 SmartBrainAcademy. All Rights Reserved.</small>
+    </div>
+  </footer>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize Summernote
+            $('#privacyPolicySummernote').summernote({
+                placeholder: '',
+                height: 200,
+                focus: true,
+                toolbar: [
+                    ['font', ['bold', 'italic', 'strikethrough']],
+                    ['insert', ['link', 'picture']],
+                    ['para', ['ul', 'ol']],
+                    ['view', ['codeview']]
+                ]
+            });
+
+            function getBodyText() {
+                var content = $('#privacyPolicySummernote').summernote('code');
+                var text = $('<div>').html(content).text().trim();
+                return text;
+            }
+
+            function checkInputs() {
+                var title = $('#questionTitle').val().trim();
+                var body = getBodyText();
+
+                // Show errors
+                if (title.length < 15) {
+                    $('#titleError').removeClass('d-none');
+                } else {
+                    $('#titleError').addClass('d-none');
+                }
+
+                if (body.length < 220) {
+                    $('#bodyError').removeClass('d-none');
+                } else {
+                    $('#bodyError').addClass('d-none');
+                }
+
+                // Enable button only if both valid
+                if (title.length >= 15 && body.length >= 220) {
+                    $('#submitBtn').prop('disabled', false);
+                } else {
+                    $('#submitBtn').prop('disabled', true);
+                }
+            }
+
+            // Check on title input
+            $('#questionTitle').on('input', checkInputs);
+
+            // Check on Summernote content change
+            $('#privacyPolicySummernote').on('summernote.change', checkInputs);
+
+            // Open modal on submit click
+            $('#submitBtn').on('click', function () {
+                var submitModal = new bootstrap.Modal(document.getElementById('submitModal'));
+                submitModal.show();
+            });
+
+            // Handle OK click in modal
+            $('#confirmSubmit').on('click', function () {
+                // Here you can redirect or show success message
+                window.location.href = "/online-tutor/ask-an-expert.html"; // or your desired action
+            });
+
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
