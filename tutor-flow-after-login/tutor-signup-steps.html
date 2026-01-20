@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutor Signup Stpes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <style>
+        .tutor-steps .nav-link {
+            text-align: center;
+            padding-inline: 10px;
+            padding-block: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            color: var(--secondary);
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        .tutor-steps .nav-link.active {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        .accordion-button {
+            font-weight: 600;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-1">
+                    <a href="/tutor-flow-after-login/tutor-message.html"
+                        class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+                <!-- Notification bell -->
+                <div class="nav-item dropdown mx-1">
+                    <button class="btn btn-sm border-0 text-dark position-relative p-0" type="button"
+                        id="notificationBell" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                          translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            3
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 shadow rounded-3" style="min-width: 350px;">
+                        <li class="dropdown-header">Notifications</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="px-3 py-2">• New message from rahul</li>
+                        <li class="px-3 py-2">• New lesson request</li>
+                        <li class="px-3 py-2">• Profile approved</li>
+                        <li class="px-3 py-2">• System update</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a href="/tutor-flow-after-login/profile.html" class="dropdown-item text-center"
+                                onclick="openTutorNotifications()">
+                                See all
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/tutor-flow-after-login/profile.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-person"></i>
+                                profile
+                            </a>
+
+                            <a href="/tutor-flow-after-login/setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+
+                    </ul>
+                </div> <!-- Toggler -->
+                <button class="navbar-toggler ms-2" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link " href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/all-lesson-list.html">Lessons</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/calnader.html">Calander</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/shedule-lesson.html">Shedule
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/submit-lesson.html">Submit
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/stundets-list.html">Students</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/payments.html">payment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="container py-3">
+        <div class="">
+            <ul class="nav nav-tabs tutor-steps mb-4 border-0 gap-3 justify-content-center" id="signupSteps">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-target="#step1" type="button">
+                        <span class=" fs-2 me-1">1</span> <span>Select Subjects</span>
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-target="#step2" type="button">
+                        <span class="fs-2 me-1">2</span><span>Basic Information</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-target="#step3" type="button">
+                        <span class="fs-2 me-1">3</span><span>Personalize Profile</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-target="#step4" type="button">
+                        <span class="fs-2 me-1">4</span> <span>How It Works</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-target="#step5" type="button">
+                        <span class="fs-2 me-1">5</span><span>Terms for Tutoring</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-target="#step6" type="button">
+                        <span class="fs-2 me-1">6</span><span>Email Confirmation</span>
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content p-4 bg-white">
+                <div class="tab-pane fade show active" id="step1">
+                    <h4 class="fw-semibold mb-1">Choose your subjects</h4>
+                    <p class="text-muted mb-4">
+                        Select 1–5 subjects you'd like to tutor. You can add more later once you're done signing up.
+                    </p>
+                    <div class="row">
+                        <div class="col-12  col-lg-3 mb-3">
+                            <div class="border p-3 rounded">
+                                <div id="selectedSubjects" class="small text-muted">
+                                    No subjects selected
+                                </div>
+
+                                <button class="btn btn-primary w-100 mt-3" id="nextBtn" disabled>
+                                    NEXT →
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-12  col-lg-9 mb-3">
+                            <div class="accordion" id="subjectAccordion">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" data-bs-toggle="collapse"
+                                            data-bs-target="#artSubjects">
+                                            Art
+                                        </button>
+                                    </h2>
+                                    <div id="artSubjects" class="accordion-collapse collapse show">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_acting" name="subjects[]" value="Acting">
+                                                        <label class="form-check-label" for="subject_acting">
+                                                            Acting
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_photoshop" name="subjects[]"
+                                                            value="Adobe Photoshop">
+                                                        <label class="form-check-label" for="subject_photoshop">
+                                                            Adobe Photoshop
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_animation" name="subjects[]" value="Animation">
+                                                        <label class="form-check-label" for="subject_animation">
+                                                            Animation
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_architecture" name="subjects[]"
+                                                            value="Architecture">
+                                                        <label class="form-check-label" for="subject_architecture">
+                                                            Architecture
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_ballroom" name="subjects[]"
+                                                            value="Ballroom Dancing">
+                                                        <label class="form-check-label" for="subject_ballroom">
+                                                            Ballroom Dancing
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_composition_music" name="subjects[]"
+                                                            value="Composition (Music)">
+                                                        <label class="form-check-label" for="subject_composition_music">
+                                                            Composition (Music)
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_drawing" name="subjects[]" value="Drawing">
+                                                        <label class="form-check-label" for="subject_drawing">
+                                                            Drawing
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_film" name="subjects[]" value="Film">
+                                                        <label class="form-check-label" for="subject_film">
+                                                            Film
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_painting" name="subjects[]" value="Painting">
+                                                        <label class="form-check-label" for="subject_painting">
+                                                            Painting
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_photography" name="subjects[]"
+                                                            value="Photography">
+                                                        <label class="form-check-label" for="subject_photography">
+                                                            Photography
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_theater" name="subjects[]" value="Theater">
+                                                        <label class="form-check-label" for="subject_theater">
+                                                            Theater
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_video_production" name="subjects[]"
+                                                            value="Video Production">
+                                                        <label class="form-check-label" for="subject_video_production">
+                                                            Video Production
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                            data-bs-target="#business">Business</button>
+                                    </h2>
+                                    <div id="business" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <div class="row">
+
+                                                <div class="col-md-4">
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_accounting" name="subjects[]"
+                                                            value="Accounting">
+                                                        <label class="form-check-label" for="subject_accounting">
+                                                            Accounting
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_business_management" name="subjects[]"
+                                                            value="Business Management">
+                                                        <label class="form-check-label"
+                                                            for="subject_business_management">
+                                                            Business Management
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_economics" name="subjects[]" value="Economics">
+                                                        <label class="form-check-label" for="subject_economics">
+                                                            Economics
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_entrepreneurship" name="subjects[]"
+                                                            value="Entrepreneurship">
+                                                        <label class="form-check-label" for="subject_entrepreneurship">
+                                                            Entrepreneurship
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- COLUMN 2 -->
+                                                <div class="col-md-4">
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_finance" name="subjects[]" value="Finance">
+                                                        <label class="form-check-label" for="subject_finance">
+                                                            Finance
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_marketing" name="subjects[]" value="Marketing">
+                                                        <label class="form-check-label" for="subject_marketing">
+                                                            Marketing
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_operations_management" name="subjects[]"
+                                                            value="Operations Management">
+                                                        <label class="form-check-label"
+                                                            for="subject_operations_management">
+                                                            Operations Management
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_project_management" name="subjects[]"
+                                                            value="Project Management">
+                                                        <label class="form-check-label"
+                                                            for="subject_project_management">
+                                                            Project Management
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- COLUMN 3 -->
+                                                <div class="col-md-4">
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_human_resources" name="subjects[]"
+                                                            value="Human Resources">
+                                                        <label class="form-check-label" for="subject_human_resources">
+                                                            Human Resources
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_international_business" name="subjects[]"
+                                                            value="International Business">
+                                                        <label class="form-check-label"
+                                                            for="subject_international_business">
+                                                            International Business
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_business_strategy" name="subjects[]"
+                                                            value="Business Strategy">
+                                                        <label class="form-check-label" for="subject_business_strategy">
+                                                            Business Strategy
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_supply_chain_management" name="subjects[]"
+                                                            value="Supply Chain Management">
+                                                        <label class="form-check-label"
+                                                            for="subject_supply_chain_management">
+                                                            Supply Chain Management
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                            data-bs-target="#computer">Computer</button>
+                                    </h2>
+                                    <div id="computer" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <div class="row">
+
+                                                <!-- COLUMN 1 -->
+                                                <div class="col-md-4">
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_computer_basics" name="subjects[]"
+                                                            value="Computer Basics">
+                                                        <label class="form-check-label" for="subject_computer_basics">
+                                                            Computer Basics
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_excel" name="subjects[]"
+                                                            value="Microsoft Excel">
+                                                        <label class="form-check-label" for="subject_excel">
+                                                            Microsoft Excel
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_word" name="subjects[]" value="Microsoft Word">
+                                                        <label class="form-check-label" for="subject_word">
+                                                            Microsoft Word
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_powerpoint" name="subjects[]"
+                                                            value="PowerPoint">
+                                                        <label class="form-check-label" for="subject_powerpoint">
+                                                            PowerPoint
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- COLUMN 2 -->
+                                                <div class="col-md-4">
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_programming_fundamentals" name="subjects[]"
+                                                            value="Programming Fundamentals">
+                                                        <label class="form-check-label"
+                                                            for="subject_programming_fundamentals">
+                                                            Programming Fundamentals
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_web_development" name="subjects[]"
+                                                            value="Web Development">
+                                                        <label class="form-check-label" for="subject_web_development">
+                                                            Web Development
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_html_css" name="subjects[]" value="HTML & CSS">
+                                                        <label class="form-check-label" for="subject_html_css">
+                                                            HTML & CSS
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_javascript" name="subjects[]"
+                                                            value="JavaScript">
+                                                        <label class="form-check-label" for="subject_javascript">
+                                                            JavaScript
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- COLUMN 3 -->
+                                                <div class="col-md-4">
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_python" name="subjects[]" value="Python">
+                                                        <label class="form-check-label" for="subject_python">
+                                                            Python
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_java" name="subjects[]" value="Java">
+                                                        <label class="form-check-label" for="subject_java">
+                                                            Java
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_data_science" name="subjects[]"
+                                                            value="Data Science">
+                                                        <label class="form-check-label" for="subject_data_science">
+                                                            Data Science
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_cyber_security" name="subjects[]"
+                                                            value="Cyber Security">
+                                                        <label class="form-check-label" for="subject_cyber_security">
+                                                            Cyber Security
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                            data-bs-target="#math">
+                                            Math
+                                        </button>
+                                    </h2>
+
+                                    <div id="math" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <div class="row">
+
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_algebra" name="subjects[]" value="Algebra">
+                                                        <label class="form-check-label"
+                                                            for="subject_algebra">Algebra</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_geometry" name="subjects[]" value="Geometry">
+                                                        <label class="form-check-label"
+                                                            for="subject_geometry">Geometry</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_trigonometry" name="subjects[]"
+                                                            value="Trigonometry">
+                                                        <label class="form-check-label"
+                                                            for="subject_trigonometry">Trigonometry</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_calculus" name="subjects[]" value="Calculus">
+                                                        <label class="form-check-label"
+                                                            for="subject_calculus">Calculus</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_linear_algebra" name="subjects[]"
+                                                            value="Linear Algebra">
+                                                        <label class="form-check-label"
+                                                            for="subject_linear_algebra">Linear Algebra</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_statistics" name="subjects[]"
+                                                            value="Statistics">
+                                                        <label class="form-check-label"
+                                                            for="subject_statistics">Statistics</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_probability" name="subjects[]"
+                                                            value="Probability">
+                                                        <label class="form-check-label"
+                                                            for="subject_probability">Probability</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_discrete_math" name="subjects[]"
+                                                            value="Discrete Mathematics">
+                                                        <label class="form-check-label"
+                                                            for="subject_discrete_math">Discrete Mathematics</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                            data-bs-target="#science">
+                                            Science
+                                        </button>
+                                    </h2>
+
+                                    <div id="science" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <div class="row">
+
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_physics" name="subjects[]" value="Physics">
+                                                        <label class="form-check-label"
+                                                            for="subject_physics">Physics</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_chemistry" name="subjects[]" value="Chemistry">
+                                                        <label class="form-check-label"
+                                                            for="subject_chemistry">Chemistry</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_biology" name="subjects[]" value="Biology">
+                                                        <label class="form-check-label"
+                                                            for="subject_biology">Biology</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_environmental_science" name="subjects[]"
+                                                            value="Environmental Science">
+                                                        <label class="form-check-label"
+                                                            for="subject_environmental_science">
+                                                            Environmental Science
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_astronomy" name="subjects[]" value="Astronomy">
+                                                        <label class="form-check-label"
+                                                            for="subject_astronomy">Astronomy</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-lg-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_geology" name="subjects[]" value="Geology">
+                                                        <label class="form-check-label"
+                                                            for="subject_geology">Geology</label>
+                                                    </div>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="subject_science_exam_prep" name="subjects[]"
+                                                            value="Science Exam Preparation">
+                                                        <label class="form-check-label" for="subject_science_exam_prep">
+                                                            Science Exam Preparation
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-0">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                                data-bs-target="#language">
+                                                Language
+                                            </button>
+                                        </h2>
+
+                                        <div id="language" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <div class="row">
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="subject_english" name="subjects[]" value="English">
+                                                            <label class="form-check-label"
+                                                                for="subject_english">English</label>
+                                                        </div>
+
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="subject_hindi" name="subjects[]" value="Hindi">
+                                                            <label class="form-check-label"
+                                                                for="subject_hindi">Hindi</label>
+                                                        </div>
+
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="subject_french" name="subjects[]" value="French">
+                                                            <label class="form-check-label"
+                                                                for="subject_french">French</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="subject_spanish" name="subjects[]" value="Spanish">
+                                                            <label class="form-check-label"
+                                                                for="subject_spanish">Spanish</label>
+                                                        </div>
+
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="subject_german" name="subjects[]" value="German">
+                                                            <label class="form-check-label"
+                                                                for="subject_german">German</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="subject_ielts" name="subjects[]"
+                                                                value="IELTS Preparation">
+                                                            <label class="form-check-label" for="subject_ielts">
+                                                                IELTS Preparation
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="subject_toefl" name="subjects[]"
+                                                                value="TOEFL Preparation">
+                                                            <label class="form-check-label" for="subject_toefl">
+                                                                TOEFL Preparation
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="step4">
+                    <div class="py-3">
+                        <div class="mb-5">
+                            <h5 class="fw-semibold mb-3">Relationship</h5>
+
+                            <p class="text-muted">
+                                As a tutor on our platform, you operate as an <strong>independent professional</strong>.
+                                This means you are not an employee of the platform and you have full control over how
+                                you deliver your tutoring services.
+                            </p>
+
+                            <p class="text-muted">
+                                You choose the subjects you teach, set your own availability, and decide how you
+                                structure your lessons. The platform simply helps you connect with students and
+                                provides tools to manage scheduling, communication, and payments.
+                            </p>
+
+                            <p class="text-muted">
+                                This independent relationship allows you to build your own tutoring profile and
+                                reputation while reaching students online in a secure and professional environment.
+                            </p>
+                        </div>
+
+                        <div class="mb-5">
+                            <h5 class="fw-semibold mb-3">New Students</h5>
+
+                            <p class="text-muted">
+                                Students discover tutors based on profile quality, responsiveness, availability,
+                                and past ratings. Completing your profile and replying quickly to student messages
+                                increases your chances of receiving new tutoring requests.
+                            </p>
+
+                            <p class="text-muted">
+                                The platform matches students with tutors who best fit their learning needs.
+                                Providing clear subject expertise, a strong profile description, and consistent
+                                teaching quality helps improve your visibility to new students.
+                            </p>
+
+                            <p class="text-muted">
+                                As you successfully complete lessons and receive positive feedback, your profile
+                                becomes more visible, helping you attract more students over time.
+                            </p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-semibold mb-3">Payment</h5>
+
+                            <p class="text-muted">
+                                During registration, you will set your default hourly rate. Students are charged
+                                through the platform only after a tutoring session has been successfully completed.
+                                Tutors should never accept direct payments from students outside the platform.
+                            </p>
+
+                            <p class="text-muted">
+                                For each completed session, you will receive a percentage of your listed rate.
+                                The remaining portion covers platform services such as payment processing,
+                                student matching, and system maintenance. As an independent tutor, you are
+                                responsible for managing your own taxes and obligations.
+                            </p>
+
+                            <p class="text-muted">
+                                Payments are made via <strong>direct deposit</strong> and are processed on scheduled
+                                payout dates each month. Processing may exclude weekends or public holidays.
+                            </p>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-3">
+                            <button type="submit" class="btn btn-primary text-white px-4">
+                                SAVE & CONTINUE
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary px-4">
+                                SKIP FOR NOW
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="step2">
+                    <h4 class="fw-semibold mb-1">Basic information</h4>
+                    <p class="text-muted mb-4">
+                        Please provide the following information so we can start composing your profile.
+                    </p>
+
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h6 class="fw-semibold mb-3">Administrative details</h6>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select id="gender" name="gender" class="select2-enable" required>
+                                <option value="">Please select...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="dob" class="form-label">
+                                Date of birth
+                                <i class="bi bi-info-circle text-primary" role="button" data-bs-toggle="modal"
+                                    data-bs-target="#dateob"></i>
+                            </label>
+                            <input type="date" id="dob" name="dob" class="form-control" required>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="cancellation_notice" class="form-label">
+                                Cancellation notice
+                                <i class="bi bi-info-circle text-primary"></i>
+                            </label>
+                            <select id="cancellation_notice" name="cancellation_notice" class="select2-enable" required>
+                                <option value="">None</option>
+                                <option value="12_hours">12 hours</option>
+                                <option value="24_hours">24 hours</option>
+                                <option value="48_hours">48 hours</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label class="form-label fw-semibold">Hourly rate</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" name="hourly_rate" min="1" step="1"
+                                    placeholder="Enter In $" required>
+                            </div>
+                            <small class="text-muted">
+                                Please choose a default hourly rate. Our platform fee is 15% of this amount. Most tutors
+                                charge between $50 - $100 per hour.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h6 class="fw-semibold mb-3">Education</h6>
+                            <p class="text-muted small mb-4">
+                                Please select your highest completed degree. This information helps us verify your
+                                academic background.
+                            </p>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="highest_degree_type" class="form-label">
+                                Highest degree
+                                <i class="bi bi-info-circle text-primary" role="button" data-bs-toggle="modal"
+                                    data-bs-target="#degreeTypeModal">
+                                </i>
+
+                            </label>
+                            <select id="highest_degree_type" name="highest_degree_type" class="select2-enable" required>
+                                <option value="">Select your highest degree</option>
+                                <option value="Enrolled">Enrolled</option>
+                                <option value="Coursework">Coursework</option>
+                                <option value="Diploma">Diploma</option>
+                                <option value="Bachelors">Bachelor’s</option>
+                                <option value="Masters">Master’s</option>
+                                <option value="PhD">PhD</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="college_name" class="form-label">
+                                College / University name
+                            </label>
+                            <input type="text" id="college_name" name="college_name" class="form-control"
+                                placeholder="e.g. Delhi University" required>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="degree_name" class="form-label">
+                                Degree name
+                            </label>
+                            <input type="text" id="degree_name" name="degree_name" class="form-control"
+                                placeholder="e.g. B.Sc, B.Ed, M.Tech" required>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="specialization" class="form-label">
+                                Specialization / Major
+                            </label>
+                            <input type="text" id="specialization" name="specialization" class="form-control"
+                                placeholder="e.g. Mathematics, Computer Science" required>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="degree_document" class="form-label">
+                                Upload degree certificate
+                            </label>
+                            <input type="file" id="degree_document" name="degree_document" class="form-control"
+                                accept=".pdf,.jpg,.jpeg,.png">
+                            <small class="text-muted">
+                                Accepted formats: PDF, JPG, PNG
+                            </small>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="teaching_certification_status" class="form-label">
+                                Teaching certification status <i class="bi bi-info-circle text-primary" role="button"
+                                    data-bs-toggle="modal" data-bs-target="#certification">
+                                </i>
+                            </label>
+                            <select id="teaching_certification_status" name="teaching_certification_status"
+                                class="select2-enable" required>
+                                <option value="">Select option</option>
+                                <option value="Certified">Certified</option>
+                                <option value="No Certified">No Certified</option>
+                                <option value="Palnned">Palnned</option>
+                                <option value="Certification Expired">Certification Expired”</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="teaching_certificate_document" class="form-label">
+                                Upload teaching certificate (if available)
+                            </label>
+                            <input type="file" id="teaching_certificate_document" name="teaching_certificate_document"
+                                class="form-control" accept=".pdf,.jpg,.jpeg,.png">
+                            <small class="text-muted">
+                                Optional. Upload if you have a teaching certificate.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <!-- SECTION TITLE -->
+                        <div class="col-12">
+                            <h6 class="fw-semibold mb-3">Address</h6>
+                            <p class="text-muted small mb-4">
+                                This information is used for verification and profile visibility. Online tutoring only.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="phone_number" class="form-label d-block">
+                                Phone number
+                            </label>
+                            <input type="tel" id="phone_number" name="phone_number" class="form-control d-block w-100"
+                                required inputmode="numeric">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="country" class="form-label">Country</label>
+                            <select id="country" name="country" class="form-select" required>
+                                <option value="">Select country</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="state_region" class="form-label">
+                                State / Region
+                            </label>
+                            <input type="text" id="state_region" name="state_region" class="form-control"
+                                placeholder="e.g. Dubai, Riyadh, Doha" required>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mb-3">
+                            <label for="city_area" class="form-label">
+                                City / Area
+                            </label>
+                            <input type="text" id="city_area" name="city_area" class="form-control"
+                                placeholder="e.g. Business Bay, Al Wakrah" required>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end gap-3">
+                        <button type="submit" class="btn btn-primary text-white px-4">
+                            SAVE & CONTINUE
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary px-4">
+                            SKIP FOR NOW
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="step3">
+                    <div class="mb-4">
+                        <h5 class="fw-semibold mb-1">Personalize your profile</h5>
+                        <p class="text-muted mb-0">
+                            Tell us about yourself. This is your chance to stand out.
+                            Students and parents will see this information on your profile page.
+                            Need inspiration?
+                            <a href="#" class="text-decoration-none">See an example</a>
+                            of a great tutor profile and free response.
+                        </p>
+                    </div>
+                    <div class="row gap-2">
+                        <div class="col-md-6 mb-4">
+                            <label for="profile_headline" class="form-label fw-semibold">
+                                Profile headline
+                            </label>
+                            <input type="text" id="profile_headline" name="profile_headline" class="form-control"
+                                placeholder="A short headline about yourself" maxlength="120" required>
+
+                            <small class="text-muted">
+                                This will appear at the top of your profile.
+                                For your privacy, last names are not shown on public profiles.
+                            </small>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label for="profile_photo" class="form-label fw-semibold">
+                                Profile photo
+                            </label>
+
+                            <input type="file" id="profile_photo" name="profile_photo" class="form-control"
+                                accept=".jpg,.jpeg,.png">
+
+                            <small class="text-muted d-block mt-2">
+                                Minimum size: <strong>200 × 200 pixels</strong><br>
+                                Tutors with a profile photo receive up to <strong>3× more inquiries</strong>
+                                than those without one. You can upload or change your photo at any time.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-2 mb-4">
+                            <h6 class="fw-semibold">Free response</h6>
+
+                            <p class="text-muted small">
+                                The free response section is your chance to stand out.
+                                Be descriptive, be thorough, and be yourself as you tell
+                                potential students and parents about your experience and
+                                tutoring methods.
+                            </p>
+                        </div>
+
+                        <div class="col-md-10">
+
+                            <p class="small">
+                                To become approved, specific information that outlines how and why you are able
+                                to tutor in specific areas must be included, such as:
+                            </p>
+
+                            <ul class="small">
+                                <li>Educational background, including any degrees and certifications.</li>
+                                <li>Previous tutoring/teaching experience, including methods or approaches.</li>
+                                <li>
+                                    Contextual details such as the ages of students you previously taught,
+                                    how long you have been teaching, and the context of your teaching
+                                    experience (classroom setting, one on one, volunteer experience, etc).
+                                </li>
+                            </ul>
+
+                            <p class="small text-muted">
+                                Please do not provide your information in an HTML, list, resume or ALL CAPS format,
+                                as it will be rejected. All submissions should be in a narrative style and at least
+                                2 to 3 paragraphs in length. All submissions are subject to a
+                                <strong>2048 character limit</strong>.
+                            </p>
+
+                            <div class="mb-4">
+                                <textarea class="form-control" id="free_response" name="free_response" rows="6"
+                                    maxlength="2048" placeholder="A paragraph or more about yourself"
+                                    required></textarea>
+                            </div>
+
+                            <div class="d-flex justify-content-end gap-3">
+                                <button type="submit" class="btn btn-primary text-white px-4">
+                                    SAVE & CONTINUE
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary px-4">
+                                    SKIP FOR NOW
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="step5">
+                    <div class="py-4">
+                        <div class="mb-4">
+                            <h5 class="fw-semibold">Agreement and Terms for Tutoring</h5>
+                            <p class="text-muted small">
+                                This agreement is a legally binding contract. By proceeding, you confirm that you
+                                have read, understood, and agreed to the terms outlined below.
+                            </p>
+                        </div>
+
+                        <div class="border rounded p-3 mb-4" style="max-height:260px; overflow-y:auto; font-size:14px;">
+
+                            <p>
+                                This Agreement ("Agreement") is entered into between you ("Independent Tutor")
+                                and <strong>Smart Brain Academy</strong> ("Platform").
+                                By registering as a tutor, you agree to comply with the following terms.
+                            </p>
+
+                            <p><strong>1. Platform Role</strong><br>
+                                The Platform operates as an online marketplace that connects independent tutors
+                                with students seeking educational services. The Platform does not provide tutoring
+                                services directly and is not responsible for the conduct of tutors or students.
+                            </p>
+
+                            <p><strong>2. Independent Tutor Status</strong><br>
+                                You acknowledge that you are acting as an independent tutor and not as an employee,
+                                agent, or representative of the Platform. You are solely responsible for the content,
+                                quality, and delivery of your tutoring sessions.
+                            </p>
+
+                            <p><strong>3. Use of the Platform</strong><br>
+                                You may use the Platform only for lawful educational purposes. You agree not to misuse
+                                the Platform, solicit users outside the system, or engage in activities that violate
+                                applicable laws or platform policies.
+                            </p>
+
+                            <p><strong>4. Payments and Fees</strong><br>
+                                Payments for tutoring sessions may be processed through the Platform. Any applicable
+                                service fees, payment timelines, and deductions will be clearly communicated.
+                            </p>
+
+                            <p><strong>5. Compliance and Eligibility</strong><br>
+                                You confirm that you meet the minimum age requirement, are legally permitted to provide
+                                tutoring services in your country of residence, and that the information you provide
+                                during registration is accurate and truthful.
+                            </p>
+
+                            <p><strong>6. Termination</strong><br>
+                                The Platform reserves the right to suspend or terminate access if these terms are
+                                violated or if your conduct negatively impacts students or the Platform.
+                            </p>
+
+                            <p><strong>7. Electronic Acceptance</strong><br>
+                                You agree that your electronic acceptance of this Agreement constitutes a valid and
+                                binding signature under applicable electronic transaction laws.
+                            </p>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="agree_terms" name="agree_terms"
+                                    required>
+                                <label class="form-check-label" for="agree_terms">
+                                    I voluntarily agree to be bound by the terms of this Independent Tutor Agreement.
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="agree_policy" name="agree_policy"
+                                    required>
+                                <label class="form-check-label" for="agree_policy">
+                                    I have read and agree to the <a href="#" class="text-decoration-none">Terms of
+                                        Use</a>.
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="eligibility_confirm"
+                                    name="eligibility_confirm" required>
+                                <label class="form-check-label" for="eligibility_confirm">
+                                    I confirm that I am at least 18 years old and legally eligible to provide tutoring
+                                    services.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <p class="small text-muted">
+                                The following serves as your digital signature. Please enter your legal name.
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="legal_first_name" class="form-label">Legal first name</label>
+                                    <input type="text" id="legal_first_name" name="legal_first_name"
+                                        class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label for="legal_last_name" class="form-label">Legal last name</label>
+                                    <input type="text" id="legal_last_name" name="legal_last_name" class="form-control"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end gap-3">
+                            <button type="submit" class="btn btn-primary text-white px-4">
+                                SAVE & CONTINUE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="step6">
+                    <div class="py-4">
+
+                        <div class="row">
+                            <div class="col-md-8">
+
+                                <h5 class="fw-semibold mb-2">Email confirmation sent</h5>
+
+                                <p class="text-muted small mb-3">
+                                    An email confirmation has been sent to the address provided.
+                                    If you don’t receive this in a few minutes, please confirm your
+                                    email address below and resend the confirmation email.
+                                </p>
+
+                                <div class="d-flex align-items-center gap-3 mb-2">
+                                    <div>
+                                        <div class="fw-semibold small" id="user_email">
+                                            useremail@gmail.com
+                                        </div>
+
+                                    </div>
+
+                                    <a type="button" id="resend_email_btn" class="btn btn-success btn-sm px-3 py-0">
+                                        RESEND EMAIL
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <a href="/tutor-flow-after-login/dashboard.html" type="submit"
+                                class="btn btn-primary text-white px-4">
+                                SAVE & CONTINUE
+                            </a>
+
+                            <button type="button" class="btn btn-outline-secondary px-4">
+                                SKIP FOR NOW
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+    </section>
+    <footer class="bg-white pt-5">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <div class="modal modal-lg fade" id="confirmTabChange" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Are you sure you want to skip this step?</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body ">
+                    Any changes you’ve made on this page will not be saved. Any information you’ve entered on other
+                    pages will still be saved.
+                </div>
+                <div class="modal-footer  border-0">
+                    <button class="btn btn-primary" id="confirmSwitchBtn">Yes I'M SURE</button>
+                    <button class="btn btn-outline-primary" data-bs-dismiss="modal">NO, STAY ON THE PAGE </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="degreeTypeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-semibold">Type of degree</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body pt-2">
+                    <p class="text-muted mb-0">
+                        Select the degree type that is the best fit.
+                        If you did not complete your degree, please select
+                        <b>"Coursework"</b>. If you are still working towards your degree,
+                        please select <b>"Enrolled"</b>.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="certification" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-semibold">Teaching certification status</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body pt-2">
+                    <p class="text-muted mb-0">
+                        Select the status of your teaching certification. If you are currently in the process of
+                        completing your certification, select “Palnned”. If your certification is no longer current,
+                        select “Certification Expired”.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="dateob" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-semibold">Date of birth</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body pt-2">
+                    <p class="text-muted mb-0">
+                        Your age will not be listed on your profile. Our platform uses this information so that students
+                        can search for a tutor within a specified age range.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cancellation_notice" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-semibold">Cancellation notice</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body pt-2">
+                    <p class="text-muted mb-0">
+                        You may wish to maintain a cancellation policy to guard against late notice of rescheduling or
+                        lesson cancellation. Please make sure to communicate this cancellation policy before you
+                        schedule a lesson with a student.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/js/utils.js"></script>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const phoneInput = document.querySelector("#phone_number");
+        const errorMessage = document.getElementById("error-message");
+        const validMessage = document.getElementById("valid-message");
+
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "ae",
+            onlyCountries: ["ae", "sa", "qa"],
+            separateDialCode: true,
+            nationalMode: false,
+            formatOnDisplay: true,
+            autoPlaceholder: "aggressive",
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/js/utils.js"
+        });
+
+        function getMaxDigits(countryIso) {
+            const maxDigitsMap = {
+                ae: 9,
+                sa: 9,
+                qa: 8
+            };
+            return maxDigitsMap[countryIso] || 9;
+        }
+
+        function validatePhone() {
+            const countryData = iti.getSelectedCountryData();
+            const maxDigits = getMaxDigits(countryData.iso2);
+            const currentDigits = phoneInput.value.replace(/\D/g, "");
+
+            // Check exact digit count
+            if (currentDigits.length !== maxDigits) {
+                showError(`Phone number must be exactly ${maxDigits} digits for ${countryData.name}.`);
+                return false;
+            }
+
+            const isValid = iti.isValidNumber();
+            const numberType = iti.getNumberType();
+            const isMobile = numberType === 1;
+
+            if (!isValid) {
+                showError("Please enter a valid phone number for UAE, Saudi Arabia, or Qatar.");
+                return false;
+            } else if (!isMobile) {
+                showError("Only mobile numbers are allowed.");
+                return false;
+            } else {
+                showValid();
+                return true;
+            }
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = "block";
+            validMessage.style.display = "none";
+            phoneInput.classList.add("is-invalid");
+            phoneInput.classList.remove("is-valid");
+        }
+
+        function showValid() {
+            errorMessage.style.display = "none";
+            validMessage.style.display = "block";
+            phoneInput.classList.remove("is-invalid");
+            phoneInput.classList.add("is-valid");
+        }
+
+        function clearFeedback() {
+            errorMessage.style.display = "none";
+            validMessage.style.display = "none";
+            phoneInput.classList.remove("is-invalid", "is-valid");
+        }
+
+        phoneInput.addEventListener("input", function () {
+            clearFeedback();
+        });
+
+        phoneInput.addEventListener("blur", validatePhone);
+
+        phoneInput.addEventListener("keypress", function (e) {
+            if (e.key === "Backspace" || e.key === "Delete" || e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "Tab") return;
+
+            if (!/[0-9]/.test(e.key)) {
+                e.preventDefault();
+                return;
+            }
+
+            const countryData = iti.getSelectedCountryData();
+            const maxLength = getMaxDigits(countryData.iso2);
+
+            const currentDigits = phoneInput.value.replace(/\D/g, "");
+            if (currentDigits.length >= maxLength) {
+                e.preventDefault();
+            }
+        });
+
+        phoneInput.addEventListener("paste", function (e) {
+            e.preventDefault();
+            const pastedData = (e.clipboardData || window.clipboardData).getData('text');
+            const digitsOnly = pastedData.replace(/\D/g, "");
+            const countryData = iti.getSelectedCountryData();
+            const maxLength = getMaxDigits(countryData.iso2);
+            if (digitsOnly.length > maxLength) return;
+            const allowedDigits = digitsOnly.substring(0, maxLength);
+            document.execCommand("insertText", false, allowedDigits);
+        });
+
+        document.getElementById("phoneForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            if (validatePhone()) {
+                const finalNumber = iti.getNumber();
+                alert("Valid mobile number submitted:\n" + finalNumber);
+            } else {
+                phoneInput.focus();
+            }
+        });
+    </script>
+    <script>
+        let targetTabButton = null;
+
+        const modalEl = document.getElementById('confirmTabChange');
+        const confirmModal = new bootstrap.Modal(modalEl);
+
+        document.querySelectorAll('#signupSteps .nav-link').forEach(tab => {
+
+            tab.addEventListener('click', function () {
+
+                const activeTab = document.querySelector('#signupSteps .nav-link.active');
+
+                if (this === activeTab) return;
+
+                targetTabButton = this;
+
+                confirmModal.show();
+            });
+
+        });
+
+        document.getElementById('confirmSwitchBtn').addEventListener('click', function () {
+
+            if (!targetTabButton) return;
+
+            const tab = new bootstrap.Tab(targetTabButton);
+            tab.show();
+
+            confirmModal.hide();
+
+            targetTabButton = null;
+        });
+    </script>
+    <script>
+        const maxSubjects = 5;
+        const selectedContainer = document.getElementById('selectedSubjects');
+        const nextBtn = document.getElementById('nextBtn');
+
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', updateSelected);
+        });
+
+        function updateSelected() {
+            const checked = [...document.querySelectorAll('input[type="checkbox"]:checked')];
+
+            if (checked.length > maxSubjects) {
+                this.checked = false;
+                alert('You can select up to 5 subjects only.');
+                return;
+            }
+
+            selectedContainer.innerHTML = '';
+
+            if (checked.length === 0) {
+                selectedContainer.textContent = 'No subjects selected';
+                nextBtn.disabled = true;
+                return;
+            }
+
+            checked.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'd-flex justify-content-between align-items-center border-bottom py-1';
+
+                div.innerHTML = `
+                <span>${item.value}</span>
+                <button class="btn btn-sm text-danger" onclick="removeSubject('${item.value}')">×</button>
+            `;
+                selectedContainer.appendChild(div);
+            });
+
+            nextBtn.disabled = false;
+        }
+
+        function removeSubject(value) {
+            const checkbox = [...document.querySelectorAll('input[type="checkbox"]')]
+                .find(cb => cb.value === value);
+
+            if (checkbox) checkbox.checked = false;
+            updateSelected();
+        }
+    </script>
+    <script>
+        function openTutorNotifications() {
+            // signal save
+            localStorage.setItem('openTutorNotifications', 'true');
+        }
+    </script>
+
+</body>
+
+</html>

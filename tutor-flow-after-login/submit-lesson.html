@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Lesson</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/message.css">
+
+</head>
+
+<body>
+    <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-1">
+                    <a href="/tutor-flow-after-login/tutor-message.html"
+                        class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Notification bell -->
+                <div class="nav-item dropdown mx-1">
+                    <button class="btn btn-sm border-0 text-dark position-relative p-0" type="button"
+                        id="notificationBell" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                          translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            3
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 shadow rounded-3" style="min-width: 350px;">
+                        <li class="dropdown-header">Notifications</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="px-3 py-2">• New message from rahul</li>
+                        <li class="px-3 py-2">• New lesson request</li>
+                        <li class="px-3 py-2">• Profile approved</li>
+                        <li class="px-3 py-2">• System update</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a href="/tutor-flow-after-login/profile.html" class="dropdown-item text-center"
+                                onclick="openTutorNotifications()">
+                                See all
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/tutor-flow-after-login/profile.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-person"></i>
+                                profile
+                            </a>
+
+                            <a href="/tutor-flow-after-login/setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+
+                    </ul>
+                </div> <!-- Toggler -->
+                <button class="navbar-toggler ms-2" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link " href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/all-lesson-list.html">Lessons</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/calnader.html">Calander</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/shedule-lesson.html">Shedule
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item active" href="/tutor-flow-after-login/submit-lesson.html">Submit
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/stundets-list.html">Students</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/payments.html">payment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <h4 class="fw-bold mb-3">Submit Completed Lesson</h4>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Search student by name...">
+                    </div>
+
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Student Name</th>
+                                        <th>Subject</th>
+                                        <th>Last Lesson</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr class="student-row" data-name="Rahul Sharma">
+                                        <td>Rahul Sharma</td>
+                                        <td>Mathematics</td>
+                                        <td>08 Jan 2026</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success action-btn submit-btn">
+                                                Submit Lesson
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="student-row" data-name="Ananya Verma">
+                                        <td>Ananya Verma</td>
+                                        <td>Science</td>
+                                        <td>07 Jan 2026</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success action-btn submit-btn">
+                                                Submit Lesson
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="student-row" data-name="Arjun Singh">
+                                        <td>Arjun Singh</td>
+                                        <td>English</td>
+                                        <td>05 Jan 2026</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success action-btn submit-btn">
+                                                Submit Lesson
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="card border-0 shadow-sm position-sticky" style="top:20px">
+                        <div class="card-body">
+                            <h6 class="fw-bold">Information</h6>
+                            <ul class="small text-muted ps-3">
+                                <li>Submit lesson only after completion</li>
+                                <li>Add clear notes for student & admin</li>
+                                <li>Submitted lessons cannot be deleted</li>
+                            </ul>
+
+                            <hr>
+
+                            <p class="small fw-semibold mb-1">Where will it appear?</p>
+                            <p class="small text-muted">
+                                Lesson History & Student Profile
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="submitLessonModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h6 class="modal-title fw-bold">Submit Lesson</h6>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+
+                            <!-- Student -->
+                            <div class="mb-3">
+                                <label class="form-label small">Student</label>
+                                <input type="text" id="submitStudentName" class="form-control" readonly>
+                            </div>
+
+                            <div class="row g-3">
+
+                                <!-- Lesson Date -->
+                                <div class="col-md-4">
+                                    <label class="form-label small">Lesson Date</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+
+                                <!-- Start Time (AM/PM supported) -->
+                                <div class="col-md-4">
+                                    <label class="form-label small">Start Time</label>
+                                    <input type="time" class="form-control" required>
+                                </div>
+
+                                <!-- Duration in Minutes -->
+                                <div class="col-md-4">
+                                    <label class="form-label small">Duration (Minutes)</label>
+                                    <input type="number" class="form-control" placeholder="e.g. 30, 60, 90" min="1"
+                                        required>
+                                </div>
+
+                                <!-- Lesson Notes -->
+                                <div class="col-12">
+                                    <label class="form-label small">Lesson Notes</label>
+                                    <textarea class="form-control" rows="3"
+                                        placeholder="Performance, behaviour, improvement areas" required></textarea>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success">Submit Lesson</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <footer class="bg-white pt-5">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="lessonViewModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4 p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0">Lesson Details</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="mb-3">
+                    <small class="text-muted">Lesson</small>
+                    <div class="fw-semibold">Math – Algebra</div>
+                </div>
+
+                <div class="mb-3">
+                    <small class="text-muted">Student</small>
+                    <div class="fw-semibold">Rahul Sharma</div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-6">
+                        <small class="text-muted">Date</small>
+                        <div class="fw-semibold">18 Sep 2025</div>
+                    </div>
+                    <div class="col-6">
+                        <small class="text-muted">Time</small>
+                        <div class="fw-semibold">4:00 PM</div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <small class="text-muted">Status</small><br>
+                    <span class="badge bg-warning text-dark">Scheduled</span>
+
+                </div>
+
+                <div class="text-end mt-4">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const submitModal = new bootstrap.Modal(
+            document.getElementById('submitLessonModal')
+        );
+        const studentInput = document.getElementById('submitStudentName');
+
+        document.querySelectorAll('.submit-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const row = btn.closest('tr');
+                studentInput.value = row.dataset.name;
+                submitModal.show();
+            });
+        });
+    </script>
+    <script>
+        function openTutorNotifications() {
+            // signal save
+            localStorage.setItem('openTutorNotifications', 'true');
+        }
+    </script>
+
+</body>
+
+</html>

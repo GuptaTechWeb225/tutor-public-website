@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+
+</head>
+
+<body>
+    <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-1">
+                    <a href="/tutor-flow-after-login/tutor-message.html"
+                        class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Notification bell -->
+                <div class="nav-item dropdown mx-1">
+                    <button class="btn btn-sm border-0 text-dark position-relative p-0" type="button"
+                        id="notificationBell" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                          translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            3
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 shadow rounded-3" style="min-width: 350px;">
+                        <li class="dropdown-header">Notifications</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="px-3 py-2">• New message from rahul</li>
+                        <li class="px-3 py-2">• New lesson request</li>
+                        <li class="px-3 py-2">• Profile approved</li>
+                        <li class="px-3 py-2">• System update</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a href="/tutor-flow-after-login/profile.html" class="dropdown-item text-center"
+                                onclick="openTutorNotifications()">
+                                See all
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/tutor-flow-after-login/profile.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-person"></i>
+                                profile
+                            </a>
+
+                            <a href="/tutor-flow-after-login/setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+
+                    </ul>
+                </div> <!-- Toggler -->
+                <button class="navbar-toggler ms-2" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link " href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/all-lesson-list.html">Lessons</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/calnader.html">Calander</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/shedule-lesson.html">Shedule
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/submit-lesson.html">Submit
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item active"
+                                    href="/tutor-flow-after-login/stundets-list.html">Students</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/payments.html">payment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="container py-4">
+            <div class="row">
+                <div class="table-wrapper shadow-sm my-3">
+                    <h5 class="table-heading mb-3">Your Student List</h5>
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Status</th>
+                                    <th>Connected Since</th>
+                                    <th>Last Class</th>
+                                    <th class="">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>S1001</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                                                style="width:36px;height:36px;">
+                                                R
+                                            </div>
+                                            <div class="fw-semibold">Rahul Sharma</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">Active</span>
+                                    </td>
+                                    <td>15 Aug 2025</td>
+                                    <td>12 Sep 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary py-0 px-1 rounded-2"
+                                            data-bs-toggle="modal" data-bs-target="#studentViewModal">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>S1002</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center"
+                                                style="width:36px;height:36px;">
+                                                A
+                                            </div>
+                                            <div class="fw-semibold">Ayesha Khan</div>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-secondary">Inactive</span>
+                                    </td>
+                                    <td>02 Aug 2025</td>
+                                    <td>28 Aug 2025</td>
+                                    <td class="">
+                                        <button class="btn btn-sm btn-outline-primary py-0 px-1 rounded-2"
+                                            data-bs-toggle="modal" data-bs-target="#studentViewModal">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>S1003</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center"
+                                                style="width:36px;height:36px;">
+                                                M
+                                            </div>
+                                            <div class="fw-semibold">Mohit Verma</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">Active</span>
+                                    </td>
+                                    <td>20 Jul 2025</td>
+                                    <td>05 Sep 2025</td>
+                                    <td class="">
+                                        <button class="btn btn-sm btn-outline-primary py-0 px-1 rounded-2"
+                                            data-bs-toggle="modal" data-bs-target="#studentViewModal">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="custom-pagination-wrapper d-flex justify-content-end mt-4">
+                        <ul class="custom-pagination">
+                            <li class="custom-page-item disabled">
+                                <a href="#" class="custom-page-link">&laquo;</a>
+                            </li>
+                            <li class="custom-page-item active">
+                                <a href="#" class="custom-page-link">1</a>
+                            </li>
+                            <li class="custom-page-item">
+                                <a href="#" class="custom-page-link">2</a>
+                            </li>
+                            <li class="custom-page-item">
+                                <a href="#" class="custom-page-link">3</a>
+                            </li>
+                            <li class="custom-page-item">
+                                <a href="#" class="custom-page-link">&raquo;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="studentViewModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4 p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0">Student Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                        style="width:40px;height:40px;font-size:12px;">
+                        R
+                    </div>
+                    <div>
+                        <h6 class="mb-0 fw-semibold">Rahul Sharma</h6>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <small class="text-muted">Status</small>
+                        <div class="fw-semibold text-success">Active</div>
+                    </div>
+
+                    <div class="col-6">
+                        <small class="text-muted">Connected Since</small>
+                        <div class="fw-semibold">15 Aug 2025</div>
+                    </div>
+
+                    <div class="col-6">
+                        <small class="text-muted">Total Classes</small>
+                        <div class="fw-semibold">8</div>
+                    </div>
+
+                    <div class="col-6">
+                        <small class="text-muted">Last Class</small>
+                        <div class="fw-semibold">12 Sep 2025</div>
+                    </div>
+
+                </div>
+                <div class=" mt-4">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white pt-5">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openTutorNotifications() {
+            // signal save
+            localStorage.setItem('openTutorNotifications', 'true');
+        }
+    </script>
+
+</body>
+
+</html>

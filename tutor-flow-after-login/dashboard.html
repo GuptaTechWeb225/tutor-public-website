@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <style>
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* .menu-link.active {
+            background: var(--secondary);
+            color: #fff;
+        } */
+
+        .menu-link:hover {
+            background: #eef3ff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-1">
+                    <a href="/tutor-flow-after-login/tutor-message.html"
+                        class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Notification bell -->
+                <div class="nav-item dropdown mx-1">
+                    <button class="btn btn-sm border-0 text-dark position-relative p-0" type="button"
+                        id="notificationBell" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                          translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            3
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 shadow rounded-3" style="min-width: 350px;">
+                        <li class="dropdown-header">Notifications</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="px-3 py-2">• New message from rahul</li>
+                        <li class="px-3 py-2">• New lesson request</li>
+                        <li class="px-3 py-2">• Profile approved</li>
+                        <li class="px-3 py-2">• System update</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a href="/tutor-flow-after-login/profile.html" class="dropdown-item text-center"
+                                onclick="openTutorNotifications()">
+                                See all
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/tutor-flow-after-login/profile.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-person"></i>
+                                profile
+                            </a>
+
+                            <a href="/tutor-flow-after-login/setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+
+                    </ul>
+                </div> <!-- Toggler -->
+                <button class="navbar-toggler ms-2" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/all-lesson-list.html">Lessons</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/calnader.html">Calander</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/shedule-lesson.html">Shedule
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/submit-lesson.html">Submit
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/stundets-list.html">Students</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/payments.html">payment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-4">
+                    <div class="card border-0 shadow-sm p-3 mb-3 text-center">
+                        <img src="/assets/images/tutor/tutor5.png" class="rounded-circle mx-auto" width="60"
+                            height="60">
+                        <h6 class="mt-2 mb-0">Danish M.</h6>
+                        <small class="text-muted">12 hours tutored</small>
+                        <small class="text-warning">★ 4 (10 ratings)</small>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-3">
+                            View Public Profile <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="card border-0 shadow-sm p-2 gap-2">
+                        <a class="menu-link" href="/tutor-flow-after-login/shedule-lesson.html"><i
+                                class="bi bi-file-earmark-easel"></i> Schedule Lesson</a>
+                        <a class="menu-link" href="/tutor-flow-after-login/submit-lesson.html"><i
+                                class="bi bi-upload"></i> Submit Lesson</a>
+                        <a class="menu-link" href="/tutor-flow-after-login/stundets-list.html"><i
+                                class="bi bi-people-fill"></i>Studnets</a>
+                        <a class="menu-link" href="/tutor-flow-after-login/tutor-message.html"><i
+                                class="bi bi-chat"></i> Messages</a>
+                        <a class="menu-link" href="/tutor-flow-after-login/calnader.html"><i class="bi bi-calendar"></i>
+                            Calander</a>
+                        <a class="menu-link active" href="/tutor-flow-after-login/payments.html"><i
+                                class="bi bi-credit-card-2-front"></i> Payment's</a>
+                    </div>
+
+                </div>
+                <div class="col-lg-9 col-md-8">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-4">
+                            <div class="card shadow-sm border-0 p-3 h-100">
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="bi bi-clock text-primary fs-4"></i>
+                                    <div>
+                                        <small class="text-muted">Response Time</small>
+                                        <h5 class="mb-0">1 Hr</h5>
+                                        <small class="text-muted">No inquiries in 60 days</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card shadow-sm border-0 p-3 h-100">
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="bi bi-graph-up-arrow text-success fs-4"></i>
+                                    <div>
+                                        <small class="text-muted">Response Rate</small>
+                                        <h5 class="mb-0">80%</h5>
+                                        <small class="text-muted">No inquiries in 60 days</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card shadow-sm border-0 p-3 h-100">
+                                <div class="d-flex align-items-center gap-3">
+                                    <i class="bi bi-star-fill text-secondary fs-4"></i>
+                                    <div>
+                                        <small class="text-muted">Tutor Rank</small>
+                                        <h5 class="mb-0">Silver</h5>
+                                        <small class="text-muted">50+ lessons completed</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width:48px; height:48px;">
+                                    <i class="bi bi-currency-dollar text-success fs-5"></i>
+                                </div>
+                                <h6 class="mb-0 fw-semibold">Payments</h6>
+                            </div>
+                            <a href="/tutor-flow-after-login/payments.html"
+                                class="text-primary text-decoration-none fw-semibold">
+                                View Details <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                        <hr class="">
+                        <div class="row g-3">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="shadow-sm rounded-4 p-3 h-100 bg-success bg-opacity-10">
+                                    <small class="text-muted">Total Earnings</small>
+                                    <h4 class="fw-semibold mb-0">$0.00</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="shadow-sm rounded-4 p-3 h-100 bg-primary bg-opacity-10">
+                                    <small class="text-muted">Amount Paid</small>
+                                    <h4 class="fw-semibold mb-0">$0.00</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="shadow-sm rounded-4 p-3 h-100 bg-warning bg-opacity-10">
+                                    <small class="text-muted">Amount Owed</small>
+                                    <h4 class="fw-semibold mb-0">$0.00</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="shadow-sm rounded-4 p-3 h-100 bg-purple bg-opacity-10">
+                                    <small class="text-muted">Pay Percent</small>
+                                    <h4 class="fw-semibold mb-0">75%</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-4 border-0 shadow-sm mb-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center"
+                                style="width:48px; height:48px;">
+                                <i class="bi bi-person-fill text-primary fs-5"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">Rahul Sharma</h6>
+                                    <small class="text-muted">2 min ago</small>
+                                </div>
+                                <p class="text-muted mb-2">
+                                    Hi, I am looking for a Math tutor for class 10. Are you available?
+                                </p>
+                                <div class="d-flex  gap-2">
+                                    <a href="/tutor-flow-after-login/tutor-message.html" class="btn btn-sm btn-primary">
+                                        View Message
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-secondary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width:48px; height:48px;">
+                                    <i class="bi bi-briefcase-fill text-warning fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-semibold mb-1">Jobs Board</h6>
+                                    <p class="text-muted mb-0">
+                                        Browse available tutoring opportunities and find new students.
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="/career/open-position.html" class="btn btn-outline-primary rounded-pill px-4">
+                                View Jobs <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+                                style="width:48px; height:48px;">
+                                <i class="bi bi-question-circle-fill text-primary fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="fw-semibold mb-1">Computer</h6>
+                                        <p class="text-muted mb-2">
+                                            Can you explain quadratic equations with an example?
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between gap-3">
+                                    <span class="btn py-0 rounded-1 px-1 bg-info text-white">Ask An Expert</span>
+                                    <a href="#" class="btn btn-outline-primary rounded-pill px-3">
+                                        View Question<i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-5">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openTutorNotifications() {
+            // signal save
+            localStorage.setItem('openTutorNotifications', 'true');
+        }
+    </script>
+
+</body>
+
+</html>

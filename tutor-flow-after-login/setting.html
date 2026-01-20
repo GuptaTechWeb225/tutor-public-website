@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <style>
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .menu-link:hover {
+            background: #eef3ff;
+        }
+    </style>
+</head>
+
+<body>
+    <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-1">
+                    <a href="/tutor-flow-after-login/tutor-message.html"
+                        class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Notification bell -->
+                <div class="nav-item dropdown mx-1">
+                    <button class="btn btn-sm border-0 text-dark position-relative p-0" type="button"
+                        id="notificationBell" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                          translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            3
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 shadow rounded-3" style="min-width: 350px;">
+                        <li class="dropdown-header">Notifications</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="px-3 py-2">• New message from rahul</li>
+                        <li class="px-3 py-2">• New lesson request</li>
+                        <li class="px-3 py-2">• Profile approved</li>
+                        <li class="px-3 py-2">• System update</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+              <li>
+  <a href="/tutor-flow-after-login/profile.html"
+     class="dropdown-item text-center"
+     onclick="openTutorNotifications()">
+     See all
+  </a>
+</li>
+
+                    </ul>
+                </div>
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/tutor-flow-after-login/profile.html" class="fs-6 dropdown-item my-account-side ">
+                                <i class="bi bi-person"></i>
+                                profile
+                            </a>
+
+                            <a href="/tutor-flow-after-login/setting.html"
+                                class="fs-6 dropdown-item my-account-side active">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </ul>
+                </div> <!-- Toggler -->
+                <button class="navbar-toggler ms-2" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link " href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/all-lesson-list.html">Lessons</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/calnader.html">Calander</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/shedule-lesson.html">Shedule
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/submit-lesson.html">Submit
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/stundets-list.html">Students</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/payments.html">payment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 p-3 border-end">
+                <h4 class="mb-4 ms-2 fw-bold">Tutor Settings</h4>
+                <div class="nav flex-column align-items-start nav-pills" id="tutor-profile-tab" role="tablist">
+                    <button class="nav-link active" id="profile-tab" data-bs-toggle="pill" data-bs-target="#profile"
+                        type="button" role="tab">
+                        Profile Information
+                    </button>
+                    <button class="nav-link" id="preferences-tab" data-bs-toggle="pill" data-bs-target="#preferences"
+                        type="button" role="tab">
+                        Teaching Preferences
+                    </button>
+                    <button class="nav-link" id="notifications-tab" data-bs-toggle="pill"
+                        data-bs-target="#notifications" type="button" role="tab">
+                        Notification Settings
+                    </button>
+                    <button class="nav-link" id="payout-tab" data-bs-toggle="pill" data-bs-target="#payout"
+                        type="button" role="tab">
+                        Payout Settings
+                    </button>
+                    <button class="nav-link" id="security-tab" data-bs-toggle="pill" data-bs-target="#security"
+                        type="button" role="tab">
+                        Change Password
+                    </button>
+                </div>
+            </div>
+            <!-- RIGHT SIDE - CONTENT -->
+            <div class="col-md-9 p-4">
+                <div class="tab-content" id="tutor-profile-tabContent">
+                    <!-- PROFILE -->
+                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="fw-bold">Primary Information</h4>
+                            <button id="editProfileBtn" class="btn btn-outline-primary px-3 rounded-1 btn-sm"
+                                data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                Edit
+                            </button>
+
+                        </div>
+
+                        <!-- Primary Contact -->
+                        <div class="bg-light px-3 py-2 mb-3 fw-semibold rounded">
+                            Contact Information
+                        </div>
+
+                        <p class="text-muted small">
+                            This information is used to contact you regarding tutoring activity.
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Email</label>
+                                <input type="email" class="form-control" value="tutor@email.com" readonly>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Phone</label>
+                                <input type="tel" class="form-control" value="8765432345" readonly>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="bg-light px-3 py-2 mt-4 mb-3 fw-semibold rounded">
+                            Address Information
+                        </div>
+
+                        <p class="text-muted small">
+                            Required for verification and tax-related documents.
+                        </p>
+
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">City</label>
+                                <input type="text" class="form-control" value="India" readonly>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">State</label>
+                                <select class="form-select" disabled>
+                                    <option>Select</option>
+                                    <option selected>Madhya Pradesh</option>
+                                    <option>Maharastra</option>
+                                    <option>Uttar Pradesh</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">ZIP</label>
+                                <input type="text" class="form-control" value="10001" readonly>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content rounded-3">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-bold">Edit Primary Information</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+
+                                    <!-- Contact Info -->
+                                    <div class="bg-light px-3 py-2 mb-3 fw-semibold rounded">
+                                        Contact Information
+                                    </div>
+
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Email</label>
+                                            <input type="email" class="form-control" value="tutor@email.com">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Phone</label>
+                                            <input type="tel" class="form-control" value="8765432345">
+                                        </div>
+                                    </div>
+
+                                    <!-- Address Info -->
+                                    <div class="bg-light px-3 py-2 mb-3 fw-semibold rounded">
+                                        Address Information
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label fw-semibold">City</label>
+                                            <input type="text" class="form-control" value="India">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class="form-label fw-semibold">State</label>
+                                            <select class="form-select select2-modal">
+                                                <option>Madhya Pradesh</option>
+                                                <option>Maharashtra</option>
+                                                <option>Uttar Pradesh</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class="form-label fw-semibold">ZIP</label>
+                                            <input type="text" class="form-control" value="10001">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Modal Footer -->
+                                <div class="modal-footer">
+                                    <button class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary px-4">Save Changes</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- AVAILABILITY -->
+                    <div class="tab-pane fade" id="preferences" role="tabpanel" aria-labelledby="preferences-tab">
+
+                        <!-- Welcome -->
+                        <h4 class="fw-bold mb-3">
+                            Teaching preferences
+                        </h4>
+                        <!-- Q1 -->
+                        <div class="mb-4">
+                            <p class="fw-semibold mb-2">
+                                Q1. How much teaching experience do you have?
+                            </p>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="experience" id="exp1">
+                                <label class="form-check-label" for="exp1">
+                                    Fresher (0–1 year)
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="experience" id="exp2">
+                                <label class="form-check-label" for="exp2">
+                                    1–3 years
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="experience" id="exp3">
+                                <label class="form-check-label" for="exp3">
+                                    3–5 years
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="experience" id="exp4">
+                                <label class="form-check-label" for="exp4">
+                                    More than 5 years
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="mb-4">
+                            <p class="fw-semibold mb-2">
+                                Q2. What type of tutoring experience do you have?
+                            </p>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="mode" id="mode1">
+                                <label class="form-check-label" for="mode1">
+                                    Online only
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="mode" id="mode2">
+                                <label class="form-check-label" for="mode2">
+                                    Offline (in-person)
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="mode" id="mode3">
+                                <label class="form-check-label" for="mode3">
+                                    Both online & offline
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="mb-4">
+                            <p class="fw-semibold mb-2">
+                                Q3. How confident are you in teaching your subject?
+                            </p>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="confidence" id="conf1">
+                                <label class="form-check-label" for="conf1">
+                                    Beginner
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="confidence" id="conf2">
+                                <label class="form-check-label" for="conf2">
+                                    Intermediate
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="confidence" id="conf3">
+                                <label class="form-check-label" for="conf3">
+                                    Advanced
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="confidence" id="conf4">
+                                <label class="form-check-label" for="conf4">
+                                    Expert
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Q4 -->
+                        <div class="mb-4">
+                            <p class="fw-semibold mb-2">
+                                Q4. Which student level do you prefer to teach?
+                            </p>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" id="level1">
+                                <label class="form-check-label" for="level1">Primary (Grades 1–5)</label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" id="level2">
+                                <label class="form-check-label" for="level2">Middle School (Grades 6–8)</label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" id="level3">
+                                <label class="form-check-label" for="level3">High School (Grades 9–12)</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="level4">
+                                <label class="form-check-label" for="level4">College / University</label>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="mb-4">
+                            <p class="fw-semibold mb-2">
+                                Q5. What is your teaching style?
+                            </p>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="style" id="style1">
+                                <label class="form-check-label" for="style1">Concept-based (theory focused)</label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="style" id="style2">
+                                <label class="form-check-label" for="style2">Practical / problem-solving</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="style" id="style3">
+                                <label class="form-check-label" for="style3">Balanced (theory + practice)</label>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Q6 -->
+                        <div class="mb-4">
+                            <p class="fw-semibold mb-2">
+                                Q6. Preferred session duration?
+                            </p>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="duration" id="dur1">
+                                <label class="form-check-label" for="dur1">30 minutes</label>
+                            </div>
+
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="duration" id="dur2">
+                                <label class="form-check-label" for="dur2">45 minutes</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="duration" id="dur3">
+                                <label class="form-check-label" for="dur3">60 minutes</label>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="">
+                            <a href="/tutor-flow-after-login/tutor-signup-steps.html"
+                                class="btn btn-primary  rounded-1">
+                                Save
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- SUBJECTS & EXPERIENCE -->
+                    <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+
+                        <h4 class="fw-bold mb-4">Notification Settings</h4>
+
+                        <div class="row">
+
+                            <!-- EMAIL NOTIFICATIONS -->
+
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label fw-semibold">
+                                    Platform Updates
+                                </label>
+                                <div class="text-muted small">
+                                    Updates about new features and improvements.
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label fw-semibold">
+                                    Promotions & Offers
+                                </label>
+                                <div class="text-muted small">
+                                    Emails about special offers and promotions.
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label fw-semibold">
+                                    New Student Requests
+                                </label>
+                                <div class="text-muted small">
+                                    Get notified when a student sends you a request.
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" checked>
+                                <label class="form-check-label fw-semibold">
+                                    Lesson Reminders
+                                </label>
+                                <div class="text-muted small">
+                                    Session reminders before scheduled lessons.
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label fw-semibold">
+                                    Reviews & Feedback
+                                </label>
+                                <div class="text-muted small">
+                                    Notifications when students leave reviews.
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- SAVE BUTTON -->
+                        <div class="text-end mt-4">
+                            <button class="btn btn-primary rounded-1 px-4">
+                                Save Preferences
+                            </button>
+                        </div>
+
+                    </div>
+                    <!-- PRICING -->
+                    <div class="tab-pane fade" id="payout" role="tabpanel" aria-labelledby="notifications-tab">
+
+                        <div class="container py-4">
+
+                            <!-- HEADER -->
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="fw-bold">Payout Methods</h4>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#addPayoutModal">
+                                    + Add Payout Method
+                                </button>
+
+                            </div>
+
+                            <p class="text-muted mb-4">
+                                Add a payout method to receive your earnings. You can manage or update your payout
+                                details
+                                anytime.
+                            </p>
+
+                            <!-- PAYOUT METHOD CARDS -->
+                            <div class="row g-4">
+                                <div class="card payout-card border-0 shadow-sm rounded-4 p-4 h-100 position-relative">
+
+                                    <!-- ACTIVE BADGE -->
+                                    <span
+                                        class="position-absolute top-25 end-0 translate-middle custom-badge bg-success text-white rounded-pill px-3">
+                                        Active
+                                    </span>
+
+                                    <!-- HEADER -->
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+
+                                        <img src="/assets/images/icon/stripe.svg" height="28">
+
+
+                                    </div>
+
+                                    <!-- DETAILS -->
+                                    <div class="payout-details small">
+                                        <div class="d-flex justify-content-between py-1">
+                                            <span class="text-muted">Account Email</span>
+                                            <span class="fw-semibold">tutor@email.com</span>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between py-1">
+                                            <span class="text-muted">Account Holder</span>
+                                            <span class="fw-semibold">Rajesh Gupta</span>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between py-1">
+                                            <span class="text-muted">Bank</span>
+                                            <span class="fw-semibold">HDFC Bank</span>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between py-1">
+                                            <span class="text-muted">Account Type</span>
+                                            <span class="fw-semibold">Checking</span>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between py-1">
+                                            <span class="text-muted">Currency</span>
+                                            <span class="fw-semibold">INR</span>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between py-1">
+                                            <span class="text-muted">Country</span>
+                                            <span class="fw-semibold">India</span>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-3">
+
+                                    <!-- ACTIONS -->
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <button class="btn btn-outline-secondary btn-sm edit-btn" data-bs-toggle="modal"
+                                            data-bs-target="#editPayoutModal">
+                                            Edit
+                                        </button>
+
+                                        <button class="btn btn-outline-danger btn-sm remove-btn">
+                                            Remove
+                                        </button>
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="modal fade" id="addPayoutModal" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content rounded-4 border-0">
+
+                                            <div class="modal-header">
+                                                <h5 class="modal-title fw-bold">Add Payout Method</h5>
+                                                <button class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <!-- Select Method -->
+                                                <div class="mb-3">
+                                                    <label class="form-label fw-semibold">Payout Method</label>
+                                                    <select class="form-select select2-modal" id="payoutMethod">
+                                                        <option value="">Select Method</option>
+                                                        <option value="paypal">PayPal</option>
+                                                    </select>
+                                                </div>
+
+
+
+                                                <!-- PAYPAL FORM -->
+                                                <div id="paypalForm" class="d-none">
+                                                    <h6 class="fw-bold mb-3">PayPal Account Details</h6>
+
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-semibold">Email</label>
+
+                                                        <input type="email" class="form-control"
+                                                            placeholder="PayPal Email">
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-semibold">Account Holder
+                                                            Name</label>
+
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Account Holder Name">
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-semibold">Account Type</label>
+
+                                                        <select class="form-select">
+                                                            <option>Personal</option>
+                                                            <option>Business</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-semibold">Country</label>
+
+                                                        <input type="text" class="form-control" placeholder="Country">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                                <button class="btn btn-primary">Save Payout Method</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="editPayoutModal" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content rounded-4 border-0">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title fw-bold">Edit Payout Method</h5>
+                                                <button class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label class="form-label fw-semibold">Account Email</label>
+
+                                                        <input type="email" class="form-control"
+                                                            placeholder="Account Email" value="tutor@email.com">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label fw-semibold">Account Holder
+                                                            Name</label>
+
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Account Holder" value="Rajesh Gupta">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label fw-semibold">Bank Name</label>
+
+                                                        <input type="text" class="form-control" placeholder="Bank Name"
+                                                            value="HDFC Bank">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label fw-semibold">Account Type</label>
+
+                                                        <select class="form-select">
+                                                            <option selected>Checking</option>
+                                                            <option>Savings</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label fw-semibold">Currency</label>
+
+                                                        <input type="text" class="form-control" placeholder="Currency"
+                                                            value="INR">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label fw-semibold">Country</label>
+
+                                                        <input type="text" class="form-control" placeholder="Country"
+                                                            value="India">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                                <button class="btn btn-primary" id="savePayoutBtn">Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    document.getElementById('payoutMethod').addEventListener('change', function () {
+                                        document.getElementById('paypalForm').classList.add('d-none');
+
+
+                                        if (this.value === 'paypal') {
+                                            document.getElementById('paypalForm').classList.remove('d-none');
+                                        }
+                                    });
+                                </script>
+                                <script>
+                                    document.querySelectorAll('.remove-btn').forEach(btn => {
+                                        btn.addEventListener('click', function () {
+                                            if (confirm('Are you sure you want to remove this payout method?')) {
+                                                // Remove the card from UI
+                                                this.closest('.payout-card').remove();
+
+                                                // TODO: Call backend API to delete payout method
+                                                console.log('Payout method removed');
+                                            }
+                                        });
+                                    });
+                                </script>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SECURITY -->
+                    <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                        <h4>Password & Security</h4>
+                        <p>Update your password and secure your account.</p>
+
+                        <form>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" class="form-control" placeholder="Enter current password">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">New Password</label>
+                                <input type="password" class="form-control" placeholder="Enter new password">
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" placeholder="Confirm new password">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary rounded-1 ">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white pt-5">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About Us</a>
+                        </li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script>
+function openTutorNotifications() {
+    // signal save
+    localStorage.setItem('openTutorNotifications', 'true');
+}
+</script>
+
+</body>
+
+</html>

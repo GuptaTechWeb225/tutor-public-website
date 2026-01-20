@@ -13,101 +13,115 @@
 </head>
 
 <body>
+<div class="container">
+    <div class="row min-vh-100 d-flex justify-content-center align-items-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
 
-    <div class="container">
-        <div class="row min-vh-100 d-flex justify-content-center align-items-center ">
-            <div class="col-lg-6 col-md-8 col-sm-10 ">
-                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
-                    <div class="row g-0">
+                <div class="p-4 p-lg-5">
 
-                        <!-- LOGIN AREA -->
-                        <div class="">
-                            <div class="p-4 p-lg-5">
+                    <!-- HEADING -->
+                    <h3 class="fw-bold mb-1">Welcome back, Student!</h3>
+                    <p class="text-muted mb-4">
+                        Sign in to continue learning with expert mentors.
+                        <br>
+                        <a href="/befor-login/login-flow/Signup.html"
+                           class="fw-semibold text-primary text-decoration-none">
+                            Create a student account
+                        </a>
+                    </p>
+   <!-- SOCIAL LOGIN -->
+                    <div class="row g-2 mb-4">
+                        <div class="col">
+                            <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2">
+                                <img src="/assets/images/svg/google.svg" width="16">
+                                Google
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2">
+                                <img src="/assets/images/svg/apple.svg" width="16">
+                                Apple
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2">
+                                <img src="/assets/images/svg/facebook.svg" width="16">
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
 
-                                <h3 class="fw-bold mb-1">Welcome back !</h3>
-                                <p class="text-muted mb-4">
-                                    Continue your learning journey with expert mentors.
-                                    <br>
-                                    <a href="#" class="fw-semibold text-primary text-decoration-none">
-                                        Create a student account
-                                    </a>
-                                </p>
+                    <div class="text-center my-4">
+                        <small>or continue as a student using</small>
+                    </div>
 
-                                <!-- SOCIAL LOGIN -->
-                                <div class="row g-2 mb-4">
-                                    <div class="col">
+                    <!-- LOGIN FORM -->
+                    <form action="/after-login/dashboard.html" method="post">
 
-                                        <button
-                                            class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 ">
-                                            <img src="/assets/images/svg/google.svg" width="16" alt="">
-                                            <span>Google</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="col">
-                                        <button
-                                            class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 ">
-                                            <img src="/assets/images/svg/apple.svg" width="16" alt="">
-                                            <span>Apple</span>
-                                        </button>
-                                    </div>
- 
-                                    <div class="col">
-                                        <button
-                                            class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 ">
-                                            <!-- Facebook -->
-                                            <img src="/assets/images/svg/facebook.svg" width="16" alt="">
-                                            <span>Facebook</span>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="text-center  my-4">
-                                    <small>or sign in using your credentials</small>
-                                </div>
-
-                                <!-- FORM -->
-                                <div class="mb-3">
-                                    <label class="form-label fw-semibold">Email address</label>
-                                    <input type="email" name="email" class="form-control form-control-lg"
-                                        placeholder="student@email.com" required>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="form-label fw-semibold">Password</label>
-                                    <input type="password" name="password" class="form-control form-control-lg"
-                                        placeholder="Enter password" required>
-                                </div>
-
-                                <a href="/index.html" type="submit" class="btn btn-primary btn-sm w-100 rounded-3">
-                                    Continue Learning →
-                                </a>
-
-                                <div class="text-center mt-4">
-                                    <span class="small text-muted">
-                                        Don’t have an account?
-                                    </span>
-                                    <a href="/befor-login/login-flow/Signup.html"
-                                        class="small fw-semibold text-primary text-decoration-none ms-1">
-                                        Sign up
-                                    </a>
-                                </div>
-
-                                <div class="text-center mt-3">
-                                    <a href="/befor-login/login-flow/forgotpw.html" class="small ">
-                                        Forgot password?
-                                    </a>
-                                </div>
-
-                            </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Email / Username
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control form-control-lg"
+                                placeholder="student@example.com"
+                                required
+                                autocomplete="username"
+                            >
                         </div>
 
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control form-control-lg"
+                                placeholder="Enter your password"
+                                required
+                                autocomplete="current-password"
+                            >
+                        </div>
+  <!-- HELP LINKS -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label small" for="rememberMe">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="/befor-login/login-flow/forgotpw.html"
+                           class="small text-decoration-none">
+                            Forgot password?
+                        </a>
                     </div>
-                </div>
-            </div>
+                        <a href="/after-login/dashbord.html" type="submit"
+                            class="btn btn-primary w-100 py-2 rounded-3 fw-semibold">
+                            Go to Student Dashboard →
+                    </a>
 
+                    </form>
+
+
+                    <div class="text-center mt-2">
+                        <span class="small text-muted">Want to login as tutor?</span>
+                        <a href="/befor-login/login-flow/tutor-login.html"
+                           class="small fw-semibold text-primary text-decoration-none ms-1">
+                            Login
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
     </div>
+</div>
+
 
 
     <script src="/assets/js/bootstrap.bundle.min.js"></script>

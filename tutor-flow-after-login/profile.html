@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <style>
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* .menu-link.active {
+            background: var(--secondary);
+            color: #fff;
+        } */
+
+        .menu-link:hover {
+            background: #eef3ff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class=" shadow-sm">
+        <nav class="container navbar navbar-expand-xl navbar-light py-2 px-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/assets/images/logo.svg" alt="logo" class="logo">
+            </a>
+            <div class="d-flex align-items-center gap-2 ms-auto order-xl-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm border-0 fw-semibold text-dark dropdown-toggle no-caret" type="button"
+                        data-bs-toggle="dropdown">
+                        <img src="/assets/images/form/english.png" width="15" alt=""> EN
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">AR</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item mx-1">
+                    <a href="/tutor-flow-after-login/tutor-message.html"
+                        class="btn btn-sm border-0 text-dark position-relative p-0">
+                        <i class="bi bi-chat-dots fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                           translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            1
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Notification bell -->
+                <div class="nav-item dropdown mx-1">
+                    <button class="btn btn-sm border-0 text-dark position-relative p-0" type="button"
+                        id="notificationBell" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell fs-5"></i>
+                        <span class="position-absolute top-0 start-100 mt-1
+                          translate-middle px-1 rounded-circle bg-secondary" style="font-size:10px;">
+                            3
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 shadow rounded-3" style="min-width: 350px;">
+                        <li class="dropdown-header">Notifications</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="px-3 py-2">• New message from rahul</li>
+                        <li class="px-3 py-2">• New lesson request</li>
+                        <li class="px-3 py-2">• Profile approved</li>
+                        <li class="px-3 py-2">• System update</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a href="/tutor-flow-after-login/profile.html" class="dropdown-item text-center"
+                                onclick="openTutorNotifications()">
+                                See all
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-item dropdown user-profile">
+                    <a class=" my-account-top d-flex align-items-center p-0" href="#" id="userMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false" style="gap:12px;">
+                        <img src="/assets/images/users/user1.png" class="rounded-circle object-fit-cover flex-shrink-0"
+                            width="35" height="35" alt="User" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 my-account-dropdown-menu shadow-md rounded-4"
+                        style=" min-width: 240px;">
+                        <li>
+                            <div class="pt-2"></div>
+                        </li>
+
+                        <div class="text-start d-flex mt-1 flex-column">
+                            <a href="/tutor-flow-after-login/profile.html"
+                                class="fs-6 dropdown-item my-account-side active">
+                                <i class="bi bi-person"></i>
+                                profile
+                            </a>
+
+                            <a href="/tutor-flow-after-login/setting.html" class="fs-6 dropdown-item my-account-side">
+                                <i class="bi bi-gear"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/index.html" class="fs-6 dropdown-item myaccount-nav logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </a>
+                        </div>
+
+                    </ul>
+                </div> <!-- Toggler -->
+                <button class="navbar-toggler ms-2" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-xl-2" id="mainNavbar">
+                <ul class="navbar-nav mx-auto gap-xl-3">
+                    <li class="nav-item"><a class="nav-link " href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link " href="tutor-message.html">Messages</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Toolkit</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online learning</a></li>
+                            <li><a class="dropdown-item" href="#">Resoursess</a></li>
+                            <li><a class="dropdown-item" href="#">Jobs</a></li>
+                            <li><a class="dropdown-item" href="#">Ask An expert</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">My Business</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/all-lesson-list.html">Lessons</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/calnader.html">Calander</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/shedule-lesson.html">Shedule
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/submit-lesson.html">Submit
+                                    Lesson</a></li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/stundets-list.html">Students</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/tutor-flow-after-login/payments.html">payment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- LEFT SIDE MENU -->
+            <div class="col-md-3 p-3 border-end">
+                <h4 class="mb-4 ms-2 fw-bold">My Tutor Profile</h4>
+                <div class="nav flex-column align-items-start nav-pills" id="tutor-profile-tab" role="tablist"
+                    aria-orientation="vertical">
+                    <button class="nav-link active" id="overview-tab" data-bs-toggle="pill" data-bs-target="#overview"
+                        type="button" role="tab">Profile Overview</button>
+                    <button class="nav-link" id="skills-tab" data-bs-toggle="pill" data-bs-target="#skills"
+                        type="button" role="tab">Skills & Subjects</button>
+                    <button class="nav-link" id="schedule-tab" data-bs-toggle="pill" data-bs-target="#schedule"
+                        type="button" role="tab">Schedule & Availability</button>
+                    <button class="nav-link" id="pricing-tab" data-bs-toggle="pill" data-bs-target="#pricing"
+                        type="button" role="tab">Pricing & policies</button>
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="pill" data-bs-target="#reviews"
+                        type="button" role="tab">Reviews & Feedback</button>
+                    <button class="nav-link" id="credentials-tab" data-bs-toggle="pill" data-bs-target="#credentials"
+                        type="button" role="tab">Education & Qualifications</button>
+
+
+                    <button class="nav-link" id="lang-tab" data-bs-toggle="pill" data-bs-target="#lang" type="button"
+                        role="tab">
+                        Language
+                    </button>
+                    <button class="nav-link" id="tutor-notifications-tab" data-bs-toggle="pill"
+                        data-bs-target="#notifications" type="button">
+                        Notifications
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE CONTENT -->
+            <div class="col-md-9 p-4">
+                <div class="tab-content" id="tutor-profile-tabContent">
+
+                    <!-- OVERVIEW -->
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                        <!-- LEFT : Tutor Summary -->
+
+                        <div class="card border-0 shadow-sm p-4 text-center">
+
+
+                            <!-- EDIT BUTTON -->
+                            <button class="btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-3"
+                                data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                <i class="bi bi-pencil"></i> Edit
+                            </button>
+                            <div class="modal fade" id="editProfileModal" tabindex="-1">
+                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    <div class="modal-content rounded-3">
+
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Edit Profile Overview</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                            <div class="row g-3">
+
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Tutor Name</label>
+                                                    <input type="text" class="form-control" id="editName"
+                                                        value="Rashi F.">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Hourly Rate ($)</label>
+                                                    <input type="number" class="form-control" id="editRate" value="45">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Subjects</label>
+                                                    <input type="text" class="form-control" id="editSubjects"
+                                                        value="Math, Physics, Algebra">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Languages</label>
+                                                    <input type="text" class="form-control" id="editLanguages"
+                                                        value="English, Hindi">
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label class="form-label">About Tutor</label>
+                                                    <textarea class="form-control" rows="4" id="editAbout">
+Rashi is an experienced online tutor specializing in Math and Physics.
+                        </textarea>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <button class="btn btn-primary" onclick="saveProfile()">Save
+                                                Changes</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tutor Image -->
+                            <img src="/assets/images/tutor/tutor6.png" class="rounded-circle tutor-avatar mx-auto mb-2"
+                                alt="Tutor Image">
+
+                            <!-- Name -->
+                            <h6 class="fw-bold mb-1">Rashi F.</h6>
+
+                            <!-- Subjects -->
+                            <p class="text-muted small mb-2">
+                                Math • Physics • Algebra
+                            </p>
+
+                            <!-- Meta badges -->
+                            <div class="d-flex justify-content-center gap-2 mb-3">
+                                <span class="badge bg-light text-dark fw-normal">$45 / hour</span>
+                                <span class="badge bg-light text-dark fw-normal">English, Hindi</span>
+                            </div>
+
+                        </div>
+                        <!-- About -->
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <h5 class="fw-semibold mb-2">About the Tutor</h5>
+                            <p class="text-muted mb-0">
+                                Rashi is an experienced online tutor specializing in Math and Physics.
+                                She focuses on concept clarity, exam preparation, and confidence building
+                                through interactive online sessions.
+                            </p>
+                        </div>
+
+
+
+                    </div>
+                    <!-- SKILLS & SUBJECTS TAB -->
+                    <div class="tab-pane fade" id="skills" role="tabpanel">
+
+                        <!-- Header with Add Button -->
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+                            <h4 class="fw-bold">Skills & Subjects</h4>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#subjectsModal">
+                                Add Subjects
+                            </button>
+
+                        </div>
+                        <div class="modal fade" id="subjectsModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content rounded-4">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h5 class="modal-title fw-bold">Select Subjects You Teach</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <!-- Modal Body -->
+                                    <div class="modal-body">
+
+                                        <!-- 🔽 YOUR EXISTING ACCORDION GOES HERE -->
+                                        <div class="accordion" id="subjectAccordion">
+                                            <div class="">
+                                                <div class="accordion" id="subjectAccordion">
+                                                    <div class="accordion-item border-0">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button" data-bs-toggle="collapse"
+                                                                data-bs-target="#artSubjects">
+                                                                Art
+                                                            </button>
+                                                        </h2>
+                                                        <div id="artSubjects" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_acting"
+                                                                                name="subjects[]" value="Acting">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_acting">
+                                                                                Acting
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_photoshop"
+                                                                                name="subjects[]"
+                                                                                value="Adobe Photoshop">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_photoshop">
+                                                                                Adobe Photoshop
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_animation"
+                                                                                name="subjects[]" value="Animation">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_animation">
+                                                                                Animation
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_architecture"
+                                                                                name="subjects[]" value="Architecture">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_architecture">
+                                                                                Architecture
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_ballroom"
+                                                                                name="subjects[]"
+                                                                                value="Ballroom Dancing">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_ballroom">
+                                                                                Ballroom Dancing
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_composition_music"
+                                                                                name="subjects[]"
+                                                                                value="Composition (Music)">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_composition_music">
+                                                                                Composition (Music)
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_drawing"
+                                                                                name="subjects[]" value="Drawing">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_drawing">
+                                                                                Drawing
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_film"
+                                                                                name="subjects[]" value="Film">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_film">
+                                                                                Film
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_painting"
+                                                                                name="subjects[]" value="Painting">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_painting">
+                                                                                Painting
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_photography"
+                                                                                name="subjects[]" value="Photography">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_photography">
+                                                                                Photography
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_theater"
+                                                                                name="subjects[]" value="Theater">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_theater">
+                                                                                Theater
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_video_production"
+                                                                                name="subjects[]"
+                                                                                value="Video Production">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_video_production">
+                                                                                Video Production
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item border-0">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#business">Business</button>
+                                                        </h2>
+                                                        <div id="business" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                <div class="row">
+
+                                                                    <div class="col-md-4">
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_accounting"
+                                                                                name="subjects[]" value="Accounting">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_accounting">
+                                                                                Accounting
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_business_management"
+                                                                                name="subjects[]"
+                                                                                value="Business Management">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_business_management">
+                                                                                Business Management
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_economics"
+                                                                                name="subjects[]" value="Economics">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_economics">
+                                                                                Economics
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_entrepreneurship"
+                                                                                name="subjects[]"
+                                                                                value="Entrepreneurship">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_entrepreneurship">
+                                                                                Entrepreneurship
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- COLUMN 2 -->
+                                                                    <div class="col-md-4">
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_finance"
+                                                                                name="subjects[]" value="Finance">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_finance">
+                                                                                Finance
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_marketing"
+                                                                                name="subjects[]" value="Marketing">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_marketing">
+                                                                                Marketing
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_operations_management"
+                                                                                name="subjects[]"
+                                                                                value="Operations Management">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_operations_management">
+                                                                                Operations Management
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_project_management"
+                                                                                name="subjects[]"
+                                                                                value="Project Management">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_project_management">
+                                                                                Project Management
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- COLUMN 3 -->
+                                                                    <div class="col-md-4">
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_human_resources"
+                                                                                name="subjects[]"
+                                                                                value="Human Resources">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_human_resources">
+                                                                                Human Resources
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_international_business"
+                                                                                name="subjects[]"
+                                                                                value="International Business">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_international_business">
+                                                                                International Business
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_business_strategy"
+                                                                                name="subjects[]"
+                                                                                value="Business Strategy">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_business_strategy">
+                                                                                Business Strategy
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_supply_chain_management"
+                                                                                name="subjects[]"
+                                                                                value="Supply Chain Management">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_supply_chain_management">
+                                                                                Supply Chain Management
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="accordion-item border-0">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#computer">Computer</button>
+                                                        </h2>
+                                                        <div id="computer" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                <div class="row">
+
+                                                                    <!-- COLUMN 1 -->
+                                                                    <div class="col-md-4">
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_computer_basics"
+                                                                                name="subjects[]"
+                                                                                value="Computer Basics">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_computer_basics">
+                                                                                Computer Basics
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_excel"
+                                                                                name="subjects[]"
+                                                                                value="Microsoft Excel">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_excel">
+                                                                                Microsoft Excel
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_word"
+                                                                                name="subjects[]"
+                                                                                value="Microsoft Word">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_word">
+                                                                                Microsoft Word
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_powerpoint"
+                                                                                name="subjects[]" value="PowerPoint">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_powerpoint">
+                                                                                PowerPoint
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- COLUMN 2 -->
+                                                                    <div class="col-md-4">
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_programming_fundamentals"
+                                                                                name="subjects[]"
+                                                                                value="Programming Fundamentals">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_programming_fundamentals">
+                                                                                Programming Fundamentals
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_web_development"
+                                                                                name="subjects[]"
+                                                                                value="Web Development">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_web_development">
+                                                                                Web Development
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_html_css"
+                                                                                name="subjects[]" value="HTML & CSS">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_html_css">
+                                                                                HTML & CSS
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_javascript"
+                                                                                name="subjects[]" value="JavaScript">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_javascript">
+                                                                                JavaScript
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- COLUMN 3 -->
+                                                                    <div class="col-md-4">
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_python"
+                                                                                name="subjects[]" value="Python">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_python">
+                                                                                Python
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_java"
+                                                                                name="subjects[]" value="Java">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_java">
+                                                                                Java
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_data_science"
+                                                                                name="subjects[]" value="Data Science">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_data_science">
+                                                                                Data Science
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_cyber_security"
+                                                                                name="subjects[]"
+                                                                                value="Cyber Security">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_cyber_security">
+                                                                                Cyber Security
+                                                                            </label>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="accordion-item border-0">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed"
+                                                                data-bs-toggle="collapse" data-bs-target="#math">
+                                                                Math
+                                                            </button>
+                                                        </h2>
+
+                                                        <div id="math" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                <div class="row">
+
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_algebra"
+                                                                                name="subjects[]" value="Algebra">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_algebra">Algebra</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_geometry"
+                                                                                name="subjects[]" value="Geometry">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_geometry">Geometry</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_trigonometry"
+                                                                                name="subjects[]" value="Trigonometry">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_trigonometry">Trigonometry</label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_calculus"
+                                                                                name="subjects[]" value="Calculus">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_calculus">Calculus</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_linear_algebra"
+                                                                                name="subjects[]"
+                                                                                value="Linear Algebra">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_linear_algebra">Linear
+                                                                                Algebra</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_statistics"
+                                                                                name="subjects[]" value="Statistics">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_statistics">Statistics</label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_probability"
+                                                                                name="subjects[]" value="Probability">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_probability">Probability</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_discrete_math"
+                                                                                name="subjects[]"
+                                                                                value="Discrete Mathematics">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_discrete_math">Discrete
+                                                                                Mathematics</label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item border-0">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed"
+                                                                data-bs-toggle="collapse" data-bs-target="#science">
+                                                                Science
+                                                            </button>
+                                                        </h2>
+
+                                                        <div id="science" class="accordion-collapse collapse">
+                                                            <div class="accordion-body">
+                                                                <div class="row">
+
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_physics"
+                                                                                name="subjects[]" value="Physics">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_physics">Physics</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_chemistry"
+                                                                                name="subjects[]" value="Chemistry">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_chemistry">Chemistry</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_biology"
+                                                                                name="subjects[]" value="Biology">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_biology">Biology</label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_environmental_science"
+                                                                                name="subjects[]"
+                                                                                value="Environmental Science">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_environmental_science">
+                                                                                Environmental Science
+                                                                            </label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_astronomy"
+                                                                                name="subjects[]" value="Astronomy">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_astronomy">Astronomy</label>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6 col-lg-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox" id="subject_geology"
+                                                                                name="subjects[]" value="Geology">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_geology">Geology</label>
+                                                                        </div>
+
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input"
+                                                                                type="checkbox"
+                                                                                id="subject_science_exam_prep"
+                                                                                name="subjects[]"
+                                                                                value="Science Exam Preparation">
+                                                                            <label class="form-check-label"
+                                                                                for="subject_science_exam_prep">
+                                                                                Science Exam Preparation
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item border-0">
+                                                            <h2 class="accordion-header">
+                                                                <button class="accordion-button collapsed"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#language">
+                                                                    Language
+                                                                </button>
+                                                            </h2>
+
+                                                            <div id="language" class="accordion-collapse collapse">
+                                                                <div class="accordion-body">
+                                                                    <div class="row">
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" id="subject_english"
+                                                                                    name="subjects[]" value="English">
+                                                                                <label class="form-check-label"
+                                                                                    for="subject_english">English</label>
+                                                                            </div>
+
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" id="subject_hindi"
+                                                                                    name="subjects[]" value="Hindi">
+                                                                                <label class="form-check-label"
+                                                                                    for="subject_hindi">Hindi</label>
+                                                                            </div>
+
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" id="subject_french"
+                                                                                    name="subjects[]" value="French">
+                                                                                <label class="form-check-label"
+                                                                                    for="subject_french">French</label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" id="subject_spanish"
+                                                                                    name="subjects[]" value="Spanish">
+                                                                                <label class="form-check-label"
+                                                                                    for="subject_spanish">Spanish</label>
+                                                                            </div>
+
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" id="subject_german"
+                                                                                    name="subjects[]" value="German">
+                                                                                <label class="form-check-label"
+                                                                                    for="subject_german">German</label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" id="subject_ielts"
+                                                                                    name="subjects[]"
+                                                                                    value="IELTS Preparation">
+                                                                                <label class="form-check-label"
+                                                                                    for="subject_ielts">
+                                                                                    IELTS Preparation
+                                                                                </label>
+                                                                            </div>
+
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" id="subject_toefl"
+                                                                                    name="subjects[]"
+                                                                                    value="TOEFL Preparation">
+                                                                                <label class="form-check-label"
+                                                                                    for="subject_toefl">
+                                                                                    TOEFL Preparation
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Modal Footer -->
+                                    <div class="modal-footer">
+                                        <button class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                        <button class="btn btn-primary">Save Subjects</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tutor Info Card -->
+                        <div class="card mb-4 shadow-sm rounded-4 p-3">
+                            <div class="d-flex align-items-center gap-3 flex-wrap">
+                                <img src="/assets/images/tutor/tutor6.png" alt="Tutor Profile"
+                                    class="rounded-circle border" style="width:80px; height:80px; object-fit:cover;">
+                                <div>
+                                    <h5 class="mb-1 fw-bold">Rashi F</h5>
+                                    <p class="mb-1 text-muted">Mathematics & Physics Tutor</p>
+                                    <p class="mb-0 d-flex align-items-center gap-2 flex-wrap">
+                                        <span class="badge bg-success rounded-pill ">4.8 <i
+                                                class="bi bi-star-fill"></i></span>
+                                        <span class="text-muted">5 years experience</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-muted mb-4">Select a subject below to customize how it appears on your profile.
+                            Add a personalized description to help students find you easily.</p>
+
+                        <!-- TOP SUBJECTS (Read-Only Display with remove option) -->
+                        <div class="mb-5">
+                            <h5 class="fw-semibold mb-2">Subjects You Teach</h5>
+                            <p class="text-muted mb-3">These are the subjects you have expertise in.</p>
+                            <div class="d-flex flex-wrap gap-2 top-subjects-container">
+                                <span
+                                    class="badge bg-primary text-white rounded-pill px-4 py-2 shadow-sm d-flex align-items-center gap-1">
+                                    Mathematics <i class="bi bi-x-lg remove-subject" style="cursor:pointer;"></i>
+                                </span>
+                                <span
+                                    class="badge bg-primary text-white rounded-pill px-4 py-2 shadow-sm d-flex align-items-center gap-1">
+                                    Physics <i class="bi bi-x-lg remove-subject" style="cursor:pointer;"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Add Subject Modal -->
+                        <div class="modal fade" id="addSubjectModal" tabindex="-1"
+                            aria-labelledby="addSubjectModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content rounded-4 border-0 shadow-sm">
+                                    <div class="modal-header border-0">
+                                        <h5 class="modal-title fw-bold" id="addSubjectModalLabel">Add New Subject</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="addSubjectForm">
+                                            <div class="mb-3">
+                                                <label for="subjectName" class="form-label fw-semibold">Subject
+                                                    Name</label>
+                                                <input type="text" class="form-control" id="subjectName"
+                                                    placeholder="Enter subject name" required>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer border-0">
+                                        <button type="button" class="btn btn-outline-secondary"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary" onclick="addSubject()">Add
+                                            Subject</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- schedule -->
+                    <div class="tab-pane fade" id="schedule" role="tabpanel">
+                        <h4 class="fw-bold">Schedule & Availability</h4>
+                        <p>Define your weekly availability and preferred student contact times.</p>
+
+                        <div class="weekly-schedule">
+
+                            <!-- Single days checkboxes -->
+                            <div id="daysContainer"></div>
+
+                            <!-- Full week schedule hidden initially -->
+                            <div id="fullWeekSchedule" class="d-none mt-3">
+                                <h5>Apply to Multiple Days</h5>
+                                <div class="row g-3" id="fullWeekDaysContainer"></div>
+                                <button class="btn btn-success mt-3" id="saveSchedule">OK</button>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="">
+                            <a href="#" class="btn btn-primary  rounded-1">
+                                Save
+                            </a>
+                        </div>
+                    </div>
+                    <script>
+                        // === Arrays for days & times ===
+                        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                        const shortDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                        const times = [];
+                        for (let h = 0; h < 24; h++) {
+                            let hour = h < 10 ? '0' + h : h;
+                            times.push(`${hour}:00`);
+                        }
+
+                        // --- DOM elements ---
+                        const daysContainer = document.getElementById('daysContainer');
+                        const fullWeekDaysContainer = document.getElementById('fullWeekDaysContainer');
+
+                        // --- Generate single day blocks ---
+                        days.forEach((day, i) => {
+                            const block = document.createElement('div');
+                            block.className = 'day-block mb-3';
+
+                            block.innerHTML = `
+    <div class="day-block-inner">
+
+        <!-- Day checkbox -->
+        <div class="form-check mb-2">
+            <input class="form-check-input day-checkbox"
+                type="checkbox"
+                id="day${day}"
+                data-day="${day}"
+                data-bs-toggle="collapse"
+                data-bs-target="#time${day}">
+            <label class="form-check-label fw-semibold" for="day${day}">
+                ${shortDays[i]}
+            </label>
+        </div>
+
+        <!-- Time section -->
+        <div class="collapse " id="time${day}">
+            <div class="row g-2">
+
+                <!-- Start time -->
+                <div class="col-md-3">
+                    <select class="form-select start-time">
+                        ${generateOptions()}
+                    </select>
+                </div>
+
+                <!-- End time -->
+                <div class="col-md-3">
+                    <select class="form-select end-time">
+                        ${generateOptions()}
+                    </select>
+                </div>
+
+                <!-- 👇 NEXT LINE -->
+                <div class="col-12">
+                    <span class="text-primary small"
+                          style="cursor:pointer;"
+                          onclick="applyToAll('${day}')">
+                        Apply to multiple days
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+`;
+
+                            daysContainer.appendChild(block);
+                        });
+
+
+                        function generateOptions() {
+                            return times.map(t => `<option value="${t}">${t}</option>`).join('');
+                        }
+                        days.forEach((day, i) => {
+                            const checkbox = document.getElementById(`day${day}`);
+                            checkbox.addEventListener('change', () => {
+                                const dayBlock = checkbox.closest('.day-block');
+                                const existing = dayBlock.querySelector('.full-week-block');
+                                if (!checkbox.checked && existing) existing.remove();
+                            });
+                        });
+
+                        function applyToAll(day) {
+                            const dayCheckbox = document.getElementById(`day${day}`);
+                            if (!dayCheckbox.checked) return;
+
+                            const dayLine = dayCheckbox.closest('.day-block');
+
+                            // Remove old block if it exists
+                            const existing = dayLine.querySelector('.full-week-block');
+                            if (existing) existing.remove();
+
+                            // Create new block
+                            const fullBlock = document.createElement('div');
+                            fullBlock.className = 'full-week-block mt-2 p-2 rounded';
+
+                            fullBlock.innerHTML = `
+
+        <div class="d-flex flex-wrap gap-2">
+            ${days.map((d, i) => `
+                <div class="form-check">
+                    <input class="form-check-input week-day-checkbox" type="checkbox" id="full${d}" data-day="${d}">
+                    <label class="form-check-label" for="full${d}">${shortDays[i]}</label>
+                </div>
+            `).join('')}
+        </div>
+    `;
+
+                            dayLine.appendChild(fullBlock);
+                        }
+
+                    </script>
+                    <!-- PRICING & PACKAGES -->
+                    <div class="tab-pane fade" id="pricing" role="tabpanel">
+                        <!-- Header with Add Button -->
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+                            <h4 class="fw-bold">Rates & Policies</h4>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPolicyModal">
+                                Edit
+                            </button>
+
+                        </div>
+                        <!-- HOURLY RATES -->
+                        <div class="mb-4">
+                            <h6 class="fw-semibold mb-2">
+                                Hourly Rates
+                                <i class="bi bi-info-circle text-primary ms-1"></i>
+                            </h6>
+
+                            <div class="row g-3 align-items-center">
+
+                                <div class="col-md-8 text-muted small">
+                                    Your in-person lesson rate appears in search results and on your tutor profile.
+                                    This will be the default price if no online rate is set.
+                                </div>
+                            </div>
+
+                            <div class="row g-3 align-items-center mt-2">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold">Online Hourly Rate</label>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" value="40" readonly>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- CANCELLATION POLICY -->
+                        <div class="mb-4">
+                            <h6 class="fw-semibold mb-2">Cancellation Policy</h6>
+
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-4">
+                                    <select class="select2-enable">
+                                        <option value="none">No penalty</option>
+                                        <option>1 hour notice</option>
+                                        <option>2 hours notice</option>
+                                        <option>4 hours notice</option>
+                                        <option>6 hours notice</option>
+                                        <option>12 hours notice</option>
+                                        <option>24 hours notice</option>
+                                        <option>36 hours notice</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-8 text-muted small">
+                                    Define how much advance notice is required to avoid a cancellation penalty.
+                                    Please communicate this policy clearly to students.
+                                    <a href="#" class="text-decoration-none">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="editPolicyModal" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content rounded-3">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Edit Cancellation Policy</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Penalty Amount ($)</label>
+                                            <input type="number" value="90" class="form-control" id="modalAmount">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Cancellation Policy</label>
+                                            <select class="form-select select2-modal" id="modalPolicy">
+                                                <option value="0">No penalty</option>
+                                                <option value="10">1 hour notice</option>
+                                                <option value="20">2 hours notice</option>
+                                                <option value="30">4 hours notice</option>
+                                                <option value="40">6 hours notice</option>
+                                                <option value="50">12 hours notice</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button class="btn btn-primary" onclick="savePolicy()">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- REVIEWS & FEEDBACK -->
+                    <div class="tab-pane fade" id="reviews" role="tabpanel">
+                        <h4 class="fw-bold">Reviews & Feedback</h4>
+                        <!-- Lesson Ratings -->
+                        <div class="section-card p-1 mb-2">
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <div class="rating-box text-center">
+                                        <div class="rating-value">4.8</div>
+                                        <div>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <small class="text-muted">Average Rating</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5 class="section-title mb-2">Lesson Ratings</h5>
+                                    <p class="text-muted mb-0">
+                                        Students can rate each lesson from 1 to 5 stars within 14 days of submission.
+                                        Higher ratings improve your visibility and help attract more students.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Request Feedback -->
+                        <div class="section-card p-1">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="section-title mb-0">Request Feedback</h5>
+                            </div>
+
+                            <p class="text-muted">
+                                Students listed below are eligible to leave a written review.
+                                Sending a reminder helps increase your feedback count.
+                            </p>
+
+                            <div class="table-responsive">
+                                <table class="table align-middle table-hover">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Student</th>
+                                            <th>Last Lesson</th>
+                                            <th>Note</th>
+                                            <th>Rating</th>
+                                            <th class="text-end">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!-- Student 1 -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="/assets/images/users/user2.png"
+                                                        class="rounded-circle me-2" width="40">
+                                                    <div>John Doe</div>
+                                                </div>
+                                            </td>
+                                            <td>Jan 10, 2026</td>
+                                            <td>Very attentive, participates actively</td>
+                                            <td><span class="text-warning">★★★★☆</span></td>
+                                            <td class="text-end">
+                                                <button class="btn btn-sm btn-outline-primary"
+                                                    onclick="openStudentModal('John Doe','/assets/images/users/user2.png','Jan 10, 2026','Very attentive, participates actively','4')">
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <!-- Student 2 -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="/assets/images/users/user1.png"
+                                                        class="rounded-circle me-2" width="40">
+                                                    <div>Jane Smith</div>
+                                                </div>
+                                            </td>
+                                            <td>Jan 12, 2026</td>
+                                            <td>Good progress, needs more practice on grammar</td>
+                                            <td><span class="text-warning">★★★☆☆</span></td>
+                                            <td class="text-end">
+                                                <button class="btn btn-sm btn-outline-primary"
+                                                    onclick="openStudentModal('Jane Smith','/assets/images/users/user1.png','Jan 12, 2026','Good progress, needs more practice on grammar','3')">
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Empty State -->
+                                        <tr id="noStudentsRow">
+                                            <td colspan="5" class="text-center text-muted py-4">
+                                                No students available for feedback
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal fade" id="studentDetailModal" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content rounded-4">
+
+                                        <div class="modal-header">
+                                            <h5 class="modal-title fw-bold">Student Feedback</h5>
+                                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+
+                                        <div class="modal-body text-center">
+
+                                            <img id="studentAvatar" class="rounded-circle mb-3" width="80">
+
+                                            <h6 id="studentName" class="fw-bold mb-1"></h6>
+                                            <p class="text-muted mb-2">
+                                                Last Lesson: <span id="studentLessonDate"></span>
+                                            </p>
+
+                                            <div class="mb-3">
+                                                <strong>Teacher Note</strong>
+                                                <p id="studentNote" class="text-muted mt-1"></p>
+                                            </div>
+
+                                            <div>
+                                                <strong>Rating</strong>
+                                                <div id="studentRating" class="text-warning fs-5"></div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                function openStudentModal(name, avatar, lessonDate, note, rating) {
+
+                                    document.getElementById('studentName').innerText = name;
+                                    document.getElementById('studentAvatar').src = avatar;
+                                    document.getElementById('studentLessonDate').innerText = lessonDate;
+                                    document.getElementById('studentNote').innerText = note;
+
+                                    let stars = '';
+                                    for (let i = 1; i <= 5; i++) {
+                                        stars += i <= rating ? '★' : '☆';
+                                    }
+                                    document.getElementById('studentRating').innerText = stars;
+
+                                    const modal = new bootstrap.Modal(document.getElementById('studentDetailModal'));
+                                    modal.show();
+                                }
+                            </script>
+
+                            <script>
+                                // Hide the "No students" row if sample students exist
+                                const tbody = document.querySelector('table tbody');
+                                const rows = tbody.querySelectorAll('tr');
+                                if (rows.length > 1) {
+                                    document.getElementById('noStudentsRow').style.display = 'none';
+                                }
+                            </script>
+
+                        </div>
+
+                    </div>
+                    <!-- CREDENTIALS & CERTIFICATES -->
+                    <div class="tab-pane fade" id="credentials" role="tabpanel">
+                        <!-- EDIT BUTTON -->
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                            <!-- Left: Heading -->
+                            <h4 class="fw-bold mb-2 mb-md-0">Education & Qualification</h4>
+
+                            <!-- Right: Edit Button -->
+                            <button class="btn btn-outline-primary rounded-1 d-flex align-items-center gap-2"
+                                id="editCredentialsBtn">
+                                Edit
+                            </button>
+                        </div>
+
+
+                        <!-- CREDENTIALS & CERTIFICATES FORM -->
+                        <form id="credentialsForm">
+                            <fieldset disabled> <!-- Fields disabled by default -->
+                                <div class="row">
+
+                                    <!-- Education Section -->
+                                    <div class="col-12">
+                                        <h6 class="fw-semibold mb-3">Education</h6>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="highest_degree_type" class="form-label">Highest degree</label>
+                                        <input type="text" id="highest_degree_type" class="form-control"
+                                            value="Bachelor’s">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="college_name" class="form-label">College / University name</label>
+                                        <input type="text" id="college_name" class="form-control"
+                                            value="Delhi University">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="degree_name" class="form-label">Degree name</label>
+                                        <input type="text" id="degree_name" class="form-control" value="B.Sc.">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="specialization" class="form-label">Specialization / Major</label>
+                                        <input type="text" id="specialization" class="form-control" value="Mathematics">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="degree_document" class="form-label">Degree certificate</label>
+                                        <input type="file" id="degree_document" class="form-control">
+                                        <small class="text-muted">Accepted: PDF, JPG, PNG</small>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="teaching_certification_status" class="form-label">Teaching
+                                            certification status</label>
+                                        <input type="text" id="teaching_certification_status" class="form-control"
+                                            value="Certified">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="teaching_certificate_document" class="form-label">Teaching
+                                            certificate</label>
+                                        <input type="file" id="teaching_certificate_document" class="form-control">
+                                        <small class="text-muted">Optional</small>
+                                    </div>
+
+                                </div>
+
+                                <!-- Address Section -->
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                        <h6 class="fw-semibold mb-3">Address</h6>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="phone_number" class="form-label">Phone number</label>
+                                        <input type="tel" id="phone_number" class="form-control"
+                                            value="+971 50 123 4567">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="country" class="form-label">Country</label>
+                                        <input type="text" id="country" class="form-control"
+                                            value="United Arab Emirates">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="state_region" class="form-label">State / Region</label>
+                                        <input type="text" id="state_region" class="form-control" value="Dubai">
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label for="city_area" class="form-label">City / Area</label>
+                                        <input type="text" id="city_area" class="form-control" value="Business Bay">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="d-flex justify-content-end mt-3">
+                                <button type="submit" class="btn btn-success d-none"
+                                    id="saveCredentialsBtn">Save</button>
+                                <button type="button" class="btn btn-secondary d-none"
+                                    id="cancelCredentialsBtn">Cancel</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- Language -->
+                    <div class="tab-pane fade" id="lang" role="tabpanel">
+                        <h4 class="fw-bold">Languages</h4>
+                        <p class="text-muted">
+                            Are you comfortable teaching students who don't use English as their primary language?
+                            Select from the list below if you're able to deliver instruction in a foreign language.
+                        </p>
+
+                        <div class="row">
+                            <!-- Column 1 -->
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="bengali">
+                                    <label class="form-check-label" for="bengali">Bengali</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="egyptian">
+                                    <label class="form-check-label" for="egyptian">Egyptian Arabic</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="french">
+                                    <label class="form-check-label" for="french">French</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="german">
+                                    <label class="form-check-label" for="german">German</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gujarati">
+                                    <label class="form-check-label" for="gujarati">Gujarati</label>
+                                </div>
+                            </div>
+
+                            <!-- Column 2 -->
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="hindi">
+                                    <label class="form-check-label" for="hindi">Hindi</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="persian">
+                                    <label class="form-check-label" for="persian">Iranian Persian</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="italian">
+                                    <label class="form-check-label" for="italian">Italian</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="japanese">
+                                    <label class="form-check-label" for="japanese">Japanese</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="korean">
+                                    <label class="form-check-label" for="korean">Korean</label>
+                                </div>
+                            </div>
+
+                            <!-- Column 3 -->
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="mandarin">
+                                    <label class="form-check-label" for="mandarin">Mandarin Chinese</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="marathi">
+                                    <label class="form-check-label" for="marathi">Marathi</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="portuguese">
+                                    <label class="form-check-label" for="portuguese">Portuguese</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="punjabi">
+                                    <label class="form-check-label" for="punjabi">Punjabi</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="spanish">
+                                    <label class="form-check-label" for="spanish">Spanish</label>
+                                </div>
+                            </div> <!-- SAVE -->
+                            <div class="text-start py-5">
+                                <button class="btn btn-primary rounded-1 px-4">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade" id="notifications">
+
+
+                            <!-- HEADER -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="fw-bold mb-0">Notifications</h4>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    Mark all as read
+                                </button>
+                            </div>
+
+                            <p class="text-muted mb-4">
+                                Stay updated with student messages, lesson requests, and profile activity.
+                            </p>
+
+                            <!-- NOTIFICATION LIST -->
+                            <div class="list-group notification-list">
+
+                                <!-- STUDENT MESSAGE -->
+                                <div class="list-group-item d-flex gap-3 py-3 unread">
+                                    <div class="icon ">
+                                        <i class="bi bi-chat-dots"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="mb-1 fw-semibold">New message from student</h6>
+                                            <small class="text-muted">2 mins ago</small>
+                                        </div>
+                                        <p class="mb-1 text-muted">
+                                            Rahul sent you a message regarding tomorrow’s math session.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- LESSON REQUEST -->
+                                <div class="list-group-item d-flex gap-3 py-3 unread">
+                                    <div class="icon">
+                                        <i class="bi bi-calendar-check"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="mb-1 fw-semibold">New lesson request</h6>
+                                            <small class="text-muted">1 hour ago</small>
+                                        </div>
+                                        <p class="mb-1 text-muted">
+                                            A student requested a Physics lesson on Friday at 6 PM.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- PROFILE UPDATE -->
+                                <div class="list-group-item d-flex gap-3 py-3">
+                                    <div class="icon">
+                                        <i class="bi bi-person-check"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="mb-1 fw-semibold">Profile approved</h6>
+                                            <small class="text-muted">Yesterday</small>
+                                        </div>
+                                        <p class="mb-1 text-muted">
+                                            Your education credentials have been approved successfully.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- SYSTEM -->
+                                <div class="list-group-item d-flex gap-3 py-3">
+                                    <div class="icon">
+                                        <i class="bi bi-info-circle"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="mb-1 fw-semibold">System update</h6>
+                                            <small class="text-muted">2 days ago</small>
+                                        </div>
+                                        <p class="mb-1 text-muted">
+                                            New features have been added to the tutor dashboard.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer class="bg-white pt-5">
+        <div class="container">
+            <div class="row gy-4">
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="mb-3">
+                        <img src="/assets/images/logo.svg" alt="SmartBrain Academy" class="img-fluid">
+                    </div>
+                    <p class="text-muted small mb-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                        accumsan placerat libero, sed dapibus metus.
+                    </p>
+
+                    <ul class="list-unstyled small text-muted">
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Sector 15, Building 246, Mohammed Road (Opposite XYZ)
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>
+                            info@smartbrainacademy.com
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/find-tutor.html" class="text-decoration-none">Find a
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="/how-it-work/for-student.html" class="text-decoration-none">For
+                                Students</a></li>
+                        <li class="mb-2"><a href="/about-us/about.html" class="text-decoration-none">About
+                                Us</a></li>
+                        <li><a href="/contact/contact-us.html" class="text-decoration-none">Contact us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Learn With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/FAQ/faq.html" class="text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="/find-a-tutor/request-tutor.html" class="text-decoration-none">Request
+                                Tutor</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Online Tutoring</a></li>
+                        <li class="mb-2"><a href="/Blogs/blogs.html" class="text-decoration-none">Blog</a></li>
+                        <li><a href="/Review/review.html" class="text-decoration-none">What peoples says</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 footer-title ">Work With Us</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a>
+                        </li>
+                        <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
+                                class="text-decoration-none">Apply as Tutor</a></li>
+                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-secondary text-center text-white py-3 mt-4">
+            <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/select2/select2.min.js"></script>
+    <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/select2/select-custom.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const shouldOpen =
+                localStorage.getItem('openTutorNotifications');
+
+            if (shouldOpen === 'true') {
+
+                const notifTab =
+                    document.getElementById('tutor-notifications-tab');
+
+                if (notifTab) {
+                    notifTab.click();
+                }
+
+                // clean signal
+                localStorage.removeItem('openTutorNotifications');
+            }
+        });
+    </script>
+
+
+    <script>
+        function addSubject() {
+            const subjectName = document.getElementById('subjectName').value.trim();
+
+            if (subjectName === '') {
+                alert('Please enter a subject name.');
+                return;
+            }
+
+            const container = document.querySelector('.top-subjects-container');
+            const currentSubjects = container.querySelectorAll('.badge');
+
+            // Max 5 subjects
+            if (currentSubjects.length >= 5) {
+                alert('You can add a maximum of 5 subjects only.');
+                return;
+            }
+
+            // Create new badge
+            const span = document.createElement('span');
+            span.className = 'badge bg-primary text-white rounded-pill px-4 py-2 shadow-sm d-flex align-items-center gap-1';
+            span.innerHTML = `${subjectName} <i class="bi bi-x-lg remove-subject" style="cursor:pointer;"></i>`;
+
+            // Append to container
+            container.appendChild(span);
+
+            // Add remove event listener
+            span.querySelector('.remove-subject').addEventListener('click', function () {
+                span.remove();
+            });
+
+            // Close modal & reset form
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addSubjectModal'));
+            modal.hide();
+            document.getElementById('addSubjectForm').reset();
+        }
+
+        // Existing badges remove functionality
+        document.querySelectorAll('.top-subjects-container .remove-subject').forEach(btn => {
+            btn.addEventListener('click', function () {
+                this.closest('.badge').remove();
+            });
+        });
+    </script>
+    <script>
+        // Collapse toggle for initial day
+        document.querySelectorAll('.day-checkbox').forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                const target = document.querySelector(this.dataset.bsTarget);
+                if (!this.checked) {
+                    bootstrap.Collapse.getOrCreateInstance(target).hide();
+                } else {
+                    bootstrap.Collapse.getOrCreateInstance(target).show();
+                }
+            });
+        });
+
+        // Open full week schedule
+        function openFullWeek() {
+            const fullWeek = document.getElementById('fullWeekSchedule');
+            fullWeek.classList.remove('d-none');
+
+            // Copy Monday's times to Monday in full week
+            const monStart = document.querySelector('#timeMonday input[type="time"]:nth-child(1)').value;
+            const monEnd = document.querySelector('#timeMonday input[type="time"]:nth-child(2)').value;
+            document.querySelector('#dayBlockMonday input.time-input:nth-child(2)').value = monStart;
+            document.querySelector('#dayBlockMonday input.time-input:nth-child(3)').value = monEnd;
+        }
+    </script>
+    <script>
+        const editBtn = document.getElementById('editCredentialsBtn');
+        const saveBtn = document.getElementById('saveCredentialsBtn');
+        const cancelBtn = document.getElementById('cancelCredentialsBtn');
+        const form = document.getElementById('credentialsForm');
+        const fieldset = form.querySelector('fieldset');
+
+        // Store original values for cancel
+        let originalValues = {};
+
+        editBtn.addEventListener('click', () => {
+            // Save original values
+            form.querySelectorAll('input').forEach(input => {
+                originalValues[input.id] = input.value;
+            });
+
+            // Make fields editable
+            fieldset.disabled = false;
+
+            // Toggle buttons
+            editBtn.classList.add('d-none');
+            saveBtn.classList.remove('d-none');
+            cancelBtn.classList.remove('d-none');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            // Restore original values
+            form.querySelectorAll('input').forEach(input => {
+                input.value = originalValues[input.id];
+            });
+
+            // Make fields read-only
+            fieldset.disabled = true;
+
+            // Toggle buttons
+            editBtn.classList.remove('d-none');
+            saveBtn.classList.add('d-none');
+            cancelBtn.classList.add('d-none');
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // TODO: Send data to backend API
+            alert('Credentials updated successfully!');
+
+            // Make read-only again
+            fieldset.disabled = true;
+
+            editBtn.classList.remove('d-none');
+            saveBtn.classList.add('d-none');
+            cancelBtn.classList.add('d-none');
+        });
+    </script>
+    <script>
+        document.getElementById('openNotificationsTab')
+            .addEventListener('click', function () {
+
+                // dropdown close
+                document.body.click();
+
+                // notification tab open
+                const notifTab = document.querySelector('#notifications-tab');
+                if (notifTab) {
+                    notifTab.click();
+                }
+            });
+    </script>
+</body>
+
+</html>
