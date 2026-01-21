@@ -7,8 +7,6 @@
 
     <title>All Lesson</title>
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/fav.png">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
@@ -176,18 +174,14 @@
                         <button class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-
-                        <select class="form-select mb-2" id="submitStudent">
+                        <select class="form-select select2-modal mb-2" id="submitStudent">
                             <option value="">Select Student</option>
                             <option>Rahul Sharma</option>
                             <option>Ayesha Khan</option>
                             <option>Mohit Verma</option>
                         </select>
-
-                        <input class="form-control mb-2" id="submitLesson" placeholder="Lesson Name">
-
+                        <input class="form-control mt-2 mb-2" id="submitLesson" placeholder="Lesson Name">
                         <textarea class="form-control" id="submitNotes" placeholder="Lesson Notes"></textarea>
-
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-success" id="submitSave">Submit Lesson</button>
@@ -205,14 +199,14 @@
                     </div>
                     <div class="modal-body">
 
-                        <select class="form-select mb-2" id="scheduleStudent">
+                        <select class="form-select mb-2 select2-modal " id="scheduleStudent">
                             <option value="">Select Student</option>
                             <option>Rahul Sharma</option>
                             <option>Ayesha Khan</option>
                             <option>Mohit Verma</option>
                         </select>
 
-                        <input class="form-control mb-2" id="scheduleLesson" placeholder="Lesson Name">
+                        <input class="form-control mb-2 mt-2" id="scheduleLesson" placeholder="Lesson Name">
                         <input class="form-control mb-2" id="meetingLink" placeholder="Meeting Link">
 
                     </div>
@@ -291,12 +285,11 @@
                         <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
                         <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
                                 class="text-decoration-none">Apply as Tutor</a></li>
-                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                        <!-- <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li> -->
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="bg-secondary text-center text-white py-3 mt-4">
             <small>© 2026 SmartBrainAcademy. All Rights Reserved.</small>
         </div>
@@ -309,24 +302,18 @@
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script>
         let calendar, selectedRange;
-
         document.addEventListener('DOMContentLoaded', function () {
-
             const calendarEl = document.getElementById('calendar');
             const now = new Date();
-
             calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'timeGridWeek',
                 firstDay: 1,
                 allDaySlot: false,
-
                 slotDuration: '01:00:00',
                 snapDuration: '01:00:00',
-
                 selectable: true,
                 selectOverlap: false,
                 eventOverlap: false,
-
                 select: function (info) {
                     selectedRange = info;
                     if (info.start < now) {
@@ -336,21 +323,16 @@
                     }
                 }
             });
-
             calendar.render();
         });
-
         document.getElementById('submitSave').onclick = function () {
-
             const student = submitStudent.value;
             const lesson = submitLesson.value;
             const notes = submitNotes.value;
-
             if (!student || !lesson || !notes) {
                 alert("Please fill all fields");
                 return;
             }
-
             calendar.addEvent({
                 title: student + " – " + lesson,
                 start: selectedRange.start,
@@ -358,21 +340,16 @@
                 color: '#fd7e14',
                 extendedProps: { student, lesson, notes }
             });
-
             bootstrap.Modal.getInstance(submitModal).hide();
         };
-
         document.getElementById('scheduleSave').onclick = function () {
-
             const student = scheduleStudent.value;
             const lesson = scheduleLesson.value;
             const link = meetingLink.value;
-
             if (!student || !lesson || !link) {
                 alert("Please fill all fields");
                 return;
             }
-
             calendar.addEvent({
                 title: student + " – " + lesson,
                 start: selectedRange.start,
@@ -385,11 +362,9 @@
     </script>
     <script>
         function openTutorNotifications() {
-            // signal save
             localStorage.setItem('openTutorNotifications', 'true');
         }
     </script>
-
 </body>
 
 </html>

@@ -31,9 +31,9 @@
  }
 
  .img-1 {
-   top: 15%;
-   left: 2%;
-   width: 180px;
+   top: 28%;
+left: -1%;
+   width:144px;
  }
 
  .img-3 {
@@ -101,8 +101,8 @@
    }
 
    .img-1 {
-     top: 25%;
-     left: 23%;
+     top: 20%;
+     
      width: 131px;
    }
  }
@@ -119,7 +119,7 @@
    }
 
    .hero-content h1 {
-     font-size: 30px;
+     font-size: 25px;
    }
 
    .search-bar {
@@ -133,9 +133,8 @@
    }
 
    .img-1 {
-     width: 120px;
-     top: 10%;
-     left: 5%;
+     width: 50px;
+     top: 28%;
    }
 
    .img-3,

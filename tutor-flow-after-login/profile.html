@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.3.1/build/css/intlTelInput.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -1197,53 +1199,52 @@ Rashi is an experienced online tutor specializing in Math and Physics.
                             block.className = 'day-block mb-3';
 
                             block.innerHTML = `
-    <div class="day-block-inner">
-
-        <!-- Day checkbox -->
-        <div class="form-check mb-2">
-            <input class="form-check-input day-checkbox"
-                type="checkbox"
-                id="day${day}"
-                data-day="${day}"
-                data-bs-toggle="collapse"
-                data-bs-target="#time${day}">
-            <label class="form-check-label fw-semibold" for="day${day}">
-                ${shortDays[i]}
-            </label>
-        </div>
-
-        <!-- Time section -->
-        <div class="collapse " id="time${day}">
-            <div class="row g-2">
-
-                <!-- Start time -->
-                <div class="col-md-3">
-                    <select class="form-select start-time">
-                        ${generateOptions()}
-                    </select>
-                </div>
-
-                <!-- End time -->
-                <div class="col-md-3">
-                    <select class="form-select end-time">
-                        ${generateOptions()}
-                    </select>
-                </div>
-
-                <!-- 👇 NEXT LINE -->
-                <div class="col-12">
-                    <span class="text-primary small"
-                          style="cursor:pointer;"
-                          onclick="applyToAll('${day}')">
-                        Apply to multiple days
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-`;
+                            <div class="day-block-inner">
+                        
+                                <!-- Day checkbox -->
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input day-checkbox"
+                                        type="checkbox"
+                                        id="day${day}"
+                                        data-day="${day}"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#time${day}">
+                                    <label class="form-check-label fw-semibold" for="day${day}">
+                                        ${shortDays[i]}
+                                    </label>
+                                </div>
+                        
+                                <!-- Time section -->
+                                <div class="collapse " id="time${day}">
+                                    <div class="row g-2">
+                        
+                                        <!-- Start time -->
+                                        <div class="col-md-3">
+                                          <label class="form-label small">Start Time</label>
+                                    <input type="time" class="form-control" required>
+                                        </div>
+                        
+                                        <!-- End time -->
+                                        <div class="col-md-3">
+                                           
+                                               <label class="form-label small">End Time</label>
+                                    <input type="time" class="form-control" required>
+                                        </div>
+                        
+                                        <!--NEXT LINE -->
+                                        <div class="col-12">
+                                            <span class="text-primary small"
+                                                  style="cursor:pointer;"
+                                                  onclick="applyToAll('${day}')">
+                                                Apply to multiple days
+                                            </span>
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                        
+                            </div>
+                            `;
 
                             daysContainer.appendChild(block);
                         });
@@ -1277,15 +1278,15 @@ Rashi is an experienced online tutor specializing in Math and Physics.
 
                             fullBlock.innerHTML = `
 
-        <div class="d-flex flex-wrap gap-2">
-            ${days.map((d, i) => `
-                <div class="form-check">
-                    <input class="form-check-input week-day-checkbox" type="checkbox" id="full${d}" data-day="${d}">
-                    <label class="form-check-label" for="full${d}">${shortDays[i]}</label>
-                </div>
-            `).join('')}
-        </div>
-    `;
+                                <div class="d-flex flex-wrap gap-2">
+                                    ${days.map((d, i) => `
+                                        <div class="form-check">
+                                            <input class="form-check-input week-day-checkbox" type="checkbox" id="full${d}" data-day="${d}">
+                                            <label class="form-check-label" for="full${d}">${shortDays[i]}</label>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `;
 
                             dayLine.appendChild(fullBlock);
                         }
@@ -1923,7 +1924,8 @@ Rashi is an experienced online tutor specializing in Math and Physics.
                         </li>
                         <li class="mb-2"><a href="/befor-login/login-flow/Signup.html"
                                 class="text-decoration-none">Apply as Tutor</a></li>
-                        <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+                        <!-- <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li> -->
+
                     </ul>
                 </div>
             </div>

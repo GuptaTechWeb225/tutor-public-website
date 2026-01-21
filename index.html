@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartBrain Academy</title>
-  <link rel="favicon" type="img/svg+xml" href="/assets/images/fav.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.13.1/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -24,7 +25,44 @@
     .testimonial-dots button.active {
       opacity: 1;
     }
+    @media (max-width: 420px) {
+
+      .about-images,
+      .col-lg-6.position-relative {
+        min-height: auto !important;
+        position: static !important;
+      }
+
+      /* Remove absolute positioning */
+      .position-absolute {
+        position: static !important;
+        transform: none !important;
+      }
+
+      /* Center everything */
+      .position-relative {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      /* Resize images */
+      .position-relative img {
+        width: 200px !important;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Badge full width fix */
+      .rounded-pill {
+        width: fit-content;
+        max-width: 90%;
+        text-align: center;
+      }
+    }
   </style>
+
 </head>
 
 <body>
@@ -426,18 +464,13 @@
           <h2 class="text-primary fw-semibold mb-2">
             Benefits of joining
           </h2>
-
-
-
           <p class="text-muted">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's standard dummy.
           </p>
-
-
           <!-- BUTTON -->
-          <a href="/befor-login/login-flow/tutor-signup-form.html" class="btn btn-primary px-4 rounded-1 mt-3">
+          <a href="/befor-login/login-flow/tutor-signup.html" class="btn btn-primary px-4 rounded-1 mt-3">
             Sign Up
           </a>
         </div>
@@ -468,7 +501,6 @@
                   <p>"The lessons are incredibly easy to follow, and my tutor explains even the toughest concepts with
                     clarity. I've improved my grades and my confidence!"</p>
                   <h6 class="mb-0">— Aarav S.</h6>
-                  <small>Grade 10</small>
                 </div>
                 <img src="/assets/images/hero/student-testnomial1.png" height="200" alt="Student">
               </div>
@@ -481,7 +513,6 @@
                   <p>"The tutor really understands how to break down complex topics. My coding skills improved faster
                     than I expected."</p>
                   <h6 class="mb-0">— Emily P.</h6>
-                  <small>High School Student</small>
                 </div>
                 <img src="/assets/images/hero/student-testnomial2.png" height="200" alt="Student">
               </div>
@@ -499,7 +530,6 @@
                   <p>"The lessons are incredibly easy to follow, and my tutor explains even the toughest concepts with
                     clarity. I've improved my grades and my confidence!"</p>
                   <h6 class="mb-0">— Aarav S.</h6>
-                  <small>Grade 10</small>
                 </div>
                 <img src="/assets/images/hero/student-testnomial1.png" height="200" alt="Student">
               </div>
@@ -512,7 +542,6 @@
                   <p>"The tutor really understands how to break down complex topics. My coding skills improved faster
                     than I expected."</p>
                   <h6 class="mb-0">— Emily P.</h6>
-                  <small>High School Student</small>
                 </div>
                 <img src="/assets/images/hero/student-testnomial2.png" height="200" alt="Student">
               </div>
@@ -562,8 +591,8 @@
                     exams. He is extremely patient and ensures every concept is
                     understood clearly. We’ve seen a clear improvement in scores.
                   </p>
+                  <h6 class="mb-0 text-secondary">John Ibrahim</h6>
 
-                  <span class="text-secondary fw-semibold">Physics Tutor</span>
                 </div>
               </div>
             </div>
@@ -584,8 +613,8 @@
                     Michael has been a huge help for my son in preparing for board exams. He is extremely patient and
                     always ensures my son understands each concept fully. We’ve seen a clear jump in his scores.
                   </p>
+                  <h6 class="mb-0 text-secondary">John Ibrahim</h6>
 
-                  <span class="text-secondary fw-semibold">Physics Tutor</span>
                 </div>
               </div>
             </div>
@@ -612,7 +641,8 @@
                     understood clearly. We’ve seen a clear improvement in scores.
                   </p>
 
-                  <span class="text-secondary fw-semibold">Physics Tutor</span>
+                  <h6 class="mb-0 text-secondary">John Ibrahim</h6>
+
                 </div>
               </div>
             </div>
@@ -632,7 +662,8 @@
                     understood clearly. We’ve seen a clear improvement in scores.
                   </p>
 
-                  <span class="text-secondary fw-semibold">Physics Tutor</span>
+                  <h6 class="mb-0 text-secondary">John Ibrahim</h6>
+
                 </div>
               </div>
             </div>
@@ -731,7 +762,7 @@
             <li class="mb-2"><a href="/career/career.html" class="text-decoration-none">Careers</a></li>
             <li class="mb-2"><a href="/befor-login/login-flow/Signup.html" class="text-decoration-none">Apply as
                 Tutor</a></li>
-            <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li>
+            <!-- <li><a href="#" class="text-decoration-none">Tutor Job Board</a></li> -->
           </ul>
         </div>
       </div>
